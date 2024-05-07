@@ -1,0 +1,822 @@
+@font-face {
+  font-family: "AeonikTRIAL-Bold";
+  src: url(../fonts/AeonikTRIAL-Bold.otf);
+}
+@font-face {
+  font-family: "AeonikTRIAL-Regular";
+  src: url(../fonts/AeonikTRIAL-Regular.otf);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.33%;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+ul li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+  font-family: "AeonikTRIAL-Bold";
+  color: #1d1d1f;
+}
+
+button {
+  font-family: "AeonikTRIAL-Bold";
+}
+
+p,
+span,
+strong,
+b,
+a,
+li,
+input {
+  font-family: "AeonikTRIAL-Regular";
+  color: #5d5d5d;
+}
+
+.commBtnWrap button {
+  width: 18.8rem;
+  height: 5rem;
+  border-radius: 5rem;
+  background: linear-gradient(90deg, rgb(45, 76, 195) 45%, rgb(154, 155, 237) 100%);
+  color: #fff;
+  border: 0;
+  font-size: 1.6rem;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-left: 1.5rem;
+}
+.commBtnWrap button span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4.2rem;
+  height: 4.2rem;
+  border-radius: 5rem;
+  background-color: #fff;
+}
+
+#header {
+  position: fixed;
+  position: fixed;
+  top: 5%;
+  left: 50%;
+  width: 86%;
+  display: flex;
+  transition: top 0.8s;
+  height: 6rem;
+  background: #fff;
+  box-shadow: 0 0px 10px rgba(84, 84, 84, 0.1490196078);
+  z-index: 11;
+  transform: translateX(-50%);
+  justify-content: center;
+  align-items: center;
+  border-radius: 5rem;
+  padding: 0 3rem;
+}
+
+#bannerSection {
+  background-image: url(../images/noisy-gradients.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  padding: 9% 0 0;
+}
+#bannerSection .container {
+  height: 100%;
+}
+#bannerSection .bannerContentRow {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+#bannerSection .bannerTextWrap {
+  padding-bottom: 4rem;
+}
+#bannerSection .bannerTextWrap .mainText {
+  font-size: 9.5rem;
+  text-align: center;
+}
+#bannerSection .bannerTextWrap .mainText .gradientText {
+  position: relative;
+  width: -moz-max-content;
+  width: max-content;
+  background: #6d24ba;
+  background: linear-gradient(to right, #6d24ba 0%, #96e0f3 25%, #a2b8f7 32%, #a65ff8 49%, #5949e0 77%, #313ed3 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "AeonikTRIAL-Bold";
+}
+#bannerSection .bannerTextWrap .mainPara {
+  width: 43%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.8rem;
+}
+#bannerSection .bannerTextWrap .commBtnWrap {
+  display: flex;
+  justify-content: center;
+}
+#bannerSection .centerBoxWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+#bannerSection .centerBoxWrap .priceTag .priceTagImg {
+  position: absolute;
+  top: -14%;
+  left: 27%;
+}
+#bannerSection .centerBoxWrap .priceTag .priceAmt {
+  position: absolute;
+  top: -7.5%;
+  left: 29%;
+  transform: rotate(25deg);
+  font-size: 1.6rem;
+  font-family: "AeonikTRIAL-Bold";
+  color: #fff;
+}
+#bannerSection .centerBoxWrap .mainLaptop {
+  position: relative;
+}
+#bannerSection .centerBoxWrap .mainLaptop .overlapText {
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 4rem;
+  font-family: "AeonikTRIAL-Bold";
+  width: 100%;
+}
+#bannerSection .centerBoxWrap .laptopBox {
+  margin-top: -0.3rem;
+}
+#bannerSection .centerBoxWrap .absBox {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 1rem 2rem;
+  border-radius: 0.6rem;
+  box-shadow: 0 0px 10px rgba(84, 84, 84, 0.1490196078);
+  position: absolute;
+  width: 30.4rem;
+}
+#bannerSection .centerBoxWrap .absBox.leftbox {
+  right: 0;
+  top: 0;
+}
+#bannerSection .centerBoxWrap .absBox.rightbox {
+  left: 0;
+  bottom: 40%;
+}
+#bannerSection .centerBoxWrap .absBox .boxTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+#bannerSection .centerBoxWrap .absBox .boxTitle .title {
+  font-size: 1.8rem;
+  font-family: "AeonikTRIAL-Bold";
+  color: #000;
+}
+#bannerSection .centerBoxWrap .absBox p {
+  margin-bottom: 0;
+  font-size: 1.4rem;
+  font-family: "AeonikTRIAL-Regular";
+}
+
+@media (max-width: 834px) {
+  #clients {
+    padding: 0rem 0 3rem;
+  }
+}
+@media (max-width: 767px) {
+  #clients {
+    padding: 0 0 0rem;
+  }
+}
+#clients .client-logo-listing {
+  background-color: #121010;
+  height: 135px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+#clients .client-logo-listing .brands-marquee {
+  padding: 25px 0;
+}
+#clients .client-logo-listing .js-marquee-wrapper {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  animation: 140s linear 0s infinite normal none running marqueeAnimation-3709221;
+  margin-left: 0px;
+  width: 18395px;
+  transform: translateX(0px);
+}
+#clients .client-logo-listing .js-marquee-wrapper:hover {
+  animation: 140s linear 0s infinite normal none paused marqueeAnimation-3709221 !important;
+}
+#clients .client-logo-listing ul {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+#clients .client-logo-listing ul li {
+  padding: 0px 50px;
+  display: block;
+}
+
+.svg-sprite {
+  background-image: url(../images/css_sprites-02-08-2023.png);
+  background-repeat: no-repeat;
+  display: block;
+  height: 100px;
+}
+.svg-sprite.logo-brand-black-oracle {
+  background-position: 0px 0px;
+  width: 170px;
+}
+.svg-sprite.logo-brand-black-mtn {
+  background-position: -780px 0px;
+  width: 205px;
+}
+.svg-sprite.logo-brand-black-sanchobbdo {
+  background-position: -1355px 0px;
+  width: 190px;
+}
+.svg-sprite.logo-brand-black-gulfstream {
+  background-position: -162rem 0px;
+  width: 260px;
+}
+.svg-sprite.logo-brand-black-daman {
+  background-position: -1955px 0px;
+  width: 250px;
+}
+.svg-sprite.logo-brand-black-astrazeneca {
+  background-position: -2280px 0px;
+  width: 290px;
+}
+.svg-sprite.logo-brand-black-vfsglobal {
+  background-position: -2645px 0px;
+  width: 205px;
+}
+.svg-sprite.logo-brand-black-haas {
+  background-position: -2935px 0px;
+  width: 200px;
+}
+.svg-sprite.logo-brand-black-tata {
+  background-position: -3225px 0px;
+  width: 175px;
+}
+.svg-sprite.logo-brand-black-yahoo {
+  background-position: -3490px 0px;
+  width: 170px;
+}
+.svg-sprite.logo-brand-black-smithfield {
+  background-position: -3745px 0px;
+  width: 100px;
+}
+.svg-sprite.logo-brand-black-best-buy {
+  background-position: -392rem 0px;
+  width: 80px;
+}
+.svg-sprite.logo-brand-black-essilor {
+  background-position: -4085px 0px;
+  width: 175px;
+}
+.svg-sprite.logo-brand-black-cosmopolitan {
+  background-position: -4340px 0px;
+  width: 110px;
+}
+.svg-sprite.logo-brand-black-abbott {
+  background-position: -4535px 0px;
+  width: 170px;
+}
+.svg-sprite.logo-brand-black-unsw {
+  background-position: 0px -85px;
+  width: 175px;
+}
+.svg-sprite.logo-brand-black-lifetechnologies {
+  background-position: -22rem -85px;
+  width: 70px;
+}
+.svg-sprite.logo-brand-black-jacksoncoker {
+  background-position: -385px -95px;
+  width: 115px;
+}
+.svg-sprite.logo-brand-black-mcdonalds {
+  background-position: -595px -85px;
+  width: 200px;
+}
+.svg-sprite.logo-brand-black-vodafone {
+  background-position: -885px -85px;
+  width: 65px;
+}
+.svg-sprite.logo-brand-black-adidas {
+  background-position: -1045px -85px;
+  width: 185px;
+}
+.svg-sprite.logo-brand-black-ndtv {
+  background-position: -132rem -85px;
+  width: 150px;
+}
+.svg-sprite.logo-brand-black-kotak {
+  background-position: -1560px -75px;
+  width: 240px;
+}
+.svg-sprite.logo-brand-black-macys {
+  background-position: -1890px -80px;
+  width: 115px;
+}
+.svg-sprite.logo-brand-black-cartier {
+  background-position: -2100px -85px;
+  width: 185px;
+}
+.svg-sprite.svg-sprite.logo-cambridge-v3 {
+  background-position: -260px 0;
+  width: 160px;
+}
+.svg-sprite.abdul-latif-jameel-logo {
+  background-position: -515px 0;
+  width: 180px;
+}
+.svg-sprite.abdul-latif-jameel-logo-001 {
+  background-position: -1077px 0;
+  width: 200px;
+}
+.svg-sprite.logo-brand-black-Logo1 {
+  background-position: -2365px -85px;
+  width: 80px;
+}
+.svg-sprite.logo-brand-black-Logo2 {
+  background-position: -2535px -85px;
+  width: 110px;
+}
+.svg-sprite.logo-brand-black-Logo3 {
+  background-position: -2730px -85px;
+  width: 125px;
+}
+.svg-sprite.logo-brand-black-Logo4 {
+  background-position: -2940px -90px;
+  width: 165px;
+}
+.svg-sprite.logo-brand-black-Logo5 {
+  background-position: -3190px -90px;
+  width: 135px;
+}
+.svg-sprite.logo-brand-black-Logo6 {
+  background-position: -342rem -90px;
+  width: 225px;
+}
+.svg-sprite.logo-brand-black-Logo7 {
+  background-position: -3730px -95px;
+  width: 190px;
+}
+.svg-sprite.logo-brand-black-Logo8 {
+  background-position: -402rem -95px;
+  width: 110px;
+}
+.svg-sprite.logo-brand-black-Logo9 {
+  background-position: -4230px -95px;
+  width: 180px;
+}
+.svg-sprite.logo-brand-black-Logo10 {
+  background-position: -4510px -90px;
+  width: 215px;
+}
+.svg-sprite.logo-brand-black-Logo11 {
+  background-position: 0px -185px;
+  width: 200px;
+}
+.svg-sprite.logo-brand-black-Logo12 {
+  background-position: -295px -185px;
+  width: 200px;
+}
+.svg-sprite.logo-brand-black-Logo13 {
+  background-position: -555px -170px;
+  width: 135px;
+}
+.svg-sprite.logo-brand-black-Logo14 {
+  background-position: -765px -170px;
+  width: 225px;
+}
+.svg-sprite.logo-brand-black-Logo15 {
+  background-position: -1075px -175px;
+  width: 185px;
+}
+.svg-sprite.logo-brand-black-Logo16 {
+  background-position: -1335px -175px;
+  width: 165px;
+}
+.svg-sprite.logo-brand-black-Logo17 {
+  background-position: -1575px -175px;
+  width: 260px;
+}
+.svg-sprite.logo-brand-black-Logo18 {
+  background-position: -1910px -175px;
+  width: 245px;
+}
+.svg-sprite.logo-brand-black-Logo19 {
+  background-position: -2215px -175px;
+  width: 22rem;
+}
+.svg-sprite.logo-brand-black-Logo20 {
+  background-position: -2510px -175px;
+  width: 110px;
+}
+.svg-sprite.logo-brand-black-Logo21 {
+  background-position: -2700px -175px;
+  width: 70px;
+}
+.svg-sprite.logo-brand-black-Logo22 {
+  background-position: -2860px -175px;
+  width: 150px;
+}
+.svg-sprite.logo-brand-black-Logo23 {
+  background-position: -3070px -175px;
+  width: 255px;
+}
+.svg-sprite.logo-brand-black-Logo24 {
+  background-position: -3400px -175px;
+  width: 90px;
+}
+.svg-sprite.logo-brand-black-Logo25 {
+  background-position: -3580px -175px;
+  width: 75px;
+}
+.svg-sprite.logo-brand-black-Logo26 {
+  background-position: -3735px -175px;
+  width: 245px;
+}
+.svg-sprite.logo-brand-black-Logo27 {
+  background-position: -4065px -175px;
+  width: 265px;
+}
+.svg-sprite.logo-brand-black-Logo28 {
+  background-position: -4390px -175px;
+  width: 290px;
+}
+.svg-sprite.logo-brand-black-Logo29 {
+  background-position: 0px -265px;
+  width: 250px;
+}
+.svg-sprite.logo-brand-black-Logo30 {
+  background-position: -325px -265px;
+  width: 235px;
+}
+.svg-sprite.logo-brand-black-Logo31 {
+  background-position: -630px -265px;
+  width: 145px;
+}
+.svg-sprite.logo-brand-black-Logo32 {
+  background-position: -855px -265px;
+  width: 150px;
+}
+.svg-sprite.logo-brand-black-Logo33 {
+  background-position: -1075px -265px;
+  width: 170px;
+}
+.svg-sprite.logo-brand-black-Logo34 {
+  background-position: -132rem -265px;
+  width: 140px;
+}
+.svg-sprite.logo-brand-black-Logo35 {
+  background-position: -1540px -265px;
+  width: 130px;
+}
+.svg-sprite.logo-brand-black-Logo36 {
+  background-position: -1750px -265px;
+  width: 225px;
+}
+.svg-sprite.logo-brand-black-Logo37 {
+  background-position: -2035px -265px;
+  width: 180px;
+}
+.svg-sprite.logo-brand-black-Logo38 {
+  background-position: -2295px -265px;
+  width: 200px;
+}
+.svg-sprite.logo-brand-black-Logo39 {
+  background-position: -2580px -265px;
+  width: 75px;
+}
+.svg-sprite.logo-brand-black-Logo40 {
+  background-position: -2750px -265px;
+  width: 80px;
+}
+.svg-sprite.logo-brand-black-Logo41 {
+  background-position: -2900px -265px;
+  width: 135px;
+}
+.svg-sprite.logo-brand-black-Logo42 {
+  background-position: -312rem -265px;
+  width: 180px;
+}
+.svg-sprite.logo-brand-black-Logo43 {
+  background-position: -3370px -265px;
+  width: 265px;
+}
+.svg-sprite.logo-brand-black-Logo44 {
+  background-position: -3705px -265px;
+  width: 150px;
+}
+.svg-sprite.logo-brand-black-Logo45 {
+  background-position: -3935px -265px;
+  width: 125px;
+}
+
+@keyframes marqueeAnimation-3709221 {
+  100% {
+    transform: translateX(-100%);
+  }
+}
+#productFeature {
+  padding: 10rem 0;
+}
+#productFeature .leftBox h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+#productFeature .leftBox p {
+  font-size: 1.8rem;
+  margin-bottom: 0;
+}
+#productFeature .slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#productFeature .slider-container .main-image-container {
+  position: relative;
+  width: 50rem;
+  height: 30rem;
+  text-align: center;
+}
+#productFeature .slider-container .main-image-container .main-image {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease-in-out;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#productFeature .slider-container .main-image-container .color-container {
+  position: absolute;
+  right: -7.5rem;
+  top: 0;
+  display: flex;
+}
+#productFeature .slider-container .main-image-container .color-container .color-black {
+  background-color: #2f2f2f;
+  height: 2rem;
+  width: 2rem;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+#productFeature .slider-container .main-image-container .color-container .color-black:hover {
+  background-color: #000;
+}
+#productFeature .slider-container .main-image-container .color-container .color-gray {
+  background-color: rgb(148, 148, 148);
+  height: 2rem;
+  width: 2rem;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+#productFeature .slider-container .main-image-container .color-container .color-gray:hover {
+  background-color: rgb(128, 128, 128);
+}
+#productFeature .slider-container .thumbnail-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+  width: 50rem;
+  padding: 1rem;
+  border: 0.1rem solid #dddddd;
+  border-radius: 0.3rem;
+}
+#productFeature .slider-container .thumbnail-container .thumbNailBox {
+  width: 8rem;
+  height: 8rem;
+  margin: 0 0.5rem;
+  cursor: pointer;
+}
+#productFeature .slider-container .thumbnail-container .thumbnail {
+  transition: opacity 0.3s;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#productFeature .slider-container .thumbnail-container .thumbnail.active {
+  opacity: 0.5;
+}
+#productFeature .slider-container .thumbnail-container .thumbnail.active ~ .main-image {
+  transform: scale(0.8);
+}
+
+#solarisGridSection {
+  padding: 10rem 0;
+  background-image: url(../images/gide-bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+#solarisGridSection .gridWrap {
+  margin-bottom: 4rem;
+}
+#solarisGridSection .gridWrap h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #fff;
+}
+#solarisGridSection .gridWrap p {
+  font-size: 1.8rem;
+  margin-bottom: 0;
+  text-align: center;
+  color: #d9d9d9;
+  width: 45%;
+  margin: 0 auto;
+}
+#solarisGridSection .bookGrid {
+  display: grid;
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+}
+#solarisGridSection .bookGrid .grid img {
+  width: 100%;
+  height: 100%;
+}
+#solarisGridSection .bookGrid .grid1 {
+  grid-area: 1/1/2/2;
+}
+#solarisGridSection .bookGrid .grid2 {
+  grid-area: 1/2/2/4;
+}
+#solarisGridSection .bookGrid .grid3 {
+  grid-area: 2/1/3/2;
+}
+#solarisGridSection .bookGrid .grid4 {
+  grid-area: 2/2/3/3;
+}
+#solarisGridSection .bookGrid .grid5 {
+  grid-area: 2/3/3/4;
+}
+
+#featureSliderSection {
+  padding: 10rem 0;
+}
+#featureSliderSection .sectionTitleWrap h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+#featureSliderSection .sectionTitleWrap p {
+  font-size: 1.8rem;
+  margin-bottom: 0;
+  text-align: center;
+  width: 45%;
+  margin: 0 auto;
+}
+#featureSliderSection .slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+#featureSliderSection .slider-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+#featureSliderSection .slide {
+  flex: 1 0 100%;
+  min-width: 100%;
+}
+#featureSliderSection .dots {
+  text-align: center;
+  margin-top: 1rem;
+  padding: 1rem 0;
+}
+#featureSliderSection .dot {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0 5px;
+  border-radius: 50%;
+  background-color: #C5C6D9;
+  border: 0.1rem solid #a9a9a9;
+  cursor: pointer;
+}
+#featureSliderSection .dot.active {
+  background-color: #2D4CC3;
+  box-shadow: 0px 0.4rem 0.8rem -0.2rem #202020;
+  border: 0;
+}
+#featureSliderSection .parent {
+  display: grid;
+  grid-column-gap: 3rem;
+  grid-row-gap: 4rem;
+  padding-top: 8rem;
+  padding-bottom: 3rem;
+}
+#featureSliderSection .box {
+  height: 20rem;
+  width: 70%;
+}
+#featureSliderSection .box .contentWrap span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 5rem;
+  background-color: #d0d3f7;
+  margin-bottom: 0.5rem;
+}
+#featureSliderSection .box .contentWrap h6 {
+  font-size: 2rem;
+}
+#featureSliderSection .box .contentWrap p {
+  font-size: 1.8rem;
+}
+#featureSliderSection .div1 {
+  grid-area: 1/1/2/2;
+  margin: 0 0 0 auto;
+}
+#featureSliderSection .div1 .contentWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+#featureSliderSection .div1 .contentWrap p {
+  text-align: right;
+}
+#featureSliderSection .div2 {
+  grid-area: 2/1/3/2;
+  margin: 0 0 0 auto;
+}
+#featureSliderSection .div2 .contentWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+#featureSliderSection .div2 .contentWrap p {
+  text-align: right;
+}
+#featureSliderSection .div3 {
+  grid-area: 1/3/2/4;
+}
+#featureSliderSection .div4 {
+  grid-area: 2/3/3/4;
+}
+#featureSliderSection .div5 {
+  grid-area: 1/2/2/3;
+  width: 100%;
+}
+#featureSliderSection .div5 .midImagWrap {
+  width: 45rem;
+  height: 45rem;
+}
+#featureSliderSection .div5 .midImagWrap img {
+  width: 100%;
+  height: 100%;
+}
+
+.h100 {
+  height: 100vh;
+}
+.h100:nth-child(even) {
+  background-color: red;
+}/*# sourceMappingURL=main.css.map */

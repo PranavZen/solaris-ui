@@ -1,0 +1,10 @@
+export { default as logo } from "../assets/images/logo.svg";
+export { default as laptop } from "../assets/images/laptop.png";
+export { default as laptopBox } from "../assets/images/laptop-box.png";
+export { default as priceTag } from "../assets/images/price-tag.png";
+export { default as grid1 } from "../assets/images/grid-one.png";
+export { default as grid2 } from "../assets/images/grid-two.png";
+export { default as grid3 } from "../assets/images/grid-three.png";
+export { default as grid4 } from "../assets/images/grid-four.png";
+export { default as grid5 } from "../assets/images/grid-five.png";
+export { default as midImag } from "../assets/images/mid-img-laptop.png";

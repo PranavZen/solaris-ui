@@ -1,0 +1,37 @@
+@mixin common-button {
+  .commBtnWrap {
+    button {
+      width: 18.8rem;
+      height: 5rem;
+      border-radius: 5rem;
+      background: linear-gradient(
+        90deg,
+        rgba(45, 76, 195, 1) 45%,
+        rgba(154, 155, 237, 1) 100%
+      );
+      color: #fff;
+      border: 0;
+      font-size: 1.6rem;
+      margin-top: 2rem;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding-left: 1.5rem;
+      span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 4.2rem;
+        height: 4.2rem;
+        border-radius: 5rem;
+        background-color: #fff;
+      }
+    }
+  }
+}
+@mixin mainTitle{
+    font-size: 3rem;
+}
+@mixin paraTypo {
+  font-size: 1.8rem;
+}
