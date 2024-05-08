@@ -8,3 +8,7 @@ export { default as grid3 } from "../assets/images/grid-three.png";
 export { default as grid4 } from "../assets/images/grid-four.png";
 export { default as grid5 } from "../assets/images/grid-five.png";
 export { default as midImag } from "../assets/images/mid-img-laptop.png";
+export { default as winProImg } from "../assets/images/windows-laptop.png";
+export { default as benImg1 } from "../assets/images/benefits-top.png";
+export { default as benImg2 } from "../assets/images/benefits-left-bottom.png";
+export { default as benImg3 } from "../assets/images/benefits-right-bottom.png";

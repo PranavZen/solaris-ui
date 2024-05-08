@@ -203,10 +203,38 @@ input {
         font-size: 1.4rem;
         font-family: "AeonikTRIAL-Regular";
       }
+      
     }
   }
 }
-// Banner Section End
+.svgLine{
+  position: absolute;
+  right: 0;
+  z-index: 999;
+  height: 100%;
+  width: 50%;
+  top: 25%;
+  .st0{
+    fill:none;
+    stroke:#000000;
+    stroke-miterlimit:10;
+    stroke-dasharray: 1000; 
+    stroke-dashoffset: 1000;
+    -webkit-animation: draw1 4s linear forwards;
+    animation: draw1 8s linear forwards;
+    }
+}
+
+
+// Banner Section 
+@keyframes draw1{
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
 
 // Clients Section Start
 #clients {
@@ -853,6 +881,133 @@ input {
   }
 }
 // Feature Slider Section End
+
+// Window Pro 11 Section Start
+#windowProSection{
+  padding: 10rem 0;
+  background-color: #F9F9F9;
+  .custRow{
+    justify-content: flex-end;
+    position: relative;
+    &::before{
+      content: "";
+      background-image: url(../images/windows-laptop.png);
+      background-repeat: no-repeat;
+      background-size: 60% 100%;
+      background-position: left;
+      width: 145rem;
+      height: 75rem;
+      position: absolute;
+      left: -150px;
+      top: -25%;
+    }
+    .winProTitleWrap{
+      h2{
+        @include mainTitle;
+        margin-bottom: 1rem;
+      }
+      p{
+        @include paraTypo;
+        margin-bottom: 0;
+      }
+    }
+    .winProList{
+      margin-top: 3rem;
+      ul{
+        padding-left: 0;
+        &.secondList{
+          padding-left: 4rem
+        }
+        li{
+          margin-bottom: 4rem;
+          &:last-child{
+            margin-bottom: 0;
+          }
+          h5{
+            font-size: 2.6rem;
+            margin-bottom: .2rem;
+          }
+          p{
+            @include paraTypo;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+// Window Pro 11 Section End
+
+// Solaris Benefits Section Start
+#solarisBenefits{
+  padding: 10rem 0 6rem;
+  background-color: #f2f2ff;
+  .sectionTitleBox{
+    h2{
+      @include mainTitle;
+      margin-bottom: 1rem;
+    }
+    p{
+      @include paraTypo;
+      margin-bottom: 0;
+      width: 80%;
+    }
+  }
+  .leftImgWrap{
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .leftBtmImg{
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+// Solaris Benefits Section End
+
+// Prgressive Slider Section Start
+#purePerformanceSection{
+  /* App.css or any other CSS file where you manage your styles */
+
+.slider {
+  width: 80%; /* Adjust width as needed */
+  margin: 0 auto; /* Center the slider */
+}
+
+.progressBarContainer {
+  width: 80%; /* Adjust width as needed */
+  margin: 20px auto; /* Center the progress bar */
+}
+
+.progressBar {
+  width: 100%;
+  height: 10px; /* Adjust height as needed */
+  background-color: #ccc;
+}
+
+.inProgress {
+  height: 100%;
+  background-color: #007bff; /* Adjust color as needed */
+}
+
+.item {
+  cursor: pointer;
+  text-align: center;
+}
+
+/* Optional: Add some padding and margin to the item content */
+.item span {
+  display: inline-block;
+  padding: 10px;
+  margin: 0 5px;
+  background-color: #f8f9fa; /* Adjust color as needed */
+}
+
+}
+// Prgressive Slider Section End
 
 .h100 {
   height: 100vh;

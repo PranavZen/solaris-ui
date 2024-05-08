@@ -61,7 +61,26 @@ function BannerContent() {
             </div>
             <p>via touchpad fingerprint sensor9</p>
           </div>
+          <span className="svgLine">
+            <svg
+              version="1.1"
+              id="Layer_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+              x="0px"
+              y="0px"
+              viewBox="-50 0 700 100"
+              style={{
+                enableBackground: "new 0 0 614 53",
+                transform: "rotate(170deg)",
+              }}
+              xmlSpace="preserve"
+            >
+              <polyline className="st0" points="55,80 225,8 700,0" />
+            </svg>
+          </span>
           <div className="rightbox absBox">
+          
             <div className="boxTitle">
               <span className="icon">
                 <svg
@@ -97,6 +116,7 @@ function BannerContent() {
               options.
             </p>
           </div>
+          
         </div>
       </div>
     </div>

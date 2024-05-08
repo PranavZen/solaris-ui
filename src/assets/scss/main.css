@@ -212,6 +212,31 @@ input {
   font-family: "AeonikTRIAL-Regular";
 }
 
+.svgLine {
+  position: absolute;
+  right: 0;
+  z-index: 999;
+  height: 100%;
+  width: 50%;
+  top: 25%;
+}
+.svgLine .st0 {
+  fill: none;
+  stroke: #000000;
+  stroke-miterlimit: 10;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw1 8s linear forwards;
+}
+
+@keyframes draw1 {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
 @media (max-width: 834px) {
   #clients {
     padding: 0rem 0 3rem;
@@ -812,6 +837,112 @@ input {
 #featureSliderSection .div5 .midImagWrap img {
   width: 100%;
   height: 100%;
+}
+
+#windowProSection {
+  padding: 10rem 0;
+  background-color: #F9F9F9;
+}
+#windowProSection .custRow {
+  justify-content: flex-end;
+  position: relative;
+}
+#windowProSection .custRow::before {
+  content: "";
+  background-image: url(../images/windows-laptop.png);
+  background-repeat: no-repeat;
+  background-size: 60% 100%;
+  background-position: left;
+  width: 145rem;
+  height: 75rem;
+  position: absolute;
+  left: -150px;
+  top: -25%;
+}
+#windowProSection .custRow .winProTitleWrap h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+#windowProSection .custRow .winProTitleWrap p {
+  font-size: 1.8rem;
+  margin-bottom: 0;
+}
+#windowProSection .custRow .winProList {
+  margin-top: 3rem;
+}
+#windowProSection .custRow .winProList ul {
+  padding-left: 0;
+}
+#windowProSection .custRow .winProList ul.secondList {
+  padding-left: 4rem;
+}
+#windowProSection .custRow .winProList ul li {
+  margin-bottom: 4rem;
+}
+#windowProSection .custRow .winProList ul li:last-child {
+  margin-bottom: 0;
+}
+#windowProSection .custRow .winProList ul li h5 {
+  font-size: 2.6rem;
+  margin-bottom: 0.2rem;
+}
+#windowProSection .custRow .winProList ul li p {
+  font-size: 1.8rem;
+  margin-bottom: 0;
+}
+
+#solarisBenefits {
+  padding: 10rem 0 6rem;
+  background-color: #f2f2ff;
+}
+#solarisBenefits .sectionTitleBox h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+#solarisBenefits .sectionTitleBox p {
+  font-size: 1.8rem;
+  margin-bottom: 0;
+  width: 80%;
+}
+#solarisBenefits .leftImgWrap img {
+  width: 100%;
+  height: 100%;
+}
+#solarisBenefits .leftBtmImg img {
+  width: 100%;
+  height: 100%;
+}
+
+#purePerformanceSection {
+  /* App.css or any other CSS file where you manage your styles */
+  /* Optional: Add some padding and margin to the item content */
+}
+#purePerformanceSection .slider {
+  width: 80%; /* Adjust width as needed */
+  margin: 0 auto; /* Center the slider */
+}
+#purePerformanceSection .progressBarContainer {
+  width: 80%; /* Adjust width as needed */
+  margin: 20px auto; /* Center the progress bar */
+}
+#purePerformanceSection .progressBar {
+  width: 100%;
+  height: 10px; /* Adjust height as needed */
+  background-color: #ccc;
+}
+#purePerformanceSection .inProgress {
+  height: 100%;
+  background-color: #007bff; /* Adjust color as needed */
+}
+#purePerformanceSection .item {
+  cursor: pointer;
+  text-align: center;
+}
+#purePerformanceSection .item span {
+  display: inline-block;
+  padding: 10px;
+  margin: 0 5px;
+  background-color: #f8f9fa; /* Adjust color as needed */
 }
 
 .h100 {
