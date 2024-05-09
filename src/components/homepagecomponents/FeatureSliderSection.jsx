@@ -11,7 +11,7 @@ function FeatureSliderSection() {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-md-12">
+        <div className="col-md-10 mx-auto">
           <div className="sectionTitleWrap">
             <h2>Solaris book 14X OLED</h2>
             <p>

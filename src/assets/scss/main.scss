@@ -203,31 +203,33 @@ input {
         font-size: 1.4rem;
         font-family: "AeonikTRIAL-Regular";
       }
-      
     }
   }
 }
-.svgLine{
+.svgLine {
   position: absolute;
   right: 0;
   z-index: 999;
   height: 100%;
   width: 50%;
   top: 25%;
-  .st0{
-    fill:none;
-    stroke:#000000;
-    stroke-miterlimit:10;
-    stroke-dasharray: 1000; 
+  &.leftArrow {
+    left: 0;
+    width: 36%;
+  }
+  .st0 {
+    fill: none;
+    stroke: #000000;
+    stroke-miterlimit: 10;
+    stroke-dasharray: 1000;
     stroke-dashoffset: 1000;
-    -webkit-animation: draw1 4s linear forwards;
-    animation: draw1 8s linear forwards;
-    }
+    -webkit-animation: draw1 2s linear forwards;
+    animation: draw1 2s linear forwards;
+  }
 }
 
-
-// Banner Section 
-@keyframes draw1{
+// Banner Section
+@keyframes draw1 {
   from {
     stroke-dashoffset: 1000;
   }
@@ -729,9 +731,100 @@ input {
     grid-column-gap: 2rem;
     grid-row-gap: 2rem;
     .grid {
+      height: 100%;
+      width: 100%;
+      border-radius: 0.8rem;
+      overflow: hidden;
+      position: relative;
+      .floatBox {
+        position: absolute;
+        .roundBox {
+          background-color: #fff;
+          width: 18rem;
+          height: 4.5rem;
+          border-radius: 5rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 1rem;
+          span {
+            font-family: "AeonikTRIAL-Bold";
+            font-size: 1.8rem;
+            color: #313234;
+          }
+        }
+        p {
+          font-family: "AeonikTRIAL-Regular";
+          font-size: 1.4rem;
+          color: #fff;
+        }
+        &.float1 {
+          width: 60%;
+          left: 5%;
+          bottom: 10%;
+        }
+        &.float2 {
+          width: 40%;
+          right: 5%;
+          bottom: 10%;
+          display: flex;
+          flex-direction: column;
+          .roundBox {
+            width: 25rem;
+          }
+        }
+      }
+      .flotTitle {
+        position: absolute;
+        span {
+          font-family: "AeonikTRIAL-Bold";
+          font-size: 3rem;
+          color: #313234;
+        }
+
+        &.title1 {
+          top: 10%;
+          left: 5%;
+        }
+        &.title2 {
+          right: 5%;
+          top: 25%;
+        }
+        &.title3 {
+          left: 5%;
+          top: 40%;
+        }
+      }
       img {
         width: 100%;
         height: 100%;
+      }
+    }
+    .btmBox {
+      position: absolute;
+      .lightTxt {
+        font-family: "AeonikTRIAL-Bold";
+        color: #b3b3b3;
+        font-size: 1.8rem;
+        margin-bottom: 0;
+      }
+      .darkTxt {
+        font-family: "AeonikTRIAL-Bold";
+        color: #313234;
+        font-size: 1.8rem;
+        margin-bottom: 0;
+      }
+      &.boxed1 {
+        bottom: 5%;
+        left: 5%;
+      }
+      &.boxed2 {
+        bottom: 5%;
+        right: 5%;
+      }
+      &.boxed3 {
+        top: 5%;
+        right: 5%;
       }
     }
     .grid1 {
@@ -742,12 +835,33 @@ input {
     }
     .grid3 {
       grid-area: 2 / 1 / 3 / 2;
+      .svgLine {
+        height: auto;
+        width: 70%;
+        top: 53%;
+        stroke-width: 0.3rem;
+        left: 20%;
+      }
     }
     .grid4 {
       grid-area: 2 / 2 / 3 / 3;
+      .svgLine {
+        height: auto;
+        top: 55%;
+        width: 85%;
+        left: 15%;
+        stroke-width: 0.3rem;
+      }
     }
     .grid5 {
       grid-area: 2 / 3 / 3 / 4;
+      .svgLine {
+        height: auto;
+        top: 54%;
+        width: 100%;
+        left: -4%;
+        stroke-width: 0.3rem;
+      }
     }
   }
 }
@@ -798,14 +912,15 @@ input {
     height: 1.5rem;
     margin: 0 5px;
     border-radius: 50%;
-    background-color: #C5C6D9;border: .1rem solid #a9a9a9;
+    background-color: #c5c6d9;
+    border: 0.1rem solid #a9a9a9;
 
     cursor: pointer;
   }
 
   .dot.active {
-    background-color: #2D4CC3;
-    box-shadow: 0px .4rem .8rem -.2rem #202020;
+    background-color: #2d4cc3;
+    box-shadow: 0px 0.4rem 0.8rem -0.2rem #202020;
     border: 0;
   }
   .parent {
@@ -817,7 +932,7 @@ input {
   }
   .box {
     height: 20rem;
-    width: 70%;
+    width: 100%;
     .contentWrap {
       span {
         display: flex;
@@ -870,26 +985,54 @@ input {
   .div5 {
     grid-area: 1 / 2 / 2 / 3;
     width: 100%;
+    position: relative;
+    .spinner {
+      animation: rotate 11s linear infinite;
+      -webkit-animation: rotate 11s linear infinite;
+      -moz-animation: rotate 11s linear infinite;
+      position: relative;
+    }
+    @keyframes rotate {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @-webkit-keyframes rotate {
+      to {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+
+    @-moz-keyframes rotate {
+      to {
+        transform: rotate(360deg);
+      }
+    }
     .midImagWrap {
       width: 45rem;
       height: 45rem;
+      position: absolute;
+      top: 24%;
+      left: 1%;
       img {
         width: 100%;
-        height: 100%;
+        height: auto;
       }
     }
   }
 }
+
 // Feature Slider Section End
 
 // Window Pro 11 Section Start
-#windowProSection{
+#windowProSection {
   padding: 10rem 0;
-  background-color: #F9F9F9;
-  .custRow{
+  background-color: #f9f9f9;
+  .custRow {
     justify-content: flex-end;
     position: relative;
-    &::before{
+    &::before {
       content: "";
       background-image: url(../images/windows-laptop.png);
       background-repeat: no-repeat;
@@ -901,33 +1044,33 @@ input {
       left: -150px;
       top: -25%;
     }
-    .winProTitleWrap{
-      h2{
+    .winProTitleWrap {
+      h2 {
         @include mainTitle;
         margin-bottom: 1rem;
       }
-      p{
+      p {
         @include paraTypo;
         margin-bottom: 0;
       }
     }
-    .winProList{
+    .winProList {
       margin-top: 3rem;
-      ul{
+      ul {
         padding-left: 0;
-        &.secondList{
-          padding-left: 4rem
+        &.secondList {
+          padding-left: 4rem;
         }
-        li{
+        li {
           margin-bottom: 4rem;
-          &:last-child{
+          &:last-child {
             margin-bottom: 0;
           }
-          h5{
+          h5 {
             font-size: 2.6rem;
-            margin-bottom: .2rem;
+            margin-bottom: 0.2rem;
           }
-          p{
+          p {
             @include paraTypo;
             margin-bottom: 0;
           }
@@ -939,28 +1082,77 @@ input {
 // Window Pro 11 Section End
 
 // Solaris Benefits Section Start
-#solarisBenefits{
+#solarisBenefits {
   padding: 10rem 0 6rem;
   background-color: #f2f2ff;
-  .sectionTitleBox{
-    h2{
+  .sectionTitleBox {
+    h2 {
       @include mainTitle;
       margin-bottom: 1rem;
     }
-    p{
+    p {
       @include paraTypo;
       margin-bottom: 0;
       width: 80%;
     }
   }
-  .leftImgWrap{
-    img{
+  .leftImgWrap {
+    position: relative;
+    .svgLine {
+      position: absolute;
+      right: 31.5%;
+      width: 29%;
+      top: 50%;
+      stroke-width: 0.4rem;
+    }
+    .topImgContentWrap {
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      top: 8%;
+      padding: 0 3rem;
+      h6 {
+        font-size: 2rem;
+        line-height: 1.4;
+      }
+      .leftBoxOverlay {
+        height: 8rem;
+        width: 50%;
+        background-color: #205cdc;
+        padding: 1rem;
+        border-radius: 0.4rem;
+        span {
+          font-size: 1.4rem;
+          color: #fff;
+        }
+      }
+    }
+    img {
       width: 100%;
       height: 100%;
     }
   }
-  .leftBtmImg{
-    img{
+  .leftBtmImg {
+    position: relative;
+    .overLay {
+      position: absolute;
+      &.overlayText1 {
+        top: 12%;
+        left: 8%;
+        width: 70%;
+      }
+      &.overlayText2 {
+        top: 5%;
+        left: 5%;
+        width: 60%;
+      }
+      h6 {
+        font-size: 2rem;
+        line-height: 1.4;
+      }
+    }
+    img {
       width: 100%;
       height: 100%;
     }
@@ -969,43 +1161,67 @@ input {
 // Solaris Benefits Section End
 
 // Prgressive Slider Section Start
-#purePerformanceSection{
-  /* App.css or any other CSS file where you manage your styles */
-
-.slider {
-  width: 80%; /* Adjust width as needed */
-  margin: 0 auto; /* Center the slider */
-}
-
-.progressBarContainer {
-  width: 80%; /* Adjust width as needed */
-  margin: 20px auto; /* Center the progress bar */
-}
-
-.progressBar {
-  width: 100%;
-  height: 10px; /* Adjust height as needed */
-  background-color: #ccc;
-}
-
-.inProgress {
-  height: 100%;
-  background-color: #007bff; /* Adjust color as needed */
-}
-
-.item {
-  cursor: pointer;
-  text-align: center;
-}
-
-/* Optional: Add some padding and margin to the item content */
-.item span {
-  display: inline-block;
-  padding: 10px;
-  margin: 0 5px;
-  background-color: #f8f9fa; /* Adjust color as needed */
-}
-
+#purePerformanceSection {
+  padding: 10rem 0;
+  position: relative;
+  background-color: #fff;
+  .progress-slider {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    .slide-container {
+      display: flex;
+      transition: transform 0.5s ease;
+      height: 100%;
+      .slide {
+        flex: 0 0 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 24px;
+      }
+    }
+    
+  }
+  .progress-btns {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    width: 100%;
+    height: 2rem;
+    justify-content: space-evenly;
+    align-items: center;
+    .slide-button {
+      width: 20%;
+      button {
+        color: white;
+        border: none;
+        background-color: transparent;
+        padding: 10px;
+        margin: 10px;
+        margin-bottom: 0;
+        font-size: 18px;
+        cursor: pointer;
+      }
+      .progress-bar {
+        height: 1rem;
+        background-color: red;
+        margin: 0 10px;
+        width: 100%;
+        border-radius: 5rem;
+        cursor: pointer;
+        .progress {
+          height: 100%;
+          background-color: white;
+        }
+      }
+    }
+  }
 }
 // Prgressive Slider Section End
 

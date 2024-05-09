@@ -220,13 +220,17 @@ input {
   width: 50%;
   top: 25%;
 }
+.svgLine.leftArrow {
+  left: 0;
+  width: 36%;
+}
 .svgLine .st0 {
   fill: none;
   stroke: #000000;
   stroke-miterlimit: 10;
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
-  animation: draw1 8s linear forwards;
+  animation: draw1 2s linear forwards;
 }
 
 @keyframes draw1 {
@@ -701,9 +705,101 @@ input {
   grid-column-gap: 2rem;
   grid-row-gap: 2rem;
 }
+#solarisGridSection .bookGrid .grid {
+  height: 100%;
+  width: 100%;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  position: relative;
+}
+#solarisGridSection .bookGrid .grid .floatBox {
+  position: absolute;
+}
+#solarisGridSection .bookGrid .grid .floatBox .roundBox {
+  background-color: #fff;
+  width: 18rem;
+  height: 4.5rem;
+  border-radius: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+#solarisGridSection .bookGrid .grid .floatBox .roundBox span {
+  font-family: "AeonikTRIAL-Bold";
+  font-size: 1.8rem;
+  color: #313234;
+}
+#solarisGridSection .bookGrid .grid .floatBox p {
+  font-family: "AeonikTRIAL-Regular";
+  font-size: 1.4rem;
+  color: #fff;
+}
+#solarisGridSection .bookGrid .grid .floatBox.float1 {
+  width: 60%;
+  left: 5%;
+  bottom: 10%;
+}
+#solarisGridSection .bookGrid .grid .floatBox.float2 {
+  width: 40%;
+  right: 5%;
+  bottom: 10%;
+  display: flex;
+  flex-direction: column;
+}
+#solarisGridSection .bookGrid .grid .floatBox.float2 .roundBox {
+  width: 25rem;
+}
+#solarisGridSection .bookGrid .grid .flotTitle {
+  position: absolute;
+}
+#solarisGridSection .bookGrid .grid .flotTitle span {
+  font-family: "AeonikTRIAL-Bold";
+  font-size: 3rem;
+  color: #313234;
+}
+#solarisGridSection .bookGrid .grid .flotTitle.title1 {
+  top: 10%;
+  left: 5%;
+}
+#solarisGridSection .bookGrid .grid .flotTitle.title2 {
+  right: 5%;
+  top: 25%;
+}
+#solarisGridSection .bookGrid .grid .flotTitle.title3 {
+  left: 5%;
+  top: 40%;
+}
 #solarisGridSection .bookGrid .grid img {
   width: 100%;
   height: 100%;
+}
+#solarisGridSection .bookGrid .btmBox {
+  position: absolute;
+}
+#solarisGridSection .bookGrid .btmBox .lightTxt {
+  font-family: "AeonikTRIAL-Bold";
+  color: #b3b3b3;
+  font-size: 1.8rem;
+  margin-bottom: 0;
+}
+#solarisGridSection .bookGrid .btmBox .darkTxt {
+  font-family: "AeonikTRIAL-Bold";
+  color: #313234;
+  font-size: 1.8rem;
+  margin-bottom: 0;
+}
+#solarisGridSection .bookGrid .btmBox.boxed1 {
+  bottom: 5%;
+  left: 5%;
+}
+#solarisGridSection .bookGrid .btmBox.boxed2 {
+  bottom: 5%;
+  right: 5%;
+}
+#solarisGridSection .bookGrid .btmBox.boxed3 {
+  top: 5%;
+  right: 5%;
 }
 #solarisGridSection .bookGrid .grid1 {
   grid-area: 1/1/2/2;
@@ -714,11 +810,32 @@ input {
 #solarisGridSection .bookGrid .grid3 {
   grid-area: 2/1/3/2;
 }
+#solarisGridSection .bookGrid .grid3 .svgLine {
+  height: auto;
+  width: 70%;
+  top: 53%;
+  stroke-width: 0.3rem;
+  left: 20%;
+}
 #solarisGridSection .bookGrid .grid4 {
   grid-area: 2/2/3/3;
 }
+#solarisGridSection .bookGrid .grid4 .svgLine {
+  height: auto;
+  top: 55%;
+  width: 85%;
+  left: 15%;
+  stroke-width: 0.3rem;
+}
 #solarisGridSection .bookGrid .grid5 {
   grid-area: 2/3/3/4;
+}
+#solarisGridSection .bookGrid .grid5 .svgLine {
+  height: auto;
+  top: 54%;
+  width: 100%;
+  left: -4%;
+  stroke-width: 0.3rem;
 }
 
 #featureSliderSection {
@@ -760,12 +877,12 @@ input {
   height: 1.5rem;
   margin: 0 5px;
   border-radius: 50%;
-  background-color: #C5C6D9;
+  background-color: #c5c6d9;
   border: 0.1rem solid #a9a9a9;
   cursor: pointer;
 }
 #featureSliderSection .dot.active {
-  background-color: #2D4CC3;
+  background-color: #2d4cc3;
   box-shadow: 0px 0.4rem 0.8rem -0.2rem #202020;
   border: 0;
 }
@@ -778,7 +895,7 @@ input {
 }
 #featureSliderSection .box {
   height: 20rem;
-  width: 70%;
+  width: 100%;
 }
 #featureSliderSection .box .contentWrap span {
   display: flex;
@@ -829,19 +946,34 @@ input {
 #featureSliderSection .div5 {
   grid-area: 1/2/2/3;
   width: 100%;
+  position: relative;
+}
+#featureSliderSection .div5 .spinner {
+  animation: rotate 11s linear infinite;
+  -webkit-animation: rotate 11s linear infinite;
+  -moz-animation: rotate 11s linear infinite;
+  position: relative;
+}
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
 }
 #featureSliderSection .div5 .midImagWrap {
   width: 45rem;
   height: 45rem;
+  position: absolute;
+  top: 24%;
+  left: 1%;
 }
 #featureSliderSection .div5 .midImagWrap img {
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
 #windowProSection {
   padding: 10rem 0;
-  background-color: #F9F9F9;
+  background-color: #f9f9f9;
 }
 #windowProSection .custRow {
   justify-content: flex-end;
@@ -904,9 +1036,62 @@ input {
   margin-bottom: 0;
   width: 80%;
 }
+#solarisBenefits .leftImgWrap {
+  position: relative;
+}
+#solarisBenefits .leftImgWrap .svgLine {
+  position: absolute;
+  right: 31.5%;
+  width: 29%;
+  top: 50%;
+  stroke-width: 0.4rem;
+}
+#solarisBenefits .leftImgWrap .topImgContentWrap {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  top: 8%;
+  padding: 0 3rem;
+}
+#solarisBenefits .leftImgWrap .topImgContentWrap h6 {
+  font-size: 2rem;
+  line-height: 1.4;
+}
+#solarisBenefits .leftImgWrap .topImgContentWrap .leftBoxOverlay {
+  height: 8rem;
+  width: 50%;
+  background-color: #205cdc;
+  padding: 1rem;
+  border-radius: 0.4rem;
+}
+#solarisBenefits .leftImgWrap .topImgContentWrap .leftBoxOverlay span {
+  font-size: 1.4rem;
+  color: #fff;
+}
 #solarisBenefits .leftImgWrap img {
   width: 100%;
   height: 100%;
+}
+#solarisBenefits .leftBtmImg {
+  position: relative;
+}
+#solarisBenefits .leftBtmImg .overLay {
+  position: absolute;
+}
+#solarisBenefits .leftBtmImg .overLay.overlayText1 {
+  top: 12%;
+  left: 8%;
+  width: 70%;
+}
+#solarisBenefits .leftBtmImg .overLay.overlayText2 {
+  top: 5%;
+  left: 5%;
+  width: 60%;
+}
+#solarisBenefits .leftBtmImg .overLay h6 {
+  font-size: 2rem;
+  line-height: 1.4;
 }
 #solarisBenefits .leftBtmImg img {
   width: 100%;
@@ -914,35 +1099,65 @@ input {
 }
 
 #purePerformanceSection {
-  /* App.css or any other CSS file where you manage your styles */
-  /* Optional: Add some padding and margin to the item content */
+  padding: 10rem 0;
+  position: relative;
+  background-color: #fff;
 }
-#purePerformanceSection .slider {
-  width: 80%; /* Adjust width as needed */
-  margin: 0 auto; /* Center the slider */
-}
-#purePerformanceSection .progressBarContainer {
-  width: 80%; /* Adjust width as needed */
-  margin: 20px auto; /* Center the progress bar */
-}
-#purePerformanceSection .progressBar {
+#purePerformanceSection .progress-slider {
   width: 100%;
-  height: 10px; /* Adjust height as needed */
-  background-color: #ccc;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
 }
-#purePerformanceSection .inProgress {
+#purePerformanceSection .progress-slider .slide-container {
+  display: flex;
+  transition: transform 0.5s ease;
   height: 100%;
-  background-color: #007bff; /* Adjust color as needed */
 }
-#purePerformanceSection .item {
-  cursor: pointer;
-  text-align: center;
+#purePerformanceSection .progress-slider .slide-container .slide {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
 }
-#purePerformanceSection .item span {
-  display: inline-block;
+#purePerformanceSection .progress-btns {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  width: 100%;
+  height: 2rem;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#purePerformanceSection .progress-btns .slide-button {
+  width: 20%;
+}
+#purePerformanceSection .progress-btns .slide-button button {
+  color: white;
+  border: none;
+  background-color: transparent;
   padding: 10px;
-  margin: 0 5px;
-  background-color: #f8f9fa; /* Adjust color as needed */
+  margin: 10px;
+  margin-bottom: 0;
+  font-size: 18px;
+  cursor: pointer;
+}
+#purePerformanceSection .progress-btns .slide-button .progress-bar {
+  height: 1rem;
+  background-color: red;
+  margin: 0 10px;
+  width: 100%;
+  border-radius: 5rem;
+  cursor: pointer;
+}
+#purePerformanceSection .progress-btns .slide-button .progress-bar .progress {
+  height: 100%;
+  background-color: white;
 }
 
 .h100 {

@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CommonButton from "../commonButton/CommonButton";
 import { laptop, laptopBox, priceTag } from "..";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function BannerContent() {
+  useEffect(() => {
+    AOS.init({});
+
+    return () => {
+      AOS.refresh();
+    };
+  }, []);
   return (
     <div className="container">
       <div className="bannerContentRow">
-        <div className="bannerTextWrap">
+        <div
+          className="bannerTextWrap"
+          data-aos="zoom-in"
+          data-aos-easing="linear"
+          data-aos-duration="1500"
+        >
           <h1 className="mainText">
             <span className="gradientText">Solaris</span> Book 14X OLED
           </h1>
@@ -18,17 +32,39 @@ function BannerContent() {
         </div>
         <div className="centerBoxWrap">
           <span className="priceTag">
-            <img src={priceTag} alt="Price tag" className="priceTagImg" />
-            <span className="priceAmt">14,999/-</span>
+            <img
+              src={priceTag}
+              alt="Price tag"
+              className="priceTagImg"
+              data-aos="zoom-in-right"
+              data-aos-duration="1400"
+              data-aos-easing="ease-in-back"
+            />
+            <span
+              className="priceAmt"
+              data-aos="fade-in"
+              data-aos-duration="2000"
+              data-aos-easing="ease-in-back"
+            >
+              14,999/-
+            </span>
           </span>
-          <span className="mainLaptop">
+          <span
+            className="mainLaptop"
+            data-aos="fade-down"
+            data-aos-duration="2200"
+          >
             <img src={laptop} alt="laptop" className="img-fluid" />
             <span className="overlapText">Made for India</span>
           </span>
           <span className="laptopBox">
             <img src={laptopBox} alt="laptop box" className="img-fluid" />
           </span>
-          <div className="leftbox absBox">
+          <div
+            className="leftbox absBox"
+            data-aos="fade-left"
+            data-aos-duration="2200"
+          >
             <div className="boxTitle">
               <span className="icon">
                 <svg
@@ -79,8 +115,11 @@ function BannerContent() {
               <polyline className="st0" points="55,80 225,8 700,0" />
             </svg>
           </span>
-          <div className="rightbox absBox">
-          
+          <div
+            className="rightbox absBox"
+            data-aos="fade-right"
+            data-aos-duration="2200"
+          >
             <div className="boxTitle">
               <span className="icon">
                 <svg
@@ -116,7 +155,24 @@ function BannerContent() {
               options.
             </p>
           </div>
-          
+          <span className="svgLine leftArrow">
+            <svg
+              version="1.1"
+              id="Layer_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+              x="0px"
+              y="0px"
+              viewBox="-50 0 700 100"
+              style={{
+                enableBackground: "new 0 0 614 53",
+                transform: "rotate(0deg)",
+              }}
+              xmlSpace="preserve"
+            >
+              <polyline className="st0" points="55,80 225,8 700,0" />
+            </svg>
+          </span>
         </div>
       </div>
     </div>
