@@ -18,7 +18,7 @@ function BenefitsWrap() {
           </div>
           <CommonButton buttonText="Pre Order Now" />
         </div>
-        <div className="col-md-12 col-lg-7">
+        <div className="col-md-12 col-lg-7 mobView">
           <div className="leftImgWrap">
             <div className="topImgContentWrap">
               <h6>

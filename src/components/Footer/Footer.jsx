@@ -19,13 +19,24 @@ function Footer() {
           </div>
         </div>
         <div className="row padTop">
-          <div className="col-md-6 col-lg-4">
+          <div className="col-md-6 col-lg-8">
             <div className="subscriptionBox">
+              <h6>Revolutionizing India's Digital Landscape</h6>
               <p>
-                Subscribe to our newsletter to stay in touch with our latest
-                news
+                The affordability of Solaris laptops stems from our innovative
+                approach to manufacturing and commitment to the "Make in India"
+                concept. By offering advance bookings, we can gauge demand
+                accurately and manufacture in bulk, achieving economies of
+                scale. Our aim is to provide high-quality laptops with excellent
+                configurations at afford- able prices to ensure accessibility
+                for all. By booking, users will unlock lifetime access to over
+                25 digital courses covering diverse topics like programming,
+                photography, business, and writing. Each purchase includes 3
+                courses along with 5 bonus courses, letting them expand their
+                skills at their own pace. Whether for career advancement, new
+                hobbies, or curiosity, this collection has they covered.
               </p>
-              <div className="subscriptionFormWrap">
+              <div className="subscriptionFormWrap d-none">
                 <form action="">
                   <input
                     type="email"
@@ -60,12 +71,7 @@ function Footer() {
                 <li>
                   <a href="">Home</a>
                 </li>
-                <li>
-                  <a href="">About us</a>
-                </li>
-                <li>
-                  <a href="">Product</a>
-                </li>
+
                 <li>
                   <a href="">Contact Sales</a>
                 </li>
@@ -149,7 +155,7 @@ function Footer() {
           </div>
           <div className="col-md-3">
             <div className="cpyWriteText">
-              <p>Crafted by - Version Next</p>
+              <p>© 2024 Solaris</p>
             </div>
           </div>
         </div>

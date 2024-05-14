@@ -6,8 +6,9 @@ import CommonButton from "../commonButton/CommonButton";
 function Navbar() {
   const [scroll, setScroll] = useState(false);
   const [prevScrollpos, setPrevScrollpos] = useState(0);
-
+  const [isNavOpen, setIsNavOpen] = useState(false);
   useEffect(() => {
+    setIsNavOpen(false);
     window.addEventListener("scroll", () => {
       setScroll(window.scrollY > 0);
     });
@@ -43,8 +44,13 @@ function Navbar() {
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
+            id="menuToggle"
+            onClick={() => setIsNavOpen(!isNavOpen)}
           >
-            <span className="navbar-toggler-icon"></span>
+            <input type="checkbox" checked={isNavOpen} readOnly />
+            <span></span>
+            <span></span>
+            <span></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">

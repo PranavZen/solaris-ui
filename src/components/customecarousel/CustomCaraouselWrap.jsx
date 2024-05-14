@@ -4,34 +4,27 @@ import cardData from "./cardsslide/card";
 function CustomCaraouselWrap({ cards }) {
   const [startIndex, setStartIndex] = useState(0);
   const [cardWidth, setCardWidth] = useState(0);
-  const [visibleCards, setVisibleCards] = useState(3); // Number of cards visible at a time
   const cardRef = useRef(null);
-  const cardCount = cardData.length;
+  const cardCount = cards.length;
 
   useEffect(() => {
-    if (cardRef.current) {
-      setCardWidth(cardRef.current.offsetWidth + 15);
-    }
-  }, [startIndex]);
-
-  useEffect(() => {
-    const handleResize = () => {
-      const screenWidth = window.innerWidth;
-      if (screenWidth >= 1200) {
-        setVisibleCards(3); // Display 3 cards on large screens
-      } else if (screenWidth >= 768) {
-        setVisibleCards(2); // Display 2 cards on medium screens
-      } else {
-        setVisibleCards(1); // Display 1 card on small screens
+    const resizeHandler = () => {
+      if (cardRef.current) {
+        setCardWidth(cardRef.current.offsetWidth + 15);
       }
     };
 
-    handleResize(); // Initial call to set visible cards based on initial screen width
-    window.addEventListener("resize", handleResize);
+    // Initial call
+    resizeHandler();
+
+    // Add event listener for resize
+    window.addEventListener("resize", resizeHandler);
+
+    // Cleanup
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("resize", resizeHandler);
     };
-  }, []);
+  }, [startIndex]);
 
   const handlePrev = () => {
     if (startIndex > 0) {
@@ -40,7 +33,7 @@ function CustomCaraouselWrap({ cards }) {
   };
 
   const handleNext = () => {
-    if (startIndex < cardCount - visibleCards) {
+    if (startIndex < cardCount - 1) {
       setStartIndex((prevIndex) => prevIndex + 1);
     }
   };
@@ -94,8 +87,8 @@ function CustomCaraouselWrap({ cards }) {
           style={{ transform: `translateX(-${startIndex * cardWidth}px)` }}
         >
           <div className="row flex-nowrap ">
-            {cardData.slice(startIndex, startIndex + visibleCards).map((card, index) => (
-              <div className={`col-md-${12 / visibleCards}`} key={index}>
+            {cardData.map((card, index) => (
+              <div className="col-md-4 resCard"key={index} >
                 <div
                   key={index}
                   className="boxed"

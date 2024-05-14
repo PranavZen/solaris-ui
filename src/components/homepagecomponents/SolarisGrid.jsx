@@ -40,14 +40,15 @@ function SolarisGrid() {
             </div>
             <div className="grid3 grid">
               <img src={grid3} alt="solaris book" className="img-fluid" />
-              <div className="flotTitle title1">
-                <span>Metallic Lid</span>
+              <div className="flotTitle title1" data-aos="fade-right" data-aos-duration="3000">
+                <span >Metallic Lid</span>
               </div>
               <span
                 className="svgLine"
                 data-aos="fade-right"
                 data-aos-offset="300"
                 data-aos-easing="ease-in-sine"
+                data-aos-duration="1000"
               >
                 <svg
                   version="1.1"
@@ -73,14 +74,15 @@ function SolarisGrid() {
             </div>
             <div className="grid4 grid">
               <img src={grid4} alt="solaris book" className="img-fluid" />
-              <div className="flotTitle title2">
-                <span>Touch login</span>
+              <div className="flotTitle title2" data-aos="zoom-in" data-aos-duration="3000">
+                <span>Touch Login</span>
               </div>
               <span
                 className="svgLine"
                 data-aos="fade-left"
                 data-aos-offset="300"
                 data-aos-easing="ease-in-sine"
+                data-aos-duration="1000"
               >
                 <svg
                   version="1.1"
@@ -106,7 +108,7 @@ function SolarisGrid() {
             </div>
             <div className="grid5 grid">
               <img src={grid5} alt="solaris book" className="img-fluid" />
-              <div className="flotTitle title3">
+              <div className="flotTitle title3" data-aos="fade-left" data-aos-duration="3000">
                 <span>Webcam</span>
               </div>
               <span
@@ -114,6 +116,7 @@ function SolarisGrid() {
                 data-aos="fade-left"
                 data-aos-offset="300"
                 data-aos-easing="ease-in-sine"
+                data-aos-duration="1000"
               >
                 <svg
                   version="1.1"

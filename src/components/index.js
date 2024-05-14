@@ -17,3 +17,4 @@ export { default as book1 } from "../assets/images/book1.png";
 export { default as halfLaptop } from "../assets/images/halflaptop.png";
 export { default as fooLogo } from "../assets/images/foologo.png";
 export { default as certificates } from "../assets/images/cirtificates.png";
+export { default as butterflyImg } from "../assets/images/butterflyImg.png";

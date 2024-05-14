@@ -72,28 +72,99 @@ input {
       border-right: 0.1rem solid #000;
       padding-right: 1rem;
     }
-    .navbar-collapse {
-      @include md-tablet{
-        background: #171a26;
-      box-shadow: 0 0 87px 0 rgba(0, 0, 0, .09);
-      display: block;
-      height: 100vh;
-      right: -150%;
-      overflow-y: auto;
-      padding-left: 5px;
-      padding-right: 5px;
-      padding-top: 30px;
-      position: fixed;
-      top: 100%;
-      transition: all .3s cubic-bezier(0,0,.2,1) .1s !important;
-      z-index: 999999;
-      width: 100%;
-      &.show{
-        right: 0;
-        transition: all .3s cubic-bezier(0,0,.2,1) .1s !important;
-      }
-      }
+  
+    #menuToggle {
+      width: 5rem;
+      height: 5rem;
+      border-radius: 5rem;
+      background: linear-gradient(90deg, rgb(45, 76, 195) 45%, rgb(154, 155, 237) 100%);
       
+      &.navbar-toggler {
+        border: 0;
+        @include md-tablet {
+          &:focus {
+            outline: none;
+            box-shadow: none;
+          }
+        }
+      }
+      input {
+        display: block;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        top: 14px;
+        right: 6px;
+        cursor: pointer;
+        opacity: 0; /* hide this */
+        z-index: 2; /* and place it over the hamburger */
+        -webkit-touch-callout: none;
+        &:checked {
+          ~ span {
+            opacity: 1;
+            transform: rotate(45deg) translate(-3px, -4px);
+            background: #fff;
+            &:nth-last-child(3) {
+              opacity: 1;
+              transform: rotate(-46deg) translate(-6px, 2px);
+              background: #fff;
+            }
+            &:nth-last-child(2) {
+              opacity: 0;
+              transform: rotate(0deg) scale(0.2, 0.2);
+            }
+          }
+        }
+      }
+      span {
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+        background: #fff;
+        border-radius: 3px;
+        z-index: 1;
+        transform-origin: 22px 0px;
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+          background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+          background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+        &:nth-child(3) {
+          width: 20px;
+        }
+        &:first-child {
+          transform-origin: 0% 0%;
+        }
+        &:nth-last-child(2) {
+          margin: 0 0 5px 13px;
+        }
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+    }
+    .navbar-collapse {
+      @include md-tablet {
+        background: #ffff;
+        box-shadow: 0 0 87px 0 rgba(0, 0, 0, 0.09);
+        border-radius: .6rem;
+        display: block;
+        height: auto;
+        right: -150%;
+        overflow-y: auto;
+        padding: 2rem 1.5rem;
+        position: fixed;
+        top: 100%;
+        transition: all 0.3s cubic-bezier(0, 0, 0.2, 1) 0.1s !important;
+        z-index: 99;
+        width: 100%;
+        &.show {
+          right: 0;
+          transition: all 0.3s cubic-bezier(0, 0, 0.2, 1) 0.1s !important;
+        }
+      }
+
       .navbar-nav {
         align-items: center;
         column-gap: 2rem;
@@ -102,14 +173,14 @@ input {
     .navbar-nav {
       align-items: center;
       gap: 1rem;
-      &.extraLinks{
-        @include md-tablet{
+      &.extraLinks {
+        @include md-tablet {
           display: none;
         }
       }
     }
     .nav-item {
-      &.rightBorder{
+      &.rightBorder {
         border-right: 0.1rem solid #000;
         padding-right: 1rem;
       }
@@ -122,7 +193,7 @@ input {
       .nav-link {
         @include paraTypo;
         color: #919191;
-        
+
         &.active {
           font-family: "AeonikTRIAL-Bold";
           color: #000;
@@ -149,12 +220,16 @@ input {
   width: 100%;
   height: 100%;
   padding: 9% 0 0;
-  @include md-tablet{
+  @include md-tablet {
     padding: 20% 0 0;
+  }
+  @include x-767-tablet {
+    padding: 35% 0 0;
   }
   .container {
     height: 100%;
   }
+ 
   .bannerContentRow {
     display: flex;
     flex-direction: column;
@@ -167,7 +242,7 @@ input {
       font-size: 9.5rem;
       // font-family: "AeonikTRIAL-Bold";
       text-align: center;
-      @include md-tablet{
+      @include md-tablet {
         font-size: 5.5rem;
       }
       .gradientText {
@@ -207,12 +282,15 @@ input {
     flex-direction: column;
     align-items: center;
     position: relative;
+    @include x-767-tablet {
+      display: none;
+    }
     .priceTag {
       .priceTagImg {
         position: absolute;
         top: -14%;
         left: 27%;
-        @include md-tablet{
+        @include md-tablet {
           left: 8%;
         }
       }
@@ -224,7 +302,7 @@ input {
         font-size: 1.6rem;
         font-family: "AeonikTRIAL-Bold";
         color: #fff;
-        @include md-tablet{
+        @include md-tablet {
           left: 12%;
         }
       }
@@ -240,7 +318,7 @@ input {
         font-size: 4rem;
         font-family: "AeonikTRIAL-Bold";
         width: 100%;
-        @include md-tablet{
+        @include md-tablet {
           top: 45%;
           left: 50%;
           width: max-content;
@@ -284,6 +362,11 @@ input {
         font-family: "AeonikTRIAL-Regular";
       }
     }
+    .svgLine {
+      @include md-tablet {
+        display: none;
+      }
+    }
   }
 }
 .svgLine {
@@ -292,9 +375,7 @@ input {
   height: 100%;
   width: 50%;
   top: 25%;
-  @include md-tablet{
-    display: none;
-  }
+
   &.leftArrow {
     left: 0;
     width: 36%;
@@ -326,7 +407,7 @@ input {
     padding: 0rem 0 3rem;
     display: none;
   }
- 
+
   .client-logo-listing {
     background-color: #121010;
     height: 135px;
@@ -693,9 +774,9 @@ input {
 // Product Feature Section Start
 #productFeature {
   padding: 10rem 0;
- 
+
   .leftBox {
-    @include md-tablet{
+    @include md-tablet {
       text-align: center;
     }
     h2 {
@@ -705,16 +786,19 @@ input {
     p {
       @include paraTypo;
       margin-bottom: 0;
-      @include md-tablet{
+      @include md-tablet {
         width: 80%;
         margin: 0 auto;
       }
     }
-    .commBtnWrap{
-      @include md-tablet{
+    .commBtnWrap {
+      @include md-tablet {
         display: flex;
         justify-content: center;
         margin-bottom: 3rem;
+      }
+      @include x-767-tablet {
+        margin-bottom: 8rem;
       }
     }
   }
@@ -728,6 +812,9 @@ input {
       width: 50rem;
       height: 30rem;
       text-align: center;
+      @include x-767-tablet {
+        width: 100%;
+      }
       .main-image {
         width: 100%;
         height: 100%;
@@ -739,7 +826,10 @@ input {
         right: -7.5rem;
         top: 0;
         display: flex;
-
+        @include x-767-tablet {
+          right: 10px;
+          top: -35px;
+        }
         .color-black {
           background-color: #2f2f2f;
           height: 2rem;
@@ -773,6 +863,9 @@ input {
       padding: 1rem;
       border: 0.1rem solid #dddddd;
       border-radius: 0.3rem;
+      @include x-767-tablet {
+        width: 100%;
+      }
       .thumbNailBox {
         width: 8rem;
         height: 8rem;
@@ -805,7 +898,10 @@ input {
   background-size: cover;
   width: 100%;
   height: 100%;
-   .gridWrap {
+  @include x-767-tablet {
+    padding: 10rem 1rem;
+  }
+  .gridWrap {
     margin-bottom: 4rem;
     h2 {
       @include mainTitle;
@@ -820,7 +916,7 @@ input {
       color: #d9d9d9;
       width: 45%;
       margin: 0 auto;
-      @include md-tablet{
+      @include md-tablet {
         width: 80%;
       }
     }
@@ -928,19 +1024,19 @@ input {
     }
     .grid1 {
       grid-area: 1 / 1 / 2 / 2;
-      @include md-tablet{
+      @include md-tablet {
         grid-area: 1 / 1 / 2 / 2;
       }
     }
     .grid2 {
       grid-area: 1 / 2 / 2 / 4;
-      @include md-tablet{
+      @include md-tablet {
         grid-area: 2 / 1 / 3 / 2;
       }
     }
     .grid3 {
       grid-area: 2 / 1 / 3 / 2;
-      @include md-tablet{
+      @include md-tablet {
         grid-area: 3 / 1 / 4 / 2;
       }
       .svgLine {
@@ -953,7 +1049,7 @@ input {
     }
     .grid4 {
       grid-area: 2 / 2 / 3 / 3;
-      @include md-tablet{
+      @include md-tablet {
         grid-area: 4 / 1 / 5 / 2;
       }
       .svgLine {
@@ -966,7 +1062,7 @@ input {
     }
     .grid5 {
       grid-area: 2 / 3 / 3 / 4;
-      @include md-tablet{
+      @include md-tablet {
         grid-area: 5 / 1 / 6 / 2;
       }
       .svgLine {
@@ -984,7 +1080,9 @@ input {
 // Feature Slider Section Start
 #featureSliderSection {
   padding: 10rem 0;
-
+  @include x-767-tablet {
+    padding: 10rem 1rem;
+  }
   .sectionTitleWrap {
     h2 {
       @include mainTitle;
@@ -997,7 +1095,7 @@ input {
       text-align: center;
       width: 45%;
       margin: 0 auto;
-      @include md-tablet{
+      @include md-tablet {
         width: 100%;
       }
     }
@@ -1021,14 +1119,14 @@ input {
 
   .dots {
     text-align: center;
-    margin-top: 1rem;
+    margin-top: 5rem;
     padding: 1rem 0;
   }
 
   .dot {
     display: inline-block;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2rem;
+    height: 2rem;
     margin: 0 5px;
     border-radius: 50%;
     background-color: #c5c6d9;
@@ -1052,11 +1150,10 @@ input {
   .box {
     height: 20rem;
     width: 100%;
-    @include md-tablet{
+    @include md-tablet {
       height: 100%;
     }
     .contentWrap {
-      
       span {
         display: flex;
         justify-content: center;
@@ -1066,19 +1163,20 @@ input {
         border-radius: 5rem;
         background-color: #d0d3f7;
         margin-bottom: 0.5rem;
-        @include md-tablet{
-          text-align: center;margin: 0 auto;
+        @include md-tablet {
+          text-align: center;
+          margin: 0 auto;
         }
       }
       h6 {
         font-size: 2rem;
-        @include md-tablet{
+        @include md-tablet {
           text-align: center;
         }
       }
       p {
         @include paraTypo;
-        @include md-tablet{
+        @include md-tablet {
           text-align: center;
         }
       }
@@ -1087,20 +1185,23 @@ input {
   .div1 {
     grid-area: 1 / 1 / 2 / 2;
     margin: 0 0 0 auto;
-    @include md-tablet{
+    @include md-tablet {
       grid-area: 1 / 1 / 2 / 2;
       margin: unset;
+    }
+    @include x-767-tablet {
+      grid-area: 1 / 1 / 2 / 2;
     }
     .contentWrap {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      @include md-tablet{
+      @include md-tablet {
         align-items: center;
       }
       p {
         text-align: right;
-        @include md-tablet{
+        @include md-tablet {
           text-align: center;
         }
       }
@@ -1109,20 +1210,23 @@ input {
   .div2 {
     grid-area: 2 / 1 / 3 / 2;
     margin: 0 0 0 auto;
-    @include md-tablet{
+    @include md-tablet {
       grid-area: 1 / 2 / 2 / 3;
       margin: unset;
+    }
+    @include x-767-tablet {
+      grid-area: 2 / 1 / 3 / 2;
     }
     .contentWrap {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      @include md-tablet{
+      @include md-tablet {
         align-items: center;
       }
       p {
         text-align: right;
-        @include md-tablet{
+        @include md-tablet {
           text-align: center;
         }
       }
@@ -1130,21 +1234,27 @@ input {
   }
   .div3 {
     grid-area: 1 / 3 / 2 / 4;
-    @include md-tablet{
+    @include md-tablet {
       grid-area: 2 / 1 / 3 / 2;
+    }
+    @include x-767-tablet {
+      grid-area: 3 / 1 / 4 / 2;
     }
   }
   .div4 {
     grid-area: 2 / 3 / 3 / 4;
-    @include md-tablet{
+    @include md-tablet {
       grid-area: 2 / 2 / 3 / 3;
+    }
+    @include x-767-tablet {
+      grid-area: 4 / 1 / 5 / 2;
     }
   }
   .div5 {
     grid-area: 1 / 2 / 2 / 3;
     width: 100%;
     position: relative;
-    @include md-tablet{
+    @include md-tablet {
       display: none;
     }
     .spinner {
@@ -1152,6 +1262,7 @@ input {
       -webkit-animation: rotate 11s linear infinite;
       -moz-animation: rotate 11s linear infinite;
       position: relative;
+      pointer-events: none;
     }
     @keyframes rotate {
       to {
@@ -1189,35 +1300,70 @@ input {
 // Window Pro 11 Section Start
 #windowProSection {
   padding: 10rem 0;
-  background-color: #f9f9f9;
-  
+  background-color: #e0e0e0;
+  @include x-767-tablet {
+    padding: 10rem 1rem;
+  }
   .custRow {
     justify-content: flex-end;
+    align-items: center;
     position: relative;
     &::before {
       content: "";
-      background-image: url(../images/windows-laptop.png);
+      background-image: url(../images/globeline.png);
       background-repeat: no-repeat;
-      background-size: 60% 100%;
+      background-size: cover;
       background-position: left;
-      width: 145rem;
+      width: 72%;
       height: 75rem;
       position: absolute;
-      left: -150px;
-      top: -25%;
-      @include md-tablet{
-        content: none
-        
+      left: -200px;
+      top: -9%;
+      z-index: 9;
+      pointer-events: none;
+      animation: rotate 80s linear infinite;
+      -webkit-animation: rotate 80s linear infinite;
+      -moz-animation: rotate 80s linear infinite;
+
+      @include md-tablet {
+        content: none;
       }
     }
-    .leftImgWrap{
-     @include md-tablet{
-      display: none;
-     }
+    &::after {
+      content: "";
+      background-image: url(../images/globemaine2.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: left;
+      width: 49%;
+      height: 65rem;
+      position: absolute;
+      left: -50px;
+      top: 0%;
+      pointer-events: none;
+      @include md-tablet {
+        content: none;
+      }
+    }
+    .leftImgWrap {
+      .lapImgWRap {
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        position: relative;
+        img {
+          width: 100%;
+          height: 100%;
+          pointer-events: none;
+        }
+      }
+      @include md-tablet {
+        display: none;
+      }
     }
     .winProTitleWrap {
-      @include md-tablet{
-        text-align: center
+      @include md-tablet {
+        text-align: center;
       }
       h2 {
         @include mainTitle;
@@ -1234,10 +1380,13 @@ input {
         padding-left: 0;
         &.secondList {
           padding-left: 4rem;
+          @include x-767-tablet {
+            padding-left: 0;
+          }
         }
         li {
           margin-bottom: 4rem;
-          @include md-tablet{
+          @include md-tablet {
             text-align: center;
           }
           &:last-child {
@@ -1262,9 +1411,16 @@ input {
 #solarisBenefits {
   padding: 10rem 0 6rem;
   background-color: #f2f2ff;
-
+  .mobView{
+    @include x-767-tablet{
+      display: none;
+    }
+  }
+  @include x-767-tablet {
+    padding: 10rem 1rem 6rem;
+  }
   .sectionTitleBox {
-    @include md-tablet{
+    @include md-tablet {
       text-align: center;
     }
     h2 {
@@ -1275,13 +1431,13 @@ input {
       @include paraTypo;
       margin-bottom: 0;
       width: 80%;
-      @include md-tablet{
+      @include md-tablet {
         margin: 0 auto;
       }
     }
   }
-  .commBtnWrap{
-    @include md-tablet{
+  .commBtnWrap {
+    @include md-tablet {
       display: flex;
       justify-content: center;
       margin-bottom: 3rem;
@@ -1361,7 +1517,9 @@ input {
   width: 100%;
   height: 100%;
   padding-top: 8rem;
-  
+  @include x-767-tablet {
+    padding: 8rem 1rem 0;
+  }
   .progress-slider {
     width: 100%;
     height: 100%;
@@ -1372,7 +1530,7 @@ input {
       transition: transform 0.5s ease;
       height: 100%;
       padding-top: 15rem;
-      @include md-tablet{
+      @include md-tablet {
         padding-top: 8rem;
         padding-bottom: 3rem;
       }
@@ -1382,6 +1540,9 @@ input {
         justify-content: center;
         align-items: center;
         .slideWrapping {
+          @include x-767-tablet {
+            text-align: center;
+          }
           h6 {
             font-size: 2rem;
           }
@@ -1390,6 +1551,13 @@ input {
           }
           p {
             @include paraTypo;
+          }
+          .commBtnWrap {
+            @include x-767-tablet {
+              display: flex;
+              justify-content: center;
+              margin-bottom: 3rem;
+            }
           }
         }
         .displayImgWrap {
@@ -1412,6 +1580,9 @@ input {
     height: 2rem;
     justify-content: space-evenly;
     align-items: center;
+    @include x-767-tablet {
+      top: 10%;
+    }
     .slide-button {
       width: 20%;
       .progress-bar {
@@ -1434,10 +1605,15 @@ input {
 #bookAmtCarousel {
   padding: 10rem 0;
   background-color: #f2f2ff;
-  
+  @include x-767-tablet {
+    padding: 10rem 1rem;
+  }
   .sectionTitleWrap {
-    @include md-tablet{
+    @include md-tablet {
       text-align: center;
+    }
+    @include x-767-tablet{
+      margin-bottom: 4rem;
     }
     h2 {
       @include mainTitle;
@@ -1447,7 +1623,7 @@ input {
       @include paraTypo;
       margin-bottom: 0;
       width: 60%;
-      @include md-tablet{
+      @include md-tablet {
         width: 80%;
         margin: 0 auto;
       }
@@ -1470,6 +1646,10 @@ input {
         justify-content: center;
         align-items: center;
         border: 0.1rem solid #5d5d5d;
+        @include x-767-tablet{
+          height: 4rem;
+          width: 4rem;
+        }
         &:first-child {
           span {
             transform: rotate(-180deg);
@@ -1484,6 +1664,14 @@ input {
       transition: transform 0.5s ease-in-out;
       .row {
         padding: 1rem 0;
+      }
+      .resCard {
+        @include md-tablet {
+          width: 50%;
+        }
+        @include x-767-tablet {
+          width: 100%;
+        }
       }
       .boxed {
         background-position: center;
@@ -1519,7 +1707,7 @@ input {
           h4 {
             width: 80%;
             font-size: 2.6rem;
-            @include md-tablet{
+            @include md-tablet {
               font-size: 1.8rem;
             }
           }
@@ -1543,7 +1731,9 @@ input {
   background-size: cover;
   width: 100%;
   height: auto;
-
+  @include x-767-tablet {
+    padding: 8rem 1rem 0;
+  }
   .sectionTitleBox {
     margin-bottom: 3rem;
     h2 {
@@ -1557,7 +1747,7 @@ input {
       width: 55%;
       margin: 0 auto;
       text-align: center;
-      @include md-tablet{
+      @include md-tablet {
         width: 80%;
       }
     }
@@ -1574,7 +1764,7 @@ input {
       left: 50%;
       transform: translate(-50%, -50%);
       width: 45%;
-      @include md-tablet{
+      @include md-tablet {
         width: 75%;
       }
       form {
@@ -1611,6 +1801,9 @@ input {
         text-align: center;
         width: 80%;
         margin: 0 auto;
+        @include x-767-tablet{
+          font-size: 1.4rem;
+        }
       }
     }
   }
@@ -1623,11 +1816,19 @@ input {
   background-image: url(../images/foobg.png);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
-  width: auto;
-  height: 70rem;
+  background-size: 105%;
+  width: 100%;
+  height: 50rem;
+  position: relative;
+  @include x-767-tablet {
+    padding: 8rem 1rem 0;
+    height: 100%;
+  }
   .footerWrap {
     justify-content: space-between;
+    @include x-767-tablet {
+      gap: 4rem;
+    }
     .foologoWrap {
       a {
         img {
@@ -1636,22 +1837,31 @@ input {
       }
     }
     .commBtnWrap {
+      @include x-767-tablet {
+        display: flex;
+        justify-content: center;
+      }
       button {
         margin-top: 0;
       }
     }
   }
   .padTop {
-    padding-top: 12rem;
+    padding-top: 5rem;
     justify-content: space-between;
-    align-items: center;
+    // align-items: center;
+    @include x-767-tablet {
+      padding-top: 2rem;
+      gap: 4rem;
+    }
   }
   .subscriptionBox {
+    h6 {
+      @include mainTitle;
+      font-size: 2.4rem;
+    }
     p {
       @include paraTypo;
-      font-size: 2.6rem;
-      margin-bottom: 1rem;
-      color: #1d1d1f;
       line-height: 1.2;
     }
     .subscriptionFormWrap {
@@ -1698,6 +1908,9 @@ input {
     }
   }
   .cirtificateBox {
+    @include x-767-tablet{
+      text-align: center;
+    }
     h6 {
       font-family: "AeonikTRIAL-Regular";
       font-size: 2rem;
@@ -1705,17 +1918,28 @@ input {
     }
   }
   .cpyWriteText {
+    @include x-767-tablet{
+      text-align: center;
+    }
     p {
       font-family: "AeonikTRIAL-Bold";
       color: #1d1d1f;
       font-size: 1.8rem;
+      margin-bottom: 0;
     }
   }
   .copyWriteSection {
     align-items: center;
     justify-content: space-between;
-    padding-top: 11rem;
-
+    position: absolute;
+    width: 100%;
+    bottom: 5%;
+    left: 5px;
+    padding: 0 10rem;
+    @include x-767-tablet{
+      padding-top: 3rem;
+      gap: 2rem;
+    }
     .socialLinksWrap {
       ul {
         padding-left: 0;

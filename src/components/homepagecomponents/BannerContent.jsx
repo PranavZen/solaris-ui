@@ -17,9 +17,7 @@ function BannerContent() {
       <div className="bannerContentRow">
         <div
           className="bannerTextWrap"
-          data-aos="zoom-in"
-          data-aos-easing="linear"
-          data-aos-duration="1500"
+          
         >
           <h1 className="mainText">
             <span className="gradientText">Solaris</span> Book 14X OLED
@@ -36,14 +34,14 @@ function BannerContent() {
               src={priceTag}
               alt="Price tag"
               className="priceTagImg"
-              data-aos="zoom-in-right"
-              data-aos-duration="1400"
+              data-aos="fade-in"
+              data-aos-duration="2500"
               data-aos-easing="ease-in-back"
             />
             <span
               className="priceAmt"
               data-aos="fade-in"
-              data-aos-duration="2000"
+              data-aos-duration="2500"
               data-aos-easing="ease-in-back"
             >
               14,999/-
