@@ -73,11 +73,7 @@ function ProgressSlider({ slides }) {
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
           {slides.map((slide, index) => (
-            <div
-              key={index}
-              className="slide"
-              style={{ backgroundColor: slide.color }}
-            >
+            <div key={index} className="slide">
               {slide.content}
             </div>
           ))}

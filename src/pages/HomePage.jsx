@@ -7,6 +7,9 @@ import FeatureSliderSection from "../components/homepagecomponents/FeatureSlider
 import WindowPro from "../components/homepagecomponents/WindowPro";
 import BenefitsWrap from "../components/homepagecomponents/BenefitsWrap";
 import PurePerformance from "../components/homepagecomponents/PurePerformance";
+import CustomCaraouselWrap from "../components/customecarousel/CustomCaraouselWrap";
+import cardData from "../components/customecarousel/cardsslide/card";
+import PreOrderSection from "../components/homepagecomponents/PreOrderSection";
 
 function HomePage() {
   return (
@@ -27,15 +30,20 @@ function HomePage() {
         <FeatureSliderSection />
       </section>
       <section id="windowProSection">
-        <WindowPro/>
+        <WindowPro />
       </section>
       <section id="solarisBenefits">
-        <BenefitsWrap/>
+        <BenefitsWrap />
       </section>
       <section id="purePerformanceSection">
-        <PurePerformance/>
+        <PurePerformance />
       </section>
-      {/* <div className="h100"></div> */}
+      <section id="bookAmtCarousel">
+        <CustomCaraouselWrap cards={cardData}/>
+      </section>
+      <section id="preOrderBookingSection">
+        <PreOrderSection/>
+      </section>
     </>
   );
 }

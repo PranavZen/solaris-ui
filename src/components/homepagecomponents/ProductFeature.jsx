@@ -14,7 +14,7 @@ function ProductFeature() {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-md-6">
+        <div className="col-md-12 col-lg-6">
           <div className="leftBox">
             <h2>Future Laptop for Digital India</h2>
             <p>
@@ -26,7 +26,7 @@ function ProductFeature() {
             <CommonButton buttonText="Pre Order Now" />
           </div>
         </div>
-        <div className="col-md-6">
+        <div className="col-md-12 col-lg-6">
           <ImageSlider blackImages={blackImages} grayImages={grayImages} />
         </div>
       </div>

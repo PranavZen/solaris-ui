@@ -6,7 +6,7 @@ function WindowPro() {
     <div className="container">
       <div className="row custRow">
         <div className="col-md-6 leftImgWrap"></div>
-        <div className="col-md-6">
+        <div className="col-md-12 col-lg-6">
           <div className="winProTitleWrap">
             <h2>Windows 11 Pro</h2>
             <p>With Pre-Installed MS Office 365</p>

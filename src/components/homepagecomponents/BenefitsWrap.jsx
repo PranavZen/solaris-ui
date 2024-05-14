@@ -6,7 +6,7 @@ function BenefitsWrap() {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-md-5">
+        <div className="col-md-12 col-lg-5">
           <div className="sectionTitleBox">
             <h2>
               The benefits of Solaris laptops include enhanced productivity
@@ -18,7 +18,7 @@ function BenefitsWrap() {
           </div>
           <CommonButton buttonText="Pre Order Now" />
         </div>
-        <div className="col-md-7">
+        <div className="col-md-12 col-lg-7">
           <div className="leftImgWrap">
             <div className="topImgContentWrap">
               <h6>
@@ -60,7 +60,7 @@ function BenefitsWrap() {
         </div>
       </div>
       <div className="row align-items-center">
-        <div className="col-md-7">
+        <div className="col-md-12 col-lg-7">
           <div className="leftBtmImg">
             <div className="overlayText1 overLay">
               <h6>
@@ -71,7 +71,7 @@ function BenefitsWrap() {
             <img src={benImg2} alt="" className="img-fluid" />
           </div>
         </div>
-        <div className="col-md-5">
+        <div className="col-md-12 col-lg-5">
           <div className="leftBtmImg">
             <div className="overlayText2 overLay">
               <h6>We are dedicated to delivering high-quality products</h6>

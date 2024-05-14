@@ -53,7 +53,6 @@ input {
 // Header Section Start
 #header {
   position: fixed;
-  position: fixed;
   top: 5%;
   left: 50%;
   width: 86%;
@@ -67,7 +66,70 @@ input {
   justify-content: center;
   align-items: center;
   border-radius: 5rem;
-  padding: 0 3rem;
+  padding: 0 0rem 0px 3rem;
+  .navbar {
+    .navbar-brand {
+      border-right: 0.1rem solid #000;
+      padding-right: 1rem;
+    }
+    .navbar-collapse {
+      @include md-tablet{
+        background: #171a26;
+      box-shadow: 0 0 87px 0 rgba(0, 0, 0, .09);
+      display: block;
+      height: 100vh;
+      right: -150%;
+      overflow-y: auto;
+      padding-left: 5px;
+      padding-right: 5px;
+      padding-top: 30px;
+      position: fixed;
+      top: 100%;
+      transition: all .3s cubic-bezier(0,0,.2,1) .1s !important;
+      z-index: 999999;
+      width: 100%;
+      &.show{
+        right: 0;
+        transition: all .3s cubic-bezier(0,0,.2,1) .1s !important;
+      }
+      }
+      
+      .navbar-nav {
+        align-items: center;
+        column-gap: 2rem;
+      }
+    }
+    .navbar-nav {
+      align-items: center;
+      gap: 1rem;
+      &.extraLinks{
+        @include md-tablet{
+          display: none;
+        }
+      }
+    }
+    .nav-item {
+      &.rightBorder{
+        border-right: 0.1rem solid #000;
+        padding-right: 1rem;
+      }
+      .commBtnWrap {
+        button {
+          margin-top: 0;
+          width: 11.8rem;
+        }
+      }
+      .nav-link {
+        @include paraTypo;
+        color: #919191;
+        
+        &.active {
+          font-family: "AeonikTRIAL-Bold";
+          color: #000;
+        }
+      }
+    }
+  }
 }
 // Header Section End
 
@@ -79,6 +141,7 @@ input {
   //   #f4f6fa 57%,
   //   rgba(226, 234, 247, 0.65) 100%
   // );
+
   background-image: url(../images/noisy-gradients.png);
   background-position: center;
   background-repeat: no-repeat;
@@ -86,6 +149,9 @@ input {
   width: 100%;
   height: 100%;
   padding: 9% 0 0;
+  @include md-tablet{
+    padding: 20% 0 0;
+  }
   .container {
     height: 100%;
   }
@@ -101,6 +167,9 @@ input {
       font-size: 9.5rem;
       // font-family: "AeonikTRIAL-Bold";
       text-align: center;
+      @include md-tablet{
+        font-size: 5.5rem;
+      }
       .gradientText {
         position: relative;
         width: -webkit-max-content;
@@ -143,6 +212,9 @@ input {
         position: absolute;
         top: -14%;
         left: 27%;
+        @include md-tablet{
+          left: 8%;
+        }
       }
       .priceAmt {
         position: absolute;
@@ -152,6 +224,9 @@ input {
         font-size: 1.6rem;
         font-family: "AeonikTRIAL-Bold";
         color: #fff;
+        @include md-tablet{
+          left: 12%;
+        }
       }
     }
     .mainLaptop {
@@ -165,6 +240,11 @@ input {
         font-size: 4rem;
         font-family: "AeonikTRIAL-Bold";
         width: 100%;
+        @include md-tablet{
+          top: 45%;
+          left: 50%;
+          width: max-content;
+        }
       }
     }
     .laptopBox {
@@ -209,10 +289,12 @@ input {
 .svgLine {
   position: absolute;
   right: 0;
-  z-index: 999;
   height: 100%;
   width: 50%;
   top: 25%;
+  @include md-tablet{
+    display: none;
+  }
   &.leftArrow {
     left: 0;
     width: 36%;
@@ -242,10 +324,9 @@ input {
 #clients {
   @include md-tablet {
     padding: 0rem 0 3rem;
+    display: none;
   }
-  @include x-767-tablet {
-    padding: 0 0 0rem;
-  }
+ 
   .client-logo-listing {
     background-color: #121010;
     height: 135px;
@@ -612,7 +693,11 @@ input {
 // Product Feature Section Start
 #productFeature {
   padding: 10rem 0;
+ 
   .leftBox {
+    @include md-tablet{
+      text-align: center;
+    }
     h2 {
       @include mainTitle;
       margin-bottom: 1rem;
@@ -620,6 +705,17 @@ input {
     p {
       @include paraTypo;
       margin-bottom: 0;
+      @include md-tablet{
+        width: 80%;
+        margin: 0 auto;
+      }
+    }
+    .commBtnWrap{
+      @include md-tablet{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 3rem;
+      }
     }
   }
   .slider-container {
@@ -709,7 +805,7 @@ input {
   background-size: cover;
   width: 100%;
   height: 100%;
-  .gridWrap {
+   .gridWrap {
     margin-bottom: 4rem;
     h2 {
       @include mainTitle;
@@ -724,6 +820,9 @@ input {
       color: #d9d9d9;
       width: 45%;
       margin: 0 auto;
+      @include md-tablet{
+        width: 80%;
+      }
     }
   }
   .bookGrid {
@@ -829,12 +928,21 @@ input {
     }
     .grid1 {
       grid-area: 1 / 1 / 2 / 2;
+      @include md-tablet{
+        grid-area: 1 / 1 / 2 / 2;
+      }
     }
     .grid2 {
       grid-area: 1 / 2 / 2 / 4;
+      @include md-tablet{
+        grid-area: 2 / 1 / 3 / 2;
+      }
     }
     .grid3 {
       grid-area: 2 / 1 / 3 / 2;
+      @include md-tablet{
+        grid-area: 3 / 1 / 4 / 2;
+      }
       .svgLine {
         height: auto;
         width: 70%;
@@ -845,6 +953,9 @@ input {
     }
     .grid4 {
       grid-area: 2 / 2 / 3 / 3;
+      @include md-tablet{
+        grid-area: 4 / 1 / 5 / 2;
+      }
       .svgLine {
         height: auto;
         top: 55%;
@@ -855,6 +966,9 @@ input {
     }
     .grid5 {
       grid-area: 2 / 3 / 3 / 4;
+      @include md-tablet{
+        grid-area: 5 / 1 / 6 / 2;
+      }
       .svgLine {
         height: auto;
         top: 54%;
@@ -870,6 +984,7 @@ input {
 // Feature Slider Section Start
 #featureSliderSection {
   padding: 10rem 0;
+
   .sectionTitleWrap {
     h2 {
       @include mainTitle;
@@ -882,6 +997,9 @@ input {
       text-align: center;
       width: 45%;
       margin: 0 auto;
+      @include md-tablet{
+        width: 100%;
+      }
     }
   }
   .slider {
@@ -898,6 +1016,7 @@ input {
   .slide {
     flex: 1 0 100%;
     min-width: 100%;
+    cursor: grab;
   }
 
   .dots {
@@ -933,7 +1052,11 @@ input {
   .box {
     height: 20rem;
     width: 100%;
+    @include md-tablet{
+      height: 100%;
+    }
     .contentWrap {
+      
       span {
         display: flex;
         justify-content: center;
@@ -943,49 +1066,87 @@ input {
         border-radius: 5rem;
         background-color: #d0d3f7;
         margin-bottom: 0.5rem;
+        @include md-tablet{
+          text-align: center;margin: 0 auto;
+        }
       }
       h6 {
         font-size: 2rem;
+        @include md-tablet{
+          text-align: center;
+        }
       }
       p {
         @include paraTypo;
+        @include md-tablet{
+          text-align: center;
+        }
       }
     }
   }
   .div1 {
     grid-area: 1 / 1 / 2 / 2;
     margin: 0 0 0 auto;
+    @include md-tablet{
+      grid-area: 1 / 1 / 2 / 2;
+      margin: unset;
+    }
     .contentWrap {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
+      @include md-tablet{
+        align-items: center;
+      }
       p {
         text-align: right;
+        @include md-tablet{
+          text-align: center;
+        }
       }
     }
   }
   .div2 {
     grid-area: 2 / 1 / 3 / 2;
     margin: 0 0 0 auto;
+    @include md-tablet{
+      grid-area: 1 / 2 / 2 / 3;
+      margin: unset;
+    }
     .contentWrap {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
+      @include md-tablet{
+        align-items: center;
+      }
       p {
         text-align: right;
+        @include md-tablet{
+          text-align: center;
+        }
       }
     }
   }
   .div3 {
     grid-area: 1 / 3 / 2 / 4;
+    @include md-tablet{
+      grid-area: 2 / 1 / 3 / 2;
+    }
   }
   .div4 {
     grid-area: 2 / 3 / 3 / 4;
+    @include md-tablet{
+      grid-area: 2 / 2 / 3 / 3;
+    }
   }
   .div5 {
     grid-area: 1 / 2 / 2 / 3;
     width: 100%;
     position: relative;
+    @include md-tablet{
+      display: none;
+    }
     .spinner {
       animation: rotate 11s linear infinite;
       -webkit-animation: rotate 11s linear infinite;
@@ -1029,6 +1190,7 @@ input {
 #windowProSection {
   padding: 10rem 0;
   background-color: #f9f9f9;
+  
   .custRow {
     justify-content: flex-end;
     position: relative;
@@ -1043,8 +1205,20 @@ input {
       position: absolute;
       left: -150px;
       top: -25%;
+      @include md-tablet{
+        content: none
+        
+      }
+    }
+    .leftImgWrap{
+     @include md-tablet{
+      display: none;
+     }
     }
     .winProTitleWrap {
+      @include md-tablet{
+        text-align: center
+      }
       h2 {
         @include mainTitle;
         margin-bottom: 1rem;
@@ -1063,6 +1237,9 @@ input {
         }
         li {
           margin-bottom: 4rem;
+          @include md-tablet{
+            text-align: center;
+          }
           &:last-child {
             margin-bottom: 0;
           }
@@ -1085,7 +1262,11 @@ input {
 #solarisBenefits {
   padding: 10rem 0 6rem;
   background-color: #f2f2ff;
+
   .sectionTitleBox {
+    @include md-tablet{
+      text-align: center;
+    }
     h2 {
       @include mainTitle;
       margin-bottom: 1rem;
@@ -1094,6 +1275,16 @@ input {
       @include paraTypo;
       margin-bottom: 0;
       width: 80%;
+      @include md-tablet{
+        margin: 0 auto;
+      }
+    }
+  }
+  .commBtnWrap{
+    @include md-tablet{
+      display: flex;
+      justify-content: center;
+      margin-bottom: 3rem;
     }
   }
   .leftImgWrap {
@@ -1162,68 +1353,402 @@ input {
 
 // Prgressive Slider Section Start
 #purePerformanceSection {
-  padding: 10rem 0;
   position: relative;
-  background-color: #fff;
+  background-image: url(../images/progressbg.svg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  padding-top: 8rem;
+  
   .progress-slider {
     width: 100%;
-    height: 300px;
+    height: 100%;
     overflow: hidden;
     position: relative;
     .slide-container {
       display: flex;
       transition: transform 0.5s ease;
       height: 100%;
+      padding-top: 15rem;
+      @include md-tablet{
+        padding-top: 8rem;
+        padding-bottom: 3rem;
+      }
       .slide {
         flex: 0 0 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        color: white;
-        font-size: 24px;
+        .slideWrapping {
+          h6 {
+            font-size: 2rem;
+          }
+          h4 {
+            @include mainTitle;
+          }
+          p {
+            @include paraTypo;
+          }
+        }
+        .displayImgWrap {
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
       }
     }
-    
   }
   .progress-btns {
     position: absolute;
-    top: 20%;
+    top: 15%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
     display: flex;
-    width: 100%;
+    width: 93%;
     height: 2rem;
     justify-content: space-evenly;
     align-items: center;
     .slide-button {
       width: 20%;
-      button {
-        color: white;
-        border: none;
-        background-color: transparent;
-        padding: 10px;
-        margin: 10px;
-        margin-bottom: 0;
-        font-size: 18px;
-        cursor: pointer;
-      }
       .progress-bar {
         height: 1rem;
-        background-color: red;
-        margin: 0 10px;
+        background-color: #b2cef7;
         width: 100%;
         border-radius: 5rem;
         cursor: pointer;
         .progress {
           height: 100%;
-          background-color: white;
+          background-color: #2d4cc3;
         }
       }
     }
   }
 }
 // Prgressive Slider Section End
+
+// Custom Carousel Section Start
+#bookAmtCarousel {
+  padding: 10rem 0;
+  background-color: #f2f2ff;
+  
+  .sectionTitleWrap {
+    @include md-tablet{
+      text-align: center;
+    }
+    h2 {
+      @include mainTitle;
+      margin-bottom: 1rem;
+    }
+    p {
+      @include paraTypo;
+      margin-bottom: 0;
+      width: 60%;
+      @include md-tablet{
+        width: 80%;
+        margin: 0 auto;
+      }
+    }
+  }
+  .slider-container {
+    width: 100%;
+    overflow: hidden;
+    .buttons {
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 2rem;
+      button {
+        background-color: transparent;
+        height: 5rem;
+        width: 5rem;
+        border-radius: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 0.1rem solid #5d5d5d;
+        &:first-child {
+          span {
+            transform: rotate(-180deg);
+          }
+        }
+        &:disabled {
+          opacity: 0.5;
+        }
+      }
+    }
+    .slider {
+      transition: transform 0.5s ease-in-out;
+      .row {
+        padding: 1rem 0;
+      }
+      .boxed {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 36.1rem;
+        width: 100%;
+        border: 0;
+        position: relative;
+        box-shadow: 0px 0px 15px -10px #757575;
+        border-radius: 0.6rem;
+        overflow: hidden;
+        .rightTopBox {
+          position: absolute;
+          right: 1.5rem;
+          top: 1.5rem;
+          h5 {
+            font-size: 2rem;
+            color: #a2b1d0;
+            margin-bottom: 0;
+          }
+          h6 {
+            margin-bottom: 0;
+            color: #919191;
+            font-size: 1.6rem;
+          }
+        }
+        .midlBox {
+          position: absolute;
+          top: 50%;
+          left: 2rem;
+          width: 60%;
+          h4 {
+            width: 80%;
+            font-size: 2.6rem;
+            @include md-tablet{
+              font-size: 1.8rem;
+            }
+          }
+          p {
+            @include paraTypo;
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+  }
+}
+// Custom Carousel Section End
+
+// Pre Booking Section Start
+#preOrderBookingSection {
+  padding: 8rem 0 0;
+  background-image: url(../images/prebooking-gradients.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+
+  .sectionTitleBox {
+    margin-bottom: 3rem;
+    h2 {
+      @include mainTitle;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    p {
+      @include paraTypo;
+      margin-bottom: 0;
+      width: 55%;
+      margin: 0 auto;
+      text-align: center;
+      @include md-tablet{
+        width: 80%;
+      }
+    }
+  }
+  .halfLaptopWrap {
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    .bookInputWrap {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 45%;
+      @include md-tablet{
+        width: 75%;
+      }
+      form {
+        width: 100%;
+        margin-bottom: 2rem;
+        .form-control {
+          height: 5rem;
+          position: relative;
+          border-radius: 5rem;
+          padding: 0 1.5rem;
+          font-size: 1.6rem;
+          color: #919191;
+          &:focus {
+            outline: none;
+            box-shadow: none;
+          }
+        }
+        .bookBtn {
+          background: #2d7ce7;
+          color: #fff;
+          height: 5rem;
+          width: 12rem;
+          border-radius: 5rem;
+          border: 0;
+          font-size: 1.6rem;
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+      }
+      p {
+        @include paraTypo;
+        color: #fff;
+        text-align: center;
+        width: 80%;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+// Pre Booking Section End
+
+// Footer Section Start
+#footer {
+  padding: 8rem 0 0;
+  background-image: url(../images/foobg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: auto;
+  height: 70rem;
+  .footerWrap {
+    justify-content: space-between;
+    .foologoWrap {
+      a {
+        img {
+          width: 40%;
+        }
+      }
+    }
+    .commBtnWrap {
+      button {
+        margin-top: 0;
+      }
+    }
+  }
+  .padTop {
+    padding-top: 12rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .subscriptionBox {
+    p {
+      @include paraTypo;
+      font-size: 2.6rem;
+      margin-bottom: 1rem;
+      color: #1d1d1f;
+      line-height: 1.2;
+    }
+    .subscriptionFormWrap {
+      position: relative;
+    }
+    form {
+      .form-control {
+        width: 80%;
+        height: 3rem;
+        border-bottom: 0.1rem solid #000 !important;
+        position: relative;
+        background-color: transparent;
+        border-radius: 0;
+        border: 0;
+        font-size: 1.6rem;
+        color: #919191;
+        margin-top: 2rem;
+        &:focus {
+          outline: none;
+          box-shadow: none;
+        }
+      }
+      .subBtn {
+        position: absolute;
+        right: 20%;
+        top: 0;
+        background-color: transparent;
+        border: 0;
+      }
+    }
+  }
+  .fooLinksWrap {
+    ul {
+      padding-left: 0;
+      margin-bottom: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      li {
+        a {
+          @include paraTypo;
+        }
+      }
+    }
+  }
+  .cirtificateBox {
+    h6 {
+      font-family: "AeonikTRIAL-Regular";
+      font-size: 2rem;
+      color: #919191;
+    }
+  }
+  .cpyWriteText {
+    p {
+      font-family: "AeonikTRIAL-Bold";
+      color: #1d1d1f;
+      font-size: 1.8rem;
+    }
+  }
+  .copyWriteSection {
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 11rem;
+
+    .socialLinksWrap {
+      ul {
+        padding-left: 0;
+        margin-bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        li {
+          a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 4rem;
+            height: 4rem;
+            border-radius: 5rem;
+            background: #2d4cc3;
+            &:hover {
+              background-color: #758add;
+
+              svg {
+                path {
+                  fill: #fff;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// Footer Section End
 
 .h100 {
   height: 100vh;

@@ -1,14 +1,18 @@
 import React from "react";
 import ProgressSlider from "../progressiveSlider/ProgressSlider";
+import FirstSlide from "../progressiveSlider/FirstSlide";
+import SecondSlide from "../progressiveSlider/SecondSlide";
 
 function PurePerformance() {
   const slides = [
-    { content: "Slide 1", color: "red" },
-    { content: "Slide 2", color: "blue" },
-    { content: "Slide 3", color: "green" },
+    { content: <FirstSlide/>},
+    { content: <SecondSlide/>},
+    { content: <FirstSlide/>},
+    { content: <SecondSlide/>},
+    
   ];
   return (
-    <div>
+    <div className="container">
       <ProgressSlider slides={slides} />
     </div>
   );

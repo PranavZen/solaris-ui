@@ -12,3 +12,8 @@ export { default as winProImg } from "../assets/images/windows-laptop.png";
 export { default as benImg1 } from "../assets/images/benefits-top.png";
 export { default as benImg2 } from "../assets/images/benefits-left-bottom.png";
 export { default as benImg3 } from "../assets/images/benefits-right-bottom.png";
+export { default as display1 } from "../assets/images/display-1.png";
+export { default as book1 } from "../assets/images/book1.png";
+export { default as halfLaptop } from "../assets/images/halflaptop.png";
+export { default as fooLogo } from "../assets/images/foologo.png";
+export { default as certificates } from "../assets/images/cirtificates.png";
