@@ -5,7 +5,7 @@ function SolarisGrid() {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-md-10 mx-auto col-12">
+        <div className="col-lg-12 col-xl-10 mx-auto col-12">
           <div className="gridWrap">
             <h2>Solaris book 14X OLED</h2>
             <p>

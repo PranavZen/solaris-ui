@@ -94,7 +94,7 @@ input {
   justify-content: center;
   align-items: center;
   border-radius: 5rem;
-  padding: 0 0rem 0px 3rem;
+  padding: 0 0rem 0px 1rem;
 }
 #header .navbar .navbar-brand {
   border-right: 0.1rem solid #000;
@@ -226,6 +226,11 @@ input {
   height: 100%;
   padding: 9% 0 0;
 }
+@media (max-width: 1024px) {
+  #bannerSection {
+    padding: 18% 0 0;
+  }
+}
 @media (max-width: 834px) {
   #bannerSection {
     padding: 20% 0 0;
@@ -252,7 +257,7 @@ input {
   font-size: 9.5rem;
   text-align: center;
 }
-@media (max-width: 834px) {
+@media (max-width: 1366px) {
   #bannerSection .bannerTextWrap .mainText {
     font-size: 5.5rem;
   }
@@ -294,6 +299,16 @@ input {
   top: -14%;
   left: 27%;
 }
+@media (max-width: 1366px) {
+  #bannerSection .centerBoxWrap .priceTag .priceTagImg {
+    left: 23%;
+  }
+}
+@media (max-width: 1024px) {
+  #bannerSection .centerBoxWrap .priceTag .priceTagImg {
+    left: 18%;
+  }
+}
 @media (max-width: 834px) {
   #bannerSection .centerBoxWrap .priceTag .priceTagImg {
     left: 8%;
@@ -307,6 +322,16 @@ input {
   font-size: 1.6rem;
   font-family: "AeonikTRIAL-Bold";
   color: #fff;
+}
+@media (max-width: 1366px) {
+  #bannerSection .centerBoxWrap .priceTag .priceAmt {
+    left: 25%;
+  }
+}
+@media (max-width: 1024px) {
+  #bannerSection .centerBoxWrap .priceTag .priceAmt {
+    left: 20.5%;
+  }
 }
 @media (max-width: 834px) {
   #bannerSection .centerBoxWrap .priceTag .priceAmt {
@@ -356,6 +381,11 @@ input {
   left: 0;
   bottom: 40%;
 }
+@media (max-width: 1366px) {
+  #bannerSection .centerBoxWrap .absBox.rightbox {
+    bottom: 52%;
+  }
+}
 #bannerSection .centerBoxWrap .absBox .boxTitle {
   display: flex;
   align-items: center;
@@ -387,6 +417,11 @@ input {
 .svgLine.leftArrow {
   left: 0;
   width: 36%;
+}
+@media (max-width: 1366px) {
+  .svgLine.leftArrow {
+    top: 15%;
+  }
 }
 .svgLine .st0 {
   fill: none;
@@ -793,6 +828,11 @@ input {
   height: 30rem;
   text-align: center;
 }
+@media (max-width: 1024px) {
+  #productFeature .slider-container .main-image-container {
+    width: 35rem;
+  }
+}
 @media (max-width: 767px) {
   #productFeature .slider-container .main-image-container {
     width: 100%;
@@ -810,6 +850,10 @@ input {
   right: -7.5rem;
   top: 0;
   display: flex;
+  row-gap: 0.5rem;
+  width: 14%;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 @media (max-width: 767px) {
   #productFeature .slider-container .main-image-container .color-container {
@@ -817,25 +861,22 @@ input {
     top: -35px;
   }
 }
-#productFeature .slider-container .main-image-container .color-container .color-black {
-  background-color: #2f2f2f;
+#productFeature .slider-container .main-image-container .color-container .colorBox {
   height: 2rem;
   width: 2rem;
-  margin: 0.5rem;
   cursor: pointer;
 }
-#productFeature .slider-container .main-image-container .color-container .color-black:hover {
-  background-color: #000;
+#productFeature .slider-container .main-image-container .color-container .color-black {
+  background-color: #2f2f2f;
 }
 #productFeature .slider-container .main-image-container .color-container .color-gray {
   background-color: rgb(148, 148, 148);
-  height: 2rem;
-  width: 2rem;
-  margin: 0.5rem;
-  cursor: pointer;
 }
-#productFeature .slider-container .main-image-container .color-container .color-gray:hover {
-  background-color: rgb(128, 128, 128);
+#productFeature .slider-container .main-image-container .color-container .color-red {
+  background-color: rgb(255, 31, 31);
+}
+#productFeature .slider-container .main-image-container .color-container .color-green {
+  background-color: rgb(136, 255, 31);
 }
 #productFeature .slider-container .thumbnail-container {
   display: flex;
@@ -966,6 +1007,21 @@ input {
   font-family: "AeonikTRIAL-Bold";
   font-size: 3rem;
   color: #313234;
+}
+@media (max-width: 1024px) {
+  #solarisGridSection .bookGrid .grid .flotTitle span {
+    font-size: 2.4rem;
+  }
+}
+@media (max-width: 834px) {
+  #solarisGridSection .bookGrid .grid .flotTitle span {
+    font-size: 5rem;
+  }
+}
+@media (max-width: 767px) {
+  #solarisGridSection .bookGrid .grid .flotTitle span {
+    font-size: 3rem;
+  }
 }
 #solarisGridSection .bookGrid .grid .flotTitle.title1 {
   top: 10%;
@@ -1309,6 +1365,16 @@ input {
   padding: 10rem 0;
   background-color: #e0e0e0;
 }
+@media (max-width: 1366px) {
+  #windowProSection {
+    padding: 10rem 0 6rem;
+  }
+}
+@media (max-width: 1024px) {
+  #windowProSection {
+    padding: 10rem 0 9rem;
+  }
+}
 @media (max-width: 767px) {
   #windowProSection {
     padding: 10rem 1rem;
@@ -1336,6 +1402,22 @@ input {
   -webkit-animation: rotate 220s linear infinite reverse;
   -moz-animation: rotate 220s linear infinite reverse;
 }
+@media (max-width: 1366px) {
+  #windowProSection .custRow::before {
+    width: 66%;
+    height: 58rem;
+    left: -145px;
+    top: -5%;
+  }
+}
+@media (max-width: 1024px) {
+  #windowProSection .custRow::before {
+    width: 68%;
+    height: 58rem;
+    left: -100px;
+    top: -5%;
+  }
+}
 @media (max-width: 834px) {
   #windowProSection .custRow::before {
     content: none;
@@ -1356,6 +1438,22 @@ input {
   animation: rotate 240s linear infinite;
   -webkit-animation: rotate 240s linear infinite;
   -moz-animation: rotate 240s linear infinite;
+}
+@media (max-width: 1366px) {
+  #windowProSection .custRow::after {
+    width: 45%;
+    height: 51rem;
+    left: -30px;
+    top: 2%;
+  }
+}
+@media (max-width: 1024px) {
+  #windowProSection .custRow::after {
+    width: 48%;
+    height: 46rem;
+    left: -5px;
+    top: 7%;
+  }
 }
 @media (max-width: 834px) {
   #windowProSection .custRow::after {
@@ -1494,9 +1592,29 @@ input {
   padding: 1rem;
   border-radius: 0.4rem;
 }
+@media (max-width: 1024px) {
+  #solarisBenefits .leftImgWrap .topImgContentWrap .leftBoxOverlay {
+    width: 68%;
+  }
+}
+@media (max-width: 834px) {
+  #solarisBenefits .leftImgWrap .topImgContentWrap .leftBoxOverlay {
+    width: 50%;
+  }
+}
 #solarisBenefits .leftImgWrap .topImgContentWrap .leftBoxOverlay span {
   font-size: 1.4rem;
   color: #fff;
+}
+@media (max-width: 1024px) {
+  #solarisBenefits .leftImgWrap .topImgContentWrap .leftBoxOverlay span {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 834px) {
+  #solarisBenefits .leftImgWrap .topImgContentWrap .leftBoxOverlay span {
+    font-size: 1.4rem;
+  }
 }
 #solarisBenefits .leftImgWrap img {
   width: 100%;
@@ -1742,6 +1860,11 @@ input {
   width: 80%;
   font-size: 2.6rem;
 }
+@media (max-width: 1024px) {
+  #bookAmtCarousel .slider-container .slider .boxed .midlBox h4 {
+    font-size: 2rem;
+  }
+}
 @media (max-width: 834px) {
   #bookAmtCarousel .slider-container .slider .boxed .midlBox h4 {
     font-size: 1.8rem;
@@ -1849,24 +1972,33 @@ input {
 }
 
 #footer {
-  padding: 8rem 0 0;
+  padding: 6rem 0 10rem;
   background-image: url(../images/foobg.png);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 105%;
+  background-size: 100%;
   width: 100%;
-  height: 50rem;
+  height: auto;
   position: relative;
 }
-@media (max-width: 767px) {
+@media (max-width: 1366px) {
   #footer {
-    padding: 8rem 1rem 21rem;
-    height: 100%;
-    background-size: cover;
+    background-size: 100% 100%;
   }
 }
 #footer .footerWrap {
   justify-content: space-between;
+  padding: 0 2rem;
+}
+@media (max-width: 1366px) {
+  #footer .footerWrap {
+    padding: 0 5rem;
+  }
+}
+@media (max-width: 1024px) {
+  #footer .footerWrap {
+    padding: 0 6rem;
+  }
 }
 @media (max-width: 767px) {
   #footer .footerWrap {
@@ -1898,8 +2030,18 @@ input {
   margin-top: 0;
 }
 #footer .padTop {
-  padding-top: 5rem;
+  padding: 5rem 2rem 0;
   justify-content: space-between;
+}
+@media (max-width: 1366px) {
+  #footer .padTop {
+    padding: 5rem 5rem 0;
+  }
+}
+@media (max-width: 1024px) {
+  #footer .padTop {
+    padding: 5rem 6rem 0;
+  }
 }
 @media (max-width: 767px) {
   #footer .padTop {
@@ -1919,6 +2061,11 @@ input {
 #footer .subscriptionBox p {
   font-size: 1.8rem;
   line-height: 1.2;
+}
+@media (max-width: 1366px) {
+  #footer .subscriptionBox p {
+    font-size: 1.6rem;
+  }
 }
 #footer .subscriptionBox .subscriptionFormWrap {
   position: relative;
@@ -1992,7 +2139,17 @@ input {
   width: 100%;
   bottom: 5%;
   left: 5px;
-  padding: 0 10rem;
+  padding: 0 12rem;
+}
+@media (max-width: 1366px) {
+  #footer .copyWriteSection {
+    padding: 0 11rem;
+  }
+}
+@media (max-width: 1024px) {
+  #footer .copyWriteSection {
+    padding: 0 9rem;
+  }
 }
 @media (max-width: 767px) {
   #footer .copyWriteSection {

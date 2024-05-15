@@ -20,9 +20,10 @@ function HomePage() {
       <section id="clients" className="clients">
         <Clients />
       </section>
-      <section id="productFeature">
-        <ProductFeature />
+      <section id="bookAmtCarousel">
+        <CustomCaraouselWrap cards={cardData}/>
       </section>
+      
       <section id="solarisGridSection">
         <SolarisGrid />
       </section>
@@ -38,8 +39,8 @@ function HomePage() {
       <section id="purePerformanceSection">
         <PurePerformance />
       </section>
-      <section id="bookAmtCarousel">
-        <CustomCaraouselWrap cards={cardData}/>
+      <section id="productFeature">
+        <ProductFeature />
       </section>
       <section id="preOrderBookingSection">
         <PreOrderSection/>

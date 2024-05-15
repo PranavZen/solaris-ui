@@ -9,18 +9,34 @@ import ImageSlider from "../ImageSlider/ImageSlider";
 // import grayImg2 from '../../images/gray/img2.jpg';
 // import grayImg3 from '../../images/gray/img3.jpg';
 function ProductFeature() {
-  const blackImages = [
-    "https://placehold.co/800x400",
-    "https://placehold.co/800x400",
-    "https://placehold.co/800x800",
-    "https://placehold.co/300x200",
-  ];
-  const grayImages = [
-    "https://placehold.co/200x200",
-    "https://placehold.co/100x100",
-    "https://placehold.co/300x800",
-    "https://placehold.co/1000x200",
-  ];
+  const colorImages = {
+    black: [
+      "https://placehold.co/800x400",
+      "https://placehold.co/800x400",
+      "https://placehold.co/800x800",
+      "https://placehold.co/300x200",
+    ],
+    gray: [
+      "https://placehold.co/200x200",
+      "https://placehold.co/100x100",
+      "https://placehold.co/300x800",
+      "https://placehold.co/1000x200",
+    ],
+    red: [
+      "https://placehold.co/100x900",
+      "https://placehold.co/700x700",
+      "https://placehold.co/300x800",
+      "https://placehold.co/400x400",
+      "https://placehold.co/1200x1200",
+      "https://placehold.co/200x200",
+    ],
+    green: [
+      "https://placehold.co/400x400",
+      "https://placehold.co/1200x1200",
+      "https://placehold.co/200x200",
+    ],
+    // Add more colors if needed
+  };
   return (
     <div className="container">
       <div className="row">
@@ -37,7 +53,7 @@ function ProductFeature() {
           </div>
         </div>
         <div className="col-md-12 col-lg-6">
-          <ImageSlider blackImages={blackImages} grayImages={grayImages} />
+          <ImageSlider colorImages={colorImages} />
         </div>
       </div>
     </div>
