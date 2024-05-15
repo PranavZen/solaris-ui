@@ -127,7 +127,7 @@ function Navbar() {
               </Link>
             </li>
             <li className="nav-item">
-              <CommonButton buttonText="Login" />
+              <CommonButton buttonText="Pre Order Now" />
             </li>
           </ul>
         </nav>

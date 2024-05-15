@@ -25,7 +25,7 @@ function PreOrderSection() {
                   id=""
                   placeholder="Enter your email..."
                 />
-                <button className="bookBtn">Book now</button>
+                <button className="bookBtn">Pre Order Now</button>
               </form>
               <p>
                 By booking, users will unlock lifetime access to over 25 digital

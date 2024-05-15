@@ -53,7 +53,10 @@ input {
 }
 
 .commBtnWrap button {
-  width: 18.8rem;
+  width: -moz-max-content;
+  width: max-content;
+  gap: 1rem;
+  padding-right: 0.5rem;
   height: 5rem;
   border-radius: 5rem;
   background: linear-gradient(90deg, rgb(45, 76, 195) 45%, rgb(154, 155, 237) 100%);
@@ -204,7 +207,6 @@ input {
 }
 #header .navbar .nav-item .commBtnWrap button {
   margin-top: 0;
-  width: 11.8rem;
 }
 #header .navbar .nav-item .nav-link {
   font-size: 1.8rem;
@@ -1330,9 +1332,9 @@ input {
   top: -9%;
   z-index: 9;
   pointer-events: none;
-  animation: rotate 80s linear infinite;
-  -webkit-animation: rotate 80s linear infinite;
-  -moz-animation: rotate 80s linear infinite;
+  animation: rotate 220s linear infinite reverse;
+  -webkit-animation: rotate 220s linear infinite reverse;
+  -moz-animation: rotate 220s linear infinite reverse;
 }
 @media (max-width: 834px) {
   #windowProSection .custRow::before {
@@ -1351,6 +1353,9 @@ input {
   left: -50px;
   top: 0%;
   pointer-events: none;
+  animation: rotate 240s linear infinite;
+  -webkit-animation: rotate 240s linear infinite;
+  -moz-animation: rotate 240s linear infinite;
 }
 @media (max-width: 834px) {
   #windowProSection .custRow::after {
@@ -1820,13 +1825,15 @@ input {
   background: #2d7ce7;
   color: #fff;
   height: 5rem;
-  width: 12rem;
+  width: -moz-max-content;
+  width: max-content;
   border-radius: 5rem;
   border: 0;
   font-size: 1.6rem;
   position: absolute;
   right: 0;
   top: 0;
+  padding: 0 1rem;
 }
 #preOrderBookingSection .halfLaptopWrap .bookInputWrap p {
   font-size: 1.8rem;
@@ -1853,8 +1860,9 @@ input {
 }
 @media (max-width: 767px) {
   #footer {
-    padding: 8rem 1rem 0;
+    padding: 8rem 1rem 21rem;
     height: 100%;
+    background-size: cover;
   }
 }
 #footer .footerWrap {
@@ -1865,8 +1873,20 @@ input {
     gap: 4rem;
   }
 }
+@media (max-width: 767px) {
+  #footer .footerWrap .foologoWrap a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+}
 #footer .footerWrap .foologoWrap a img {
   width: 40%;
+}
+@media (max-width: 767px) {
+  #footer .footerWrap .foologoWrap a img {
+    margin: 0 auto;
+  }
 }
 @media (max-width: 767px) {
   #footer .footerWrap .commBtnWrap {
@@ -1885,6 +1905,11 @@ input {
   #footer .padTop {
     padding-top: 2rem;
     gap: 4rem;
+  }
+}
+@media (max-width: 767px) {
+  #footer .subscriptionBox {
+    text-align: center;
   }
 }
 #footer .subscriptionBox h6 {
@@ -1928,6 +1953,14 @@ input {
   flex-direction: column;
   gap: 1rem;
 }
+@media (max-width: 767px) {
+  #footer .fooLinksWrap ul {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+}
 #footer .fooLinksWrap ul li a {
   font-size: 1.8rem;
 }
@@ -1965,6 +1998,7 @@ input {
   #footer .copyWriteSection {
     padding-top: 3rem;
     gap: 2rem;
+    bottom: 0%;
   }
 }
 #footer .copyWriteSection .socialLinksWrap ul {

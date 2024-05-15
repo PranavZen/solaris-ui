@@ -1,7 +1,9 @@
 @mixin common-button {
   .commBtnWrap {
     button {
-      width: 18.8rem;
+      width: max-content;
+      gap: 1rem;
+      padding-right: 0.5rem;
       height: 5rem;
       border-radius: 5rem;
       background: linear-gradient(

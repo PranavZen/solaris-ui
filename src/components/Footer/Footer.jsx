@@ -15,7 +15,7 @@ function Footer() {
             </div>
           </div>
           <div className="col-lg-3 col-md-5">
-            <CommonButton buttonText="Book a Demo" />
+            <CommonButton buttonText="Pre Order Now" />
           </div>
         </div>
         <div className="row padTop">
