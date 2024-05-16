@@ -32,11 +32,32 @@ function CustomCaraouselWrap({ cards }) {
     }
   };
 
-  const handleNext = () => {
-    if (startIndex < cardCount - 1) {
-      setStartIndex((prevIndex) => prevIndex + 1);
-    }
-  };
+ const handleNext = () => {
+  let limit = cardCount - 1; // Default limit
+
+  // Adjust limit based on screen width
+  if (window.innerWidth <= 767) {
+    limit = cardCount - 1;
+  } else if (window.innerWidth <= 1024) {
+    limit = cardCount - 2;
+  }
+
+  if (startIndex < limit) {
+    setStartIndex((prevIndex) => prevIndex + 1);
+  }
+};
+
+var value = 3;
+
+if (window.innerWidth < 1025) {
+    value = 2;
+}
+
+if (window.innerWidth < 767) {
+    value = 1;
+}
+
+
   return (
     <div className="container">
       <div className="sectionTitleWrap">
@@ -65,7 +86,7 @@ function CustomCaraouselWrap({ cards }) {
               </svg>
             </span>
           </button>
-          <button onClick={handleNext} disabled={startIndex === cardCount - 3}>
+          <button onClick={handleNext} disabled={startIndex === cardCount - value}>
             <span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -88,7 +109,7 @@ function CustomCaraouselWrap({ cards }) {
         >
           <div className="row flex-nowrap ">
             {cardData.map((card, index) => (
-              <div className="col-md-4 resCard"key={index} >
+              <div className="col-md-4 resCard" key={index}>
                 <div
                   key={index}
                   className="boxed"

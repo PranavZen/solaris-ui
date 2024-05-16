@@ -59,7 +59,8 @@ input {
   padding-right: 0.5rem;
   height: 5rem;
   border-radius: 5rem;
-  background: linear-gradient(90deg, rgb(45, 76, 195) 45%, rgb(154, 155, 237) 100%);
+  background-size: 100% 100%;
+  background-image: linear-gradient(90deg, rgb(45, 76, 195) 45%, rgb(154, 155, 237) 100%);
   color: #fff;
   border: 0;
   font-size: 1.6rem;
@@ -68,6 +69,12 @@ input {
   justify-content: space-around;
   align-items: center;
   padding-left: 1.5rem;
+  position: relative;
+}
+@media (max-width: 767px) {
+  .commBtnWrap button {
+    font-size: 1.4rem;
+  }
 }
 .commBtnWrap button span {
   display: flex;
@@ -77,6 +84,27 @@ input {
   height: 4.2rem;
   border-radius: 5rem;
   background-color: #fff;
+  overflow: hidden;
+  will-change: transform;
+}
+.commBtnWrap button span .oldArrow {
+  transform: translateX(-135%);
+  transform-style: preserve-3d;
+  transition: transform 0.2s ease;
+  position: relative;
+}
+.commBtnWrap button span .newArrow {
+  transform: translateX(-55%);
+}
+.commBtnWrap button:hover {
+  background-position: 0% 100%;
+  transition: all 0.2s ease-in-out;
+}
+.commBtnWrap button:hover span .oldArrow {
+  transform: translateX(45%);
+}
+.commBtnWrap button:hover span .newArrow {
+  transform: translateX(140%);
 }
 
 #header {
@@ -99,6 +127,15 @@ input {
 #header .navbar .navbar-brand {
   border-right: 0.1rem solid #000;
   padding-right: 1rem;
+}
+@media (max-width: 767px) {
+  #header .navbar .navbar-brand {
+    border-right: 0;
+    padding-right: 0rem;
+  }
+  #header .navbar .navbar-brand img {
+    width: 80%;
+  }
 }
 #header .navbar #menuToggle {
   width: 5rem;
@@ -262,6 +299,11 @@ input {
     font-size: 5.5rem;
   }
 }
+@media (max-width: 767px) {
+  #bannerSection .bannerTextWrap .mainText {
+    font-size: 3.5rem;
+  }
+}
 #bannerSection .bannerTextWrap .mainText .gradientText {
   position: relative;
   width: -moz-max-content;
@@ -278,6 +320,12 @@ input {
   margin: 0 auto;
   text-align: center;
   font-size: 1.8rem;
+}
+@media (max-width: 767px) {
+  #bannerSection .bannerTextWrap .mainPara {
+    width: 80%;
+    font-size: 1.6rem;
+  }
 }
 #bannerSection .bannerTextWrap .commBtnWrap {
   display: flex;
@@ -786,6 +834,11 @@ input {
 #productFeature {
   padding: 10rem 0;
 }
+@media (max-width: 767px) {
+  #productFeature {
+    padding: 4rem 0;
+  }
+}
 @media (max-width: 834px) {
   #productFeature .leftBox {
     text-align: center;
@@ -795,6 +848,11 @@ input {
   font-size: 3rem;
   margin-bottom: 1rem;
 }
+@media (max-width: 767px) {
+  #productFeature .leftBox h2 {
+    font-size: 2.6rem;
+  }
+}
 #productFeature .leftBox p {
   font-size: 1.8rem;
   margin-bottom: 0;
@@ -803,6 +861,7 @@ input {
   #productFeature .leftBox p {
     width: 80%;
     margin: 0 auto;
+    font-size: 1.6rem;
   }
 }
 @media (max-width: 834px) {
@@ -859,6 +918,7 @@ input {
   #productFeature .slider-container .main-image-container .color-container {
     right: 10px;
     top: -35px;
+    width: 40%;
   }
 }
 #productFeature .slider-container .main-image-container .color-container .colorBox {
@@ -925,7 +985,7 @@ input {
 }
 @media (max-width: 767px) {
   #solarisGridSection {
-    padding: 10rem 1rem;
+    padding: 3rem 1rem;
   }
 }
 #solarisGridSection .gridWrap {
@@ -936,6 +996,11 @@ input {
   margin-bottom: 1rem;
   text-align: center;
   color: #fff;
+}
+@media (max-width: 767px) {
+  #solarisGridSection .gridWrap h2 {
+    font-size: 2.6rem;
+  }
 }
 #solarisGridSection .gridWrap p {
   font-size: 1.8rem;
@@ -948,6 +1013,7 @@ input {
 @media (max-width: 834px) {
   #solarisGridSection .gridWrap p {
     width: 80%;
+    font-size: 1.6rem;
   }
 }
 #solarisGridSection .bookGrid {
@@ -975,10 +1041,20 @@ input {
   align-items: center;
   margin-bottom: 1rem;
 }
+@media (max-width: 767px) {
+  #solarisGridSection .bookGrid .grid .floatBox .roundBox {
+    height: 3.5rem;
+  }
+}
 #solarisGridSection .bookGrid .grid .floatBox .roundBox span {
   font-family: "AeonikTRIAL-Bold";
   font-size: 1.8rem;
   color: #313234;
+}
+@media (max-width: 767px) {
+  #solarisGridSection .bookGrid .grid .floatBox .roundBox span {
+    font-size: 1.4rem;
+  }
 }
 #solarisGridSection .bookGrid .grid .floatBox p {
   font-family: "AeonikTRIAL-Regular";
@@ -990,12 +1066,25 @@ input {
   left: 5%;
   bottom: 10%;
 }
+@media (max-width: 767px) {
+  #solarisGridSection .bookGrid .grid .floatBox.float1 {
+    bottom: 0%;
+  }
+}
 #solarisGridSection .bookGrid .grid .floatBox.float2 {
   width: 40%;
   right: 5%;
   bottom: 10%;
   display: flex;
   flex-direction: column;
+}
+@media (max-width: 767px) {
+  #solarisGridSection .bookGrid .grid .floatBox.float2 {
+    width: 100%;
+    bottom: 0;
+    left: 52%;
+    transform: translateX(-50%);
+  }
 }
 #solarisGridSection .bookGrid .grid .floatBox.float2 .roundBox {
   width: 25rem;
@@ -1082,6 +1171,11 @@ input {
     grid-area: 2/1/3/2;
   }
 }
+@media (max-width: 767px) {
+  #solarisGridSection .bookGrid .grid2 {
+    height: 15rem;
+  }
+}
 #solarisGridSection .bookGrid .grid3 {
   grid-area: 2/1/3/2;
 }
@@ -1133,13 +1227,18 @@ input {
 }
 @media (max-width: 767px) {
   #featureSliderSection {
-    padding: 10rem 1rem;
+    padding: 3rem 1rem;
   }
 }
 #featureSliderSection .sectionTitleWrap h2 {
   font-size: 3rem;
   margin-bottom: 1rem;
   text-align: center;
+}
+@media (max-width: 767px) {
+  #featureSliderSection .sectionTitleWrap h2 {
+    font-size: 2.6rem;
+  }
 }
 #featureSliderSection .sectionTitleWrap p {
   font-size: 1.8rem;
@@ -1151,6 +1250,7 @@ input {
 @media (max-width: 834px) {
   #featureSliderSection .sectionTitleWrap p {
     width: 100%;
+    font-size: 1.6rem;
   }
 }
 #featureSliderSection .slider {
@@ -1171,6 +1271,11 @@ input {
   text-align: center;
   margin-top: 5rem;
   padding: 1rem 0;
+}
+@media (max-width: 767px) {
+  #featureSliderSection .dots {
+    margin-top: 0;
+  }
 }
 #featureSliderSection .dot {
   display: inline-block;
@@ -1377,7 +1482,7 @@ input {
 }
 @media (max-width: 767px) {
   #windowProSection {
-    padding: 10rem 1rem;
+    padding: 3rem 1rem;
   }
 }
 #windowProSection .custRow {
@@ -1485,9 +1590,19 @@ input {
   font-size: 3rem;
   margin-bottom: 1rem;
 }
+@media (max-width: 767px) {
+  #windowProSection .custRow .winProTitleWrap h2 {
+    font-size: 2.6rem;
+  }
+}
 #windowProSection .custRow .winProTitleWrap p {
   font-size: 1.8rem;
   margin-bottom: 0;
+}
+@media (max-width: 767px) {
+  #windowProSection .custRow .winProTitleWrap p {
+    font-size: 1.6rem;
+  }
 }
 #windowProSection .custRow .winProList {
   margin-top: 3rem;
@@ -1518,6 +1633,11 @@ input {
   font-size: 2.6rem;
   margin-bottom: 0.2rem;
 }
+@media (max-width: 767px) {
+  #windowProSection .custRow .winProList ul li h5 {
+    font-size: 2rem;
+  }
+}
 #windowProSection .custRow .winProList ul li p {
   font-size: 1.8rem;
   margin-bottom: 0;
@@ -1534,7 +1654,7 @@ input {
 }
 @media (max-width: 767px) {
   #solarisBenefits {
-    padding: 10rem 1rem 6rem;
+    padding: 3rem 1rem 4rem;
   }
 }
 @media (max-width: 834px) {
@@ -1546,6 +1666,11 @@ input {
   font-size: 3rem;
   margin-bottom: 1rem;
 }
+@media (max-width: 767px) {
+  #solarisBenefits .sectionTitleBox h2 {
+    font-size: 2.6rem;
+  }
+}
 #solarisBenefits .sectionTitleBox p {
   font-size: 1.8rem;
   margin-bottom: 0;
@@ -1554,6 +1679,7 @@ input {
 @media (max-width: 834px) {
   #solarisBenefits .sectionTitleBox p {
     margin: 0 auto;
+    font-size: 1.6rem;
   }
 }
 @media (max-width: 834px) {
@@ -1631,14 +1757,31 @@ input {
   left: 8%;
   width: 70%;
 }
+@media (max-width: 767px) {
+  #solarisBenefits .leftBtmImg .overLay.overlayText1 {
+    top: 10%;
+    left: 8%;
+    width: 85%;
+  }
+}
 #solarisBenefits .leftBtmImg .overLay.overlayText2 {
   top: 5%;
   left: 5%;
   width: 60%;
 }
+@media (max-width: 767px) {
+  #solarisBenefits .leftBtmImg .overLay.overlayText2 {
+    width: 85%;
+  }
+}
 #solarisBenefits .leftBtmImg .overLay h6 {
   font-size: 2rem;
   line-height: 1.4;
+}
+@media (max-width: 767px) {
+  #solarisBenefits .leftBtmImg .overLay h6 {
+    font-size: 1.6rem;
+  }
 }
 #solarisBenefits .leftBtmImg img {
   width: 100%;
@@ -1657,7 +1800,7 @@ input {
 }
 @media (max-width: 767px) {
   #purePerformanceSection {
-    padding: 8rem 1rem 0;
+    padding: 3rem 1rem 0;
   }
 }
 #purePerformanceSection .progress-slider {
@@ -1692,11 +1835,26 @@ input {
 #purePerformanceSection .progress-slider .slide-container .slide .slideWrapping h6 {
   font-size: 2rem;
 }
+@media (max-width: 767px) {
+  #purePerformanceSection .progress-slider .slide-container .slide .slideWrapping h6 {
+    font-size: 1.6rem;
+  }
+}
 #purePerformanceSection .progress-slider .slide-container .slide .slideWrapping h4 {
   font-size: 3rem;
 }
+@media (max-width: 767px) {
+  #purePerformanceSection .progress-slider .slide-container .slide .slideWrapping h4 {
+    font-size: 2.6rem;
+  }
+}
 #purePerformanceSection .progress-slider .slide-container .slide .slideWrapping p {
   font-size: 1.8rem;
+}
+@media (max-width: 767px) {
+  #purePerformanceSection .progress-slider .slide-container .slide .slideWrapping p {
+    font-size: 1.6rem;
+  }
 }
 @media (max-width: 767px) {
   #purePerformanceSection .progress-slider .slide-container .slide .slideWrapping .commBtnWrap {
@@ -1723,7 +1881,7 @@ input {
 }
 @media (max-width: 767px) {
   #purePerformanceSection .progress-btns {
-    top: 10%;
+    top: 5%;
   }
 }
 #purePerformanceSection .progress-btns .slide-button {
@@ -1747,7 +1905,7 @@ input {
 }
 @media (max-width: 767px) {
   #bookAmtCarousel {
-    padding: 10rem 1rem;
+    padding: 3rem 1rem;
   }
 }
 @media (max-width: 834px) {
@@ -1764,6 +1922,11 @@ input {
   font-size: 3rem;
   margin-bottom: 1rem;
 }
+@media (max-width: 767px) {
+  #bookAmtCarousel .sectionTitleWrap h2 {
+    font-size: 2.6rem;
+  }
+}
 #bookAmtCarousel .sectionTitleWrap p {
   font-size: 1.8rem;
   margin-bottom: 0;
@@ -1773,6 +1936,7 @@ input {
   #bookAmtCarousel .sectionTitleWrap p {
     width: 80%;
     margin: 0 auto;
+    font-size: 1.6rem;
   }
 }
 #bookAmtCarousel .slider-container {
@@ -1813,7 +1977,7 @@ input {
 #bookAmtCarousel .slider-container .slider .row {
   padding: 1rem 0;
 }
-@media (max-width: 834px) {
+@media (max-width: 1024px) {
   #bookAmtCarousel .slider-container .slider .resCard {
     width: 50%;
   }
@@ -1886,7 +2050,7 @@ input {
 }
 @media (max-width: 767px) {
   #preOrderBookingSection {
-    padding: 8rem 1rem 0;
+    padding: 4rem 1rem 0;
   }
 }
 #preOrderBookingSection .sectionTitleBox {
@@ -1896,6 +2060,11 @@ input {
   font-size: 3rem;
   margin-bottom: 1rem;
   text-align: center;
+}
+@media (max-width: 767px) {
+  #preOrderBookingSection .sectionTitleBox h2 {
+    font-size: 2.6rem;
+  }
 }
 #preOrderBookingSection .sectionTitleBox p {
   font-size: 1.8rem;
@@ -1907,6 +2076,11 @@ input {
 @media (max-width: 834px) {
   #preOrderBookingSection .sectionTitleBox p {
     width: 80%;
+  }
+}
+@media (max-width: 767px) {
+  #preOrderBookingSection .sectionTitleBox p {
+    font-size: 1.6rem;
   }
 }
 #preOrderBookingSection .halfLaptopWrap {
@@ -1926,6 +2100,11 @@ input {
 @media (max-width: 834px) {
   #preOrderBookingSection .halfLaptopWrap .bookInputWrap {
     width: 75%;
+  }
+}
+@media (max-width: 767px) {
+  #preOrderBookingSection .halfLaptopWrap .bookInputWrap {
+    width: 90%;
   }
 }
 #preOrderBookingSection .halfLaptopWrap .bookInputWrap form {
@@ -1968,6 +2147,7 @@ input {
 @media (max-width: 767px) {
   #preOrderBookingSection .halfLaptopWrap .bookInputWrap p {
     font-size: 1.4rem;
+    display: none;
   }
 }
 
@@ -2045,7 +2225,7 @@ input {
 }
 @media (max-width: 767px) {
   #footer .padTop {
-    padding-top: 2rem;
+    padding: 3rem 1rem 10rem;
     gap: 4rem;
   }
 }
@@ -2058,6 +2238,11 @@ input {
   font-size: 3rem;
   font-size: 2.4rem;
 }
+@media (max-width: 767px) {
+  #footer .subscriptionBox h6 {
+    font-size: 2rem;
+  }
+}
 #footer .subscriptionBox p {
   font-size: 1.8rem;
   line-height: 1.2;
@@ -2065,6 +2250,11 @@ input {
 @media (max-width: 1366px) {
   #footer .subscriptionBox p {
     font-size: 1.6rem;
+  }
+}
+@media (max-width: 767px) {
+  #footer .subscriptionBox p {
+    font-size: 1.4rem;
   }
 }
 #footer .subscriptionBox .subscriptionFormWrap {
@@ -2112,6 +2302,11 @@ input {
   font-size: 1.8rem;
 }
 @media (max-width: 767px) {
+  #footer .fooLinksWrap ul li a {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 767px) {
   #footer .cirtificateBox {
     text-align: center;
   }
@@ -2120,6 +2315,11 @@ input {
   font-family: "AeonikTRIAL-Regular";
   font-size: 2rem;
   color: #919191;
+}
+@media (max-width: 767px) {
+  #footer .cirtificateBox h6 {
+    font-size: 1.6rem;
+  }
 }
 @media (max-width: 767px) {
   #footer .cpyWriteText {
@@ -2131,6 +2331,11 @@ input {
   color: #1d1d1f;
   font-size: 1.8rem;
   margin-bottom: 0;
+}
+@media (max-width: 767px) {
+  #footer .cpyWriteText p {
+    font-size: 1.4rem;
+  }
 }
 #footer .copyWriteSection {
   align-items: center;
@@ -2175,8 +2380,24 @@ input {
   border-radius: 5rem;
   background: #2d4cc3;
 }
+@media (max-width: 767px) {
+  #footer .copyWriteSection .socialLinksWrap ul li a {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+@media (max-width: 767px) {
+  #footer .copyWriteSection .socialLinksWrap ul li a svg {
+    height: 1.6rem;
+  }
+}
 #footer .copyWriteSection .socialLinksWrap ul li a:hover {
   background-color: #758add;
+}
+@media (max-width: 767px) {
+  #footer .copyWriteSection .socialLinksWrap ul li a:hover svg {
+    height: 1.6rem;
+  }
 }
 #footer .copyWriteSection .socialLinksWrap ul li a:hover svg path {
   fill: #fff;
