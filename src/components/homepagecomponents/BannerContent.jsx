@@ -95,7 +95,7 @@ function BannerContent() {
             </div>
             <p>via touchpad fingerprint sensor9</p>
           </div>
-          <span className="svgLine">
+          <span className="svgLine rightArrow">
             <svg
               version="1.1"
               id="Layer_1"

@@ -45,10 +45,8 @@ function SolarisGrid() {
               </div>
               <span
                 className="svgLine"
-                data-aos="fade-right"
-                data-aos-offset="300"
-                data-aos-easing="ease-in-sine"
-                data-aos-duration="1000"
+                // data-aos="zoom-in"
+                // data-aos-duration="100"
               >
                 <svg
                   version="1.1"
@@ -64,7 +62,7 @@ function SolarisGrid() {
                   }}
                   xmlSpace="preserve"
                 >
-                  <polyline className="st0" points="55,137 200,8 700,0" />
+                  <polyline className="st0" points="55,137 200,8 700,0" id="line"/>
                 </svg>
               </span>
               <div className="btmBox boxed1">
@@ -79,10 +77,8 @@ function SolarisGrid() {
               </div>
               <span
                 className="svgLine"
-                data-aos="fade-left"
-                data-aos-offset="300"
-                data-aos-easing="ease-in-sine"
-                data-aos-duration="1000"
+                // data-aos="zoom-in"
+                // data-aos-duration="100"
               >
                 <svg
                   version="1.1"
@@ -113,10 +109,8 @@ function SolarisGrid() {
               </div>
               <span
                 className="svgLine"
-                data-aos="fade-left"
-                data-aos-offset="300"
-                data-aos-easing="ease-in-sine"
-                data-aos-duration="1000"
+                // data-aos="zoom-in"
+                // data-aos-duration="100"
               >
                 <svg
                   version="1.1"

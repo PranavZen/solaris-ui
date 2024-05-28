@@ -1,5 +1,5 @@
 import React from "react";
-import { butterflyImg, winProImg } from "..";
+import { butterflyImg} from "..";
 
 function WindowPro() {
   return (

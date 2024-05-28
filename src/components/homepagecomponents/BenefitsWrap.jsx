@@ -34,9 +34,9 @@ function BenefitsWrap() {
             </div>
             <span
               className="svgLine"
-              data-aos="fade-left"
-              data-aos-offset="500"
-              data-aos-duration="500"
+              // data-aos="fade-left"
+              // data-aos-offset="500"
+              // data-aos-duration="500"
             >
               <svg
                 version="1.1"

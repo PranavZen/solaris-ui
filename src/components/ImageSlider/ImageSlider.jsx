@@ -2,12 +2,10 @@ import React, { useState } from "react";
 
 const ImageSlider = ({ colorImages }) => {
   const [currentIndexByColor, setCurrentIndexByColor] = useState({
-    black: 0,
     gray: 0,
-    red: 0,
-    green: 0,
+    black: 0,
   });
-  const [selectedColor, setSelectedColor] = useState("black");
+  const [selectedColor, setSelectedColor] = useState("gray");
 
   const handleColorClick = (color) => {
     setSelectedColor(color);
