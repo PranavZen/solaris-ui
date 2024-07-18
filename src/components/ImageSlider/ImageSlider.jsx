@@ -23,15 +23,8 @@ const ImageSlider = ({ colorImages }) => {
   };
 
   return (
-    <div className="slider-container container">
-      <div className="main-image-container">
-        <img
-          src={getCurrentImages()[currentIndexByColor[selectedColor]]}
-          alt={`Main ${currentIndexByColor[selectedColor]}`}
-          className="main-image"
-        />
-
-        <div className="color-container">
+    <>
+    <div className="color-container">
           {Object.keys(colorImages).map((color) => (
             <div
               key={color}
@@ -40,6 +33,15 @@ const ImageSlider = ({ colorImages }) => {
             ></div>
           ))}
         </div>
+    <div className="slider-container container">
+      <div className="main-image-container">
+        <img
+          src={getCurrentImages()[currentIndexByColor[selectedColor]]}
+          alt={`Main ${currentIndexByColor[selectedColor]}`}
+          className="main-image"
+        />
+
+        
       </div>
       <div className="thumbnail-container">
         {getCurrentImages().map((image, index) => (
@@ -56,6 +58,7 @@ const ImageSlider = ({ colorImages }) => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 

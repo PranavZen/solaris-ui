@@ -1,0 +1,281 @@
+#staticBackdrop {
+  .modal-dialog {
+    .modal-content {
+      .btn-close {
+        opacity: 1;
+        width: 2rem;
+        height: 2rem;
+        background-size: 1.8rem;
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        z-index: 1;
+        &:focus {
+          outline: none;
+          box-shadow: none;
+        }
+      }
+      .modal-body {
+        padding: 0;
+        .productDetailsWrap {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          .leftBox {
+            background: #f7f7f7;
+            height: 100%;
+            padding-bottom: 3rem;
+            .slick-slider {
+              .slick-list {
+                .slick-track {
+                  .slick-slide {
+                    .mainImg {
+                      height: 40rem;
+                      width: 80%;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      margin: 0 auto;
+                      img {
+                        width: 100%;
+                        height: auto;
+                        object-fit: cover;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            .thumbnailWrap {
+              .slick-slider {
+                .slick-arrow {
+                  z-index: 2;
+                  &.slick-prev {
+                    left: 10%;
+                    width: 3.2rem;
+                    height: 3.2rem;
+                    &:before {
+                      font-size: 3.2rem;
+                      color: #0047ff;
+                    }
+                  }
+                  &.slick-next {
+                    right: 10%;
+                    width: 3.2rem;
+                    height: 3.2rem;
+                    &:before {
+                      font-size: 3.2rem;
+                      color: #0047ff;
+                    }
+                  }
+                }
+                .slick-list {
+                  .slick-track {
+                    display: flex;
+                    gap: 1rem;
+                    align-items: center;
+                    justify-content: center;
+                    .slick-slide {
+                      width: 115px !important;
+                      height: 8rem;
+                      overflow: hidden;
+                      &.slick-current {
+                        border: 0.1rem solid #1e2785;
+                        border-radius: 0.4rem;
+                        .thumbNailsBox {
+                          border: 0;
+                        }
+                      }
+                      .thumbNailsBox {
+                        width: 100%;
+                        overflow: hidden;
+                        height: 8rem;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+                        background: #ffffff;
+                        border-radius: 0.4rem;
+                        border: 0.1rem solid #ccc;
+                        img {
+                          width: 100%;
+                          height: 100%;
+                          object-fit: cover;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .rightBox {
+            height: 100%;
+            padding: 5rem 0rem 0px 1.5rem;
+            .multi-step-form {
+              .step-content {
+                .rightBoxxxx {
+                  .bckBtn {
+                    background-color: transparent;
+                    border: 0;
+                    padding: 0;
+                    margin-bottom: 4rem;
+                    font-size: 1.8rem;
+                    font-weight: 500;
+                    display: flex;
+                    gap: 0.5rem;
+                    align-items: center;
+                    line-height: 0;
+                    span {
+                      transform: rotate(180deg);
+                      display: block;
+                    }
+                  }
+                  form {
+                    .form-label {
+                      color: #313234;
+                      font-size: 1.6rem;
+                      margin-bottom: 0.5rem;
+                      font-weight: 600;
+                    }
+                    .form-control{
+                        height: 4rem;
+                        width: 96%;
+                        font-size: 1.6rem;
+                        border-color: #2d4cc3;
+                        &:focus{
+                            outline: none;
+                            box-shadow: none;
+                        }
+                    }
+                  }
+                }
+                .mainProductName {
+                  font-size: 2.6rem;
+                  margin-bottom: 0;
+                }
+                .mainProductDescription {
+                  font-size: 1.6rem;
+                  margin-bottom: 0.5rem;
+                  width: 80%;
+                }
+                .mainProductPricing {
+                  font-size: 3.2rem;
+                  font-weight: 700;
+                  color: #333;
+                  margin-bottom: 3rem;
+                  del {
+                    font-size: 2.4rem;
+                    color: #9d9d9d;
+                    font-weight: 400;
+                  }
+                }
+                .selectionBox {
+                  display: flex;
+                  flex-wrap: wrap;
+                  //   gap: 3rem;
+                }
+                .commBtnWrap {
+                  button {
+                    width: 96%;
+                  }
+                }
+                .selectCourseBox {
+                  margin-bottom: 2rem;
+                  h5 {
+                    color: #313234;
+                    font-size: 1.8rem;
+                    margin-bottom: 0.5rem;
+                  }
+                  .form-select {
+                    font-size: 1.6rem;
+                    width: 90%;
+                    border-color: #2d4cc3;
+                    height: 4rem;
+                    cursor: pointer;
+                    &:focus {
+                      outline: none;
+                      box-shadow: none;
+                      border-color: #c6c6c7;
+                    }
+                  }
+                }
+                .colorsWrap {
+                  h5 {
+                    color: #313234;
+                    font-size: 1.8rem;
+                    margin-bottom: 0.5rem;
+                  }
+                  .form-check {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    .form-check-label {
+                      font-size: 1.6rem;
+                      cursor: pointer;
+                    }
+                    .form-check-input {
+                      width: 2.5rem;
+                      height: 2.5rem;
+                      cursor: pointer;
+                      //   border-color: #2d4cc3;
+                      &:focus {
+                        border-color: transparent;
+                        outline: none;
+                        box-shadow: none;
+                      }
+                      &.black {
+                        &:checked {
+                          background-color: #161616;
+                          border-color: #161616;
+                        }
+                      }
+                      &.gray {
+                        &:checked {
+                          background-color: gray;
+                          border-color: gray;
+                        }
+                      }
+                    }
+                  }
+                  .colorWrapBox {
+                    display: flex;
+                    margin-bottom: 2rem;
+                  }
+                }
+                .quantityWrapBox {
+                  margin-bottom: 2rem;
+                  h5 {
+                    color: #313234;
+                    font-size: 1.8rem;
+                    margin-bottom: 0.8rem;
+                  }
+                  .input-group {
+                    width: 80%;
+                    .form-control {
+                      color: #313234;
+                      font-size: 1.6rem;
+                      border-color: #2d4cc3;
+                      &:focus {
+                        outline: none;
+                        box-shadow: none;
+                      }
+                    }
+                    .btn {
+                      width: 3.5rem;
+                      height: 4rem;
+                      font-size: 2rem;
+                      line-height: 0;
+                      background-color: #2d4cc3;
+                      color: #fff;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

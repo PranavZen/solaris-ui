@@ -342,27 +342,27 @@ input {
 #bannerSection .centerBoxWrap .priceTag .priceTagImg {
   position: absolute;
   top: -14%;
-  left: 30%;
+  left: 27%;
 }
 @media (max-width: 1366px) {
   #bannerSection .centerBoxWrap .priceTag .priceTagImg {
-    left: 23%;
+    left: 24%;
   }
 }
 @media (max-width: 1024px) {
   #bannerSection .centerBoxWrap .priceTag .priceTagImg {
-    left: 23%;
+    left: 19%;
   }
 }
 @media (max-width: 834px) {
   #bannerSection .centerBoxWrap .priceTag .priceTagImg {
-    left: 8%;
+    left: 9%;
   }
 }
 #bannerSection .centerBoxWrap .priceTag .priceAmt {
   position: absolute;
   top: -7.5%;
-  left: 32%;
+  left: 29%;
   transform: rotate(25deg);
   font-size: 1.6rem;
   font-family: "AeonikTRIAL-Bold";
@@ -370,23 +370,24 @@ input {
 }
 @media (max-width: 1366px) {
   #bannerSection .centerBoxWrap .priceTag .priceAmt {
-    left: 25%;
+    left: 26.5%;
   }
 }
 @media (max-width: 1024px) {
   #bannerSection .centerBoxWrap .priceTag .priceAmt {
-    left: 25.5%;
+    left: 21.5%;
   }
 }
 @media (max-width: 834px) {
   #bannerSection .centerBoxWrap .priceTag .priceAmt {
-    left: 12%;
+    left: 13%;
   }
 }
 #bannerSection .centerBoxWrap .mainLaptop {
   position: relative;
 }
 #bannerSection .centerBoxWrap .mainLaptop .overlapText {
+  display: none;
   position: absolute;
   top: 50%;
   left: 80%;
@@ -398,7 +399,7 @@ input {
 }
 @media (max-width: 834px) {
   #bannerSection .centerBoxWrap .mainLaptop .overlapText {
-    top: 45%;
+    top: 50%;
     left: 50%;
     width: -moz-max-content;
     width: max-content;
@@ -427,6 +428,11 @@ input {
     top: 40px;
   }
 }
+@media (max-width: 834px) {
+  #bannerSection .centerBoxWrap .absBox.leftbox {
+    display: none;
+  }
+}
 #bannerSection .centerBoxWrap .absBox.rightbox {
   left: 0;
   bottom: 40%;
@@ -434,6 +440,11 @@ input {
 @media (max-width: 1366px) {
   #bannerSection .centerBoxWrap .absBox.rightbox {
     bottom: 52%;
+  }
+}
+@media (max-width: 834px) {
+  #bannerSection .centerBoxWrap .absBox.rightbox {
+    display: none;
   }
 }
 #bannerSection .centerBoxWrap .absBox .boxTitle {
@@ -471,7 +482,7 @@ input {
 @media (max-width: 1366px) {
   .svgLine.leftArrow {
     top: 15%;
-    left: -1rem;
+    left: 1rem;
   }
 }
 @media (max-width: 1366px) {
@@ -503,7 +514,7 @@ input {
   }
 }
 #clients .client-logo-listing {
-  background-color: #afa9a9;
+  background-color: #f1f1f1;
   height: 100%;
   width: 100%;
   overflow: hidden;
@@ -583,6 +594,9 @@ input {
 #productFeature {
   padding: 10rem 0;
 }
+#productFeature .col-lg-6 {
+  position: relative;
+}
 @media (max-width: 767px) {
   #productFeature {
     padding: 4rem 0;
@@ -653,42 +667,6 @@ input {
   -o-object-fit: cover;
      object-fit: cover;
 }
-#productFeature .slider-container .main-image-container .color-container {
-  position: absolute;
-  right: -7.5rem;
-  top: 0;
-  display: flex;
-  row-gap: 0.5rem;
-  width: 15%;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  -moz-column-gap: 1rem;
-       column-gap: 1rem;
-}
-@media (max-width: 767px) {
-  #productFeature .slider-container .main-image-container .color-container {
-    right: 10px;
-    top: -35px;
-    width: 40%;
-  }
-}
-#productFeature .slider-container .main-image-container .color-container .colorBox {
-  height: 2rem;
-  width: 2rem;
-  cursor: pointer;
-}
-#productFeature .slider-container .main-image-container .color-container .color-black {
-  background-color: #2f2f2f;
-}
-#productFeature .slider-container .main-image-container .color-container .color-gray {
-  background-color: rgb(148, 148, 148);
-}
-#productFeature .slider-container .main-image-container .color-container .color-red {
-  background-color: rgb(255, 31, 31);
-}
-#productFeature .slider-container .main-image-container .color-container .color-green {
-  background-color: rgb(136, 255, 31);
-}
 #productFeature .slider-container .thumbnail-container {
   display: flex;
   justify-content: center;
@@ -723,6 +701,54 @@ input {
 }
 #productFeature .slider-container .thumbnail-container .thumbnail.active ~ .main-image {
   transform: scale(0.8);
+}
+
+.color-container {
+  position: absolute;
+  right: -30px;
+  top: 0;
+  display: flex;
+  row-gap: 0.5rem;
+  width: 15%;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+@media (max-width: 1366px) {
+  .color-container {
+    right: -6.5rem;
+  }
+}
+@media (max-width: 1024px) {
+  .color-container {
+    right: -1.5rem;
+  }
+}
+@media (max-width: 767px) {
+  .color-container {
+    right: 15px;
+    top: -35px;
+    width: 40%;
+    justify-content: flex-end;
+  }
+}
+.color-container .colorBox {
+  height: 2rem;
+  width: 2rem;
+  cursor: pointer;
+}
+.color-container .color-black {
+  background-color: #2f2f2f;
+}
+.color-container .color-gray {
+  background-color: rgb(148, 148, 148);
+}
+.color-container .color-red {
+  background-color: rgb(255, 31, 31);
+}
+.color-container .color-green {
+  background-color: rgb(136, 255, 31);
 }
 
 #solarisGridSection {
@@ -1212,9 +1238,17 @@ input {
   top: 15%;
   left: -15%;
 }
+@media (max-width: 1366px) {
+  #featureSliderSection .div5 .midImagWrap {
+    top: 28%;
+    left: -10%;
+    width: 54rem;
+  }
+}
 #featureSliderSection .div5 .midImagWrap img {
   width: 100%;
   height: auto;
+  transform: scale(0.89);
 }
 
 #windowProSection {

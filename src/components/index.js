@@ -19,13 +19,10 @@ export { default as fooLogo } from "../assets/images/foologo.png";
 export { default as certificates } from "../assets/images/cirtificates.png";
 export { default as butterflyImg } from "../assets/images/butterflyImg.png";
 
-export { default as grayImg1 } from "../assets/images/1.png";
-export { default as grayImg2 } from "../assets/images/2.png";
-export { default as grayImg3 } from "../assets/images/3.png";
-export { default as grayImg4 } from "../assets/images/4.png";
-export { default as grayImg5 } from "../assets/images/5.png";
+// export { default as grayImg1 } from "../assets/images/1.png";
+// export { default as grayImg2 } from "../assets/images/2.png";
+// export { default as grayImg3 } from "../assets/images/3.png";
+// export { default as grayImg4 } from "../assets/images/4.png";
+// export { default as grayImg5 } from "../assets/images/5.png";
 // export { default as grayImg6 } from "../assets/images/6.png";
 // export { default as grayImg7 } from "../assets/images/7.png";
-export { default as grayImg8 } from "../assets/images/8.png";
-export { default as grayImg9 } from "../assets/images/9.png";
-export { default as grayImg10 } from "../assets/images/13.png";

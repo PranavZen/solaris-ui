@@ -10,6 +10,7 @@ import PurePerformance from "../components/homepagecomponents/PurePerformance";
 import CustomCaraouselWrap from "../components/customecarousel/CustomCaraouselWrap";
 import cardData from "../components/customecarousel/cardsslide/card";
 import PreOrderSection from "../components/homepagecomponents/PreOrderSection";
+import Modal from "../components/modal/Modal";
 
 function HomePage() {
   return (
@@ -45,6 +46,7 @@ function HomePage() {
       <section id="preOrderBookingSection">
         <PreOrderSection/>
       </section>
+      <Modal/>
     </>
   );
 }
