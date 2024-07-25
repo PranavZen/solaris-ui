@@ -17,6 +17,39 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
 }
+html::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+html::-webkit-scrollbar-thumb {
+  background: #2d4cc3;
+  border-radius: 16px;
+  box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+}
+html::-webkit-scrollbar-track {
+  background: linear-gradient(90deg, #87c9ff, #87c9ff 1px, #87c9ff 0, #87c9ff);
+  box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+}
+html::-webkit-scrollbar-corner {
+  background: #87c9ff;
+}
+
+body::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+body::-webkit-scrollbar-thumb {
+  background: #2d4cc3;
+  border-radius: 16px;
+  box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+}
+body::-webkit-scrollbar-track {
+  background: linear-gradient(90deg, #87c9ff, #87c9ff 1px, #87c9ff 0, #87c9ff);
+  box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+}
+body::-webkit-scrollbar-corner {
+  background: #87c9ff;
+}
 
 ul li {
   list-style: none;

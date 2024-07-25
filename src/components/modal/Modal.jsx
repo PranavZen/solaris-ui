@@ -7,8 +7,8 @@ function Modal() {
     name: "Windows 11 Pro",
     description:
       "Set your imagination free with the powerful Solaris book 14X OLED! Whether it’s for creative work or gaming fun.",
-    price: 99.99,
-    disPrice: 100,
+    price: `25,700`,
+    disPrice: `35,500`,
     colors: ["Black", "Gray"],
     courses: ["Course 1", "Course 2", "Course 3"],
     // images: [

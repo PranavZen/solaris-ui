@@ -1,11 +1,35 @@
+#staticBackdrop::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+#staticBackdrop::-webkit-scrollbar-thumb {
+  background: #2d4cc3;
+  border-radius: 16px;
+  box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+}
+#staticBackdrop::-webkit-scrollbar-track {
+  background: linear-gradient(90deg, #87c9ff, #87c9ff 1px, #87c9ff 0, #87c9ff);
+  box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+}
+#staticBackdrop::-webkit-scrollbar-corner {
+  background: #87c9ff;
+}
+@media (min-width: 576px) {
+  #staticBackdrop .modal-dialog {
+    max-width: 1080px;
+  }
+}
+#staticBackdrop .modal-dialog .modal-content {
+  max-height: none;
+}
 #staticBackdrop .modal-dialog .modal-content .btn-close {
   opacity: 1;
   width: 2rem;
   height: 2rem;
   background-size: 1.8rem;
   position: absolute;
-  right: 1rem;
-  top: 1rem;
+  right: 3rem;
+  top: 2rem;
   z-index: 1;
 }
 #staticBackdrop .modal-dialog .modal-content .btn-close:focus {
@@ -15,90 +39,190 @@
 #staticBackdrop .modal-dialog .modal-content .modal-body {
   padding: 0;
 }
+#staticBackdrop .modal-dialog .modal-content .modal-body::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+#staticBackdrop .modal-dialog .modal-content .modal-body::-webkit-scrollbar-thumb {
+  background: #2d4cc3;
+  border-radius: 16px;
+  box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+}
+#staticBackdrop .modal-dialog .modal-content .modal-body::-webkit-scrollbar-track {
+  background: linear-gradient(90deg, #87c9ff, #87c9ff 1px, #87c9ff 0, #87c9ff);
+  box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+}
+#staticBackdrop .modal-dialog .modal-content .modal-body::-webkit-scrollbar-corner {
+  background: #87c9ff;
+}
 #staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  height: 66rem;
+  overflow: auto;
+  position: relative;
+}
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap::-webkit-scrollbar-thumb {
+  background: #2d4cc3;
+  border-radius: 16px;
+  box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+}
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap::-webkit-scrollbar-track {
+  background: linear-gradient(90deg, #87c9ff, #87c9ff 1px, #87c9ff 0, #87c9ff);
+  box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+}
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap::-webkit-scrollbar-corner {
+  background: #87c9ff;
 }
 #staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox {
   background: #f7f7f7;
-  height: 100%;
-  padding-bottom: 3rem;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .slick-slider .slick-list .slick-track .slick-slide .mainImg {
-  height: 40rem;
-  width: 80%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .slick-slider .slick-list .slick-track .slick-slide .mainImg img {
-  width: 100%;
+  padding: 3rem 3rem 0rem 1.5rem;
+  position: sticky;
+  left: 0;
+  top: 0;
   height: auto;
+}
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .slider-container .main-image-container {
+  position: relative;
+  width: 50rem;
+  height: 30rem;
+  text-align: center;
+}
+@media (max-width: 1024px) {
+  #staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .slider-container .main-image-container {
+    width: 35rem;
+  }
+}
+@media (max-width: 767px) {
+  #staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .slider-container .main-image-container {
+    width: 100%;
+  }
+}
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .slider-container .main-image-container .main-image {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease-in-out;
   -o-object-fit: cover;
      object-fit: cover;
 }
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .thumbnailWrap .slick-slider .slick-arrow {
-  z-index: 2;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .thumbnailWrap .slick-slider .slick-arrow.slick-prev {
-  left: 10%;
-  width: 3.2rem;
-  height: 3.2rem;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .thumbnailWrap .slick-slider .slick-arrow.slick-prev:before {
-  font-size: 3.2rem;
-  color: #0047ff;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .thumbnailWrap .slick-slider .slick-arrow.slick-next {
-  right: 10%;
-  width: 3.2rem;
-  height: 3.2rem;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .thumbnailWrap .slick-slider .slick-arrow.slick-next:before {
-  font-size: 3.2rem;
-  color: #0047ff;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .thumbnailWrap .slick-slider .slick-list .slick-track {
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .slider-container .thumbnail-container {
   display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+  width: 50rem;
+  padding: 1rem;
+  border: 0.1rem solid #dddddd;
+  border-radius: 0.3rem;
+}
+@media (max-width: 767px) {
+  #staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .slider-container .thumbnail-container {
+    width: 100%;
+  }
+}
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .slider-container .thumbnail-container .thumbNailBox {
+  width: 8rem;
+  height: 8rem;
+  margin: 0 0.5rem;
+  cursor: pointer;
+}
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .slider-container .thumbnail-container .thumbnail {
+  transition: opacity 0.3s;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .slider-container .thumbnail-container .thumbnail.active {
+  opacity: 0.5;
+}
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .slider-container .thumbnail-container .thumbnail.active ~ .main-image {
+  transform: scale(0.8);
+}
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .color-container {
+  display: none;
+}
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .slider-container .main-image-container {
+  height: 50rem;
+}
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .subWrap {
+  background: #2d4cc3;
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .subWrap h5 {
+  color: #fff;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .subWrap .mainProductDescription {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .subWrap .subCourdersWrap {
+  display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   align-items: center;
-  justify-content: center;
 }
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .thumbnailWrap .slick-slider .slick-list .slick-track .slick-slide {
-  width: 115px !important;
-  height: 8rem;
-  overflow: hidden;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .thumbnailWrap .slick-slider .slick-list .slick-track .slick-slide.slick-current {
-  border: 0.1rem solid #1e2785;
-  border-radius: 0.4rem;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .thumbnailWrap .slick-slider .slick-list .slick-track .slick-slide.slick-current .thumbNailsBox {
-  border: 0;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .thumbnailWrap .slick-slider .slick-list .slick-track .slick-slide .thumbNailsBox {
-  width: 100%;
-  overflow: hidden;
-  height: 8rem;
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .subWrap .subCourdersWrap .coursesDetailsWrap {
+  width: 15rem;
+  height: 19rem;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  cursor: pointer;
-  background: #ffffff;
-  border-radius: 0.4rem;
-  border: 0.1rem solid #ccc;
 }
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .thumbnailWrap .slick-slider .slick-list .slick-track .slick-slide .thumbNailsBox img {
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .subWrap .subCourdersWrap .coursesDetailsWrap .courseImageWrap {
+  width: 8rem;
+  height: auto;
+}
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .subWrap .subCourdersWrap .coursesDetailsWrap .courseImageWrap img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .subWrap .subCourdersWrap .coursesDetailsWrap .courseDetails {
+  margin-top: 1rem;
+  text-align: center;
+}
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .subWrap .subCourdersWrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .subWrap .subCourdersWrap .form-check {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-left: 0;
+}
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .subWrap .subCourdersWrap .form-check i {
+  font-size: 2.4rem;
+}
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .subWrap .subCourdersWrap .form-check .form-check-label {
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .subWrap .form-check .form-check-label {
+  font-size: 1.6rem;
+  color: #fff;
 }
 #staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox {
   height: 100%;
-  padding: 5rem 0rem 0px 1.5rem;
+  padding: 5rem 3rem 0rem 1.5rem;
 }
 #staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .rightBoxxxx .bckBtn {
   background-color: transparent;
@@ -122,30 +246,34 @@
   margin-bottom: 0.5rem;
   font-weight: 600;
 }
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .rightBoxxxx form .form-control {
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .rightBoxxxx form .form-control,
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .rightBoxxxx form .form-select {
   height: 4rem;
   width: 96%;
   font-size: 1.6rem;
   border-color: #2d4cc3;
 }
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .rightBoxxxx form .form-control:focus {
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .rightBoxxxx form .form-control:focus,
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .rightBoxxxx form .form-select:focus {
   outline: none;
   box-shadow: none;
 }
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .rightBoxxxx form .form-select {
+  cursor: pointer;
+}
 #staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .mainProductName {
   font-size: 2.6rem;
-  margin-bottom: 0;
+  margin-bottom: 1rem;
 }
 #staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .mainProductDescription {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   margin-bottom: 0.5rem;
-  width: 80%;
 }
 #staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .mainProductPricing {
-  font-size: 3.2rem;
+  font-size: 3.8rem;
   font-weight: 700;
   color: #333;
-  margin-bottom: 3rem;
+  margin: 1rem 0 2rem;
 }
 #staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .mainProductPricing del {
   font-size: 2.4rem;
@@ -156,8 +284,40 @@
   display: flex;
   flex-wrap: wrap;
 }
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .subWrap h5 {
+  color: #313234;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .subWrap h5 span {
+  color: red;
+}
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .subWrap .subCourdersWrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .subWrap .subCourdersWrap .form-check {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-left: 0;
+}
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .subWrap .subCourdersWrap .form-check i {
+  font-size: 2.4rem;
+}
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .subWrap .subCourdersWrap .form-check .form-check-label {
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .commBtnWrap {
+  width: 100%;
+  position: sticky;
+  bottom: 1%;
+  left: 0;
+}
 #staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .commBtnWrap button {
-  width: 96%;
+  width: 100%;
 }
 #staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .selectCourseBox {
   margin-bottom: 2rem;
@@ -224,7 +384,7 @@
   margin-bottom: 0.8rem;
 }
 #staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .quantityWrapBox .input-group {
-  width: 80%;
+  width: 70%;
 }
 #staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .quantityWrapBox .input-group .form-control {
   color: #313234;
