@@ -16,7 +16,7 @@ function BenefitsWrap() {
               Whether it’s for creative work or gaming fun
             </p>
           </div>
-          <CommonButton buttonText="Pre Order Now" />
+          <CommonButton buttonText="Pre Order Now" type="button"/>
         </div>
         <div className="col-md-12 col-lg-7 mobView">
           <div className="leftImgWrap">

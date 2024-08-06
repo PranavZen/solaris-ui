@@ -33,7 +33,7 @@ function Navbar() {
     <header id="header" className={scroll ? "header" : "header topClass"}>
       <div className="container">
         <nav className="navbar navbar-expand-lg">
-          <Link className="navbar-brand" to="#">
+          <Link className="navbar-brand" to="/">
             <img src={logo} alt="solaris logo" className="img-fluid" />
           </Link>
           <button
@@ -53,27 +53,22 @@ function Navbar() {
             <span></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="#">
+                <Link className="nav-link active" aria-current="page" to="/">
                   Home
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="#">
-                  Product
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="#">
+                <Link className="nav-link" to="/about-us">
                   About
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="#">
-                  Contact Sales
-                </Link>
-              </li>
+              <li className="nav-item rightBorder">
+              <Link className="nav-link" aria-current="page" to="/support">
+                Support
+              </Link>
+            </li>
               {/* <li className="nav-item dropdown">
                 <Link
                   className="nav-link dropdown-toggle"
@@ -105,11 +100,7 @@ function Navbar() {
             </ul>
           </div>
           <ul className="navbar-nav me-auto mb-2 mb-lg-0 extraLinks">
-            <li className="nav-item rightBorder">
-              <Link className="nav-link" aria-current="page" to="#">
-                Support
-              </Link>
-            </li>
+           
             <li className="nav-item">
               <Link className="nav-link" to="#">
                 <svg
@@ -127,7 +118,7 @@ function Navbar() {
               </Link>
             </li>
             <li className="nav-item">
-              <CommonButton buttonText="Pre Order Now" />
+              <CommonButton buttonText="Pre Order Now" type="button"/>
             </li>
           </ul>
         </nav>

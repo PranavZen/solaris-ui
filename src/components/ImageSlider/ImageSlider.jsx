@@ -23,16 +23,6 @@ const ImageSlider = ({ colorImages }) => {
   };
 
   return (
-    <>
-    <div className="color-container">
-          {Object.keys(colorImages).map((color) => (
-            <div
-              key={color}
-              className={`color-${color} colorBox`}
-              onClick={() => handleColorClick(color)}
-            ></div>
-          ))}
-        </div>
     <div className="slider-container container">
       <div className="main-image-container">
         <img
@@ -41,7 +31,15 @@ const ImageSlider = ({ colorImages }) => {
           className="main-image"
         />
 
-        
+        <div className="color-container">
+          {Object.keys(colorImages).map((color) => (
+            <div
+              key={color}
+              className={`color-${color} colorBox`}
+              onClick={() => handleColorClick(color)}
+            ></div>
+          ))}
+        </div>
       </div>
       <div className="thumbnail-container">
         {getCurrentImages().map((image, index) => (
@@ -58,7 +56,6 @@ const ImageSlider = ({ colorImages }) => {
         ))}
       </div>
     </div>
-    </>
   );
 };
 

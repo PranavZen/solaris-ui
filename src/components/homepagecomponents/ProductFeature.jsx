@@ -29,7 +29,7 @@ function ProductFeature() {
               Core™ H-series processor and NVIDIA® GeForce RTX™ 3050 Laptop GPU1
               give you all the multitasking power you need.
             </p>
-            <CommonButton buttonText="Pre Order Now" />
+            <CommonButton buttonText="Pre Order Now" type="button"/>
           </div>
         </div>
         <div className="col-md-12 col-lg-6">

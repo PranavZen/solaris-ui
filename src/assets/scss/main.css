@@ -157,10 +157,6 @@ input {
   border-radius: 5rem;
   padding: 0 0rem 0px 1rem;
 }
-#header .navbar .navbar-brand {
-  border-right: 0.1rem solid #000;
-  padding-right: 1rem;
-}
 @media (max-width: 767px) {
   #header .navbar .navbar-brand {
     border-right: 0;
@@ -261,6 +257,7 @@ input {
   align-items: center;
   -moz-column-gap: 2rem;
        column-gap: 2rem;
+  margin-right: 1rem;
 }
 #header .navbar .navbar-nav {
   align-items: center;
@@ -274,6 +271,12 @@ input {
 #header .navbar .nav-item.rightBorder {
   border-right: 0.1rem solid #000;
   padding-right: 1rem;
+}
+@media (max-width: 834px) {
+  #header .navbar .nav-item.rightBorder {
+    border: 0;
+    padding: 0;
+  }
 }
 #header .navbar .nav-item .commBtnWrap button {
   margin-top: 0;
@@ -738,32 +741,21 @@ input {
 
 .color-container {
   position: absolute;
-  right: -30px;
+  right: -7.5rem;
   top: 0;
   display: flex;
   row-gap: 0.5rem;
   width: 15%;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   -moz-column-gap: 1rem;
        column-gap: 1rem;
 }
-@media (max-width: 1366px) {
-  .color-container {
-    right: -6.5rem;
-  }
-}
-@media (max-width: 1024px) {
-  .color-container {
-    right: -1.5rem;
-  }
-}
 @media (max-width: 767px) {
   .color-container {
-    right: 15px;
+    right: 10px;
     top: -35px;
     width: 40%;
-    justify-content: flex-end;
   }
 }
 .color-container .colorBox {

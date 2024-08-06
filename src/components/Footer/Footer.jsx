@@ -1,6 +1,7 @@
 import React from "react";
 import { certificates, fooLogo } from "..";
 import CommonButton from "../commonButton/CommonButton";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -9,13 +10,13 @@ function Footer() {
         <div className="row footerWrap">
           <div className="col-md-4">
             <div className="foologoWrap">
-              <a href="#">
+              <Link to="/">
                 <img src={fooLogo} alt="Solaris Logo" />
-              </a>
+              </Link>
             </div>
           </div>
           <div className="col-lg-3 col-md-5">
-            <CommonButton buttonText="Pre Order Now" />
+            <CommonButton buttonText="Pre Order Now" type="button"/>
           </div>
         </div>
         <div className="row padTop">
@@ -69,20 +70,16 @@ function Footer() {
             <div className="fooLinksWrap">
               <ul>
                 <li>
-                  <a href="">Home</a>
-                </li>
-
-                <li>
-                  <a href="">Contact Sales</a>
+                  <Link to="/">Home</Link>
                 </li>
                 <li>
-                  <a href="">Support</a>
+                  <Link to="/support">Support</Link>
                 </li>
                 <li>
-                  <a href="">Privacy & Policy</a>
+                  <Link to="/privacy-policy">Privacy & Policy</Link>
                 </li>
                 <li>
-                  <a href="">Terms & Condition</a>
+                  <Link to="/terms-and-conditions">Terms & Condition</Link>
                 </li>
               </ul>
             </div>
@@ -93,7 +90,11 @@ function Footer() {
             <div className="cirtificateBox">
               <h6>Certified by</h6>
               <span>
-                <img src={certificates} alt="" className="img-fluid" />
+                <img
+                  src={certificates}
+                  alt="cirtificate"
+                  className="img-fluid"
+                />
               </span>
             </div>
           </div>
@@ -101,7 +102,7 @@ function Footer() {
             <div className="socialLinksWrap">
               <ul>
                 <li>
-                  <a href="">
+                  <Link to="">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="19"
@@ -116,10 +117,10 @@ function Footer() {
                         fill="white"
                       />
                     </svg>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="">
+                  <Link to="">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="23"
@@ -132,10 +133,10 @@ function Footer() {
                         fill="white"
                       />
                     </svg>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="">
+                  <Link to="">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="13"
@@ -148,7 +149,7 @@ function Footer() {
                         fill="white"
                       />
                     </svg>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

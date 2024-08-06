@@ -69,31 +69,62 @@
   font-size: 1.8rem;
 }
 
-@mixin cousrsesImagesWrap {
-  .subCourdersWrap {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    align-items: center;
-    .coursesDetailsWrap {
-      width: 15rem;
-      height: 19rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      .courseImageWrap {
-        width: 8rem;
-        height: auto;
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-      }
-      .courseDetails {
-        margin-top: 1rem;
-        text-align: center;
-      }
+@mixin scrollBar {
+  &::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #2d4cc3;
+    border-radius: 16px;
+    box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25),
+      inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+  }
+  &::-webkit-scrollbar-track {
+    background: linear-gradient(
+      90deg,
+      #87c9ff,
+      #87c9ff 1px,
+      #87c9ff 0,
+      #87c9ff
+    );
+    box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25),
+      inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+  }
+  &::-webkit-scrollbar-corner {
+    background: #87c9ff;
+  }
+}
+
+@mixin textGradient {
+  .mainText {
+    font-size: 9.5rem;
+    // font-family: "AeonikTRIAL-Bold";
+    text-align: center;
+    @include d-1366-desktop {
+      font-size: 5.5rem;
+    }
+    @include x-767-tablet {
+      font-size: 3.5rem;
+    }
+    .gradientText {
+      position: relative;
+      width: -webkit-max-content;
+      width: max-content;
+      background: #6d24ba;
+      background: linear-gradient(
+        to right,
+        #6d24ba 0%,
+        #96e0f3 25%,
+        #a2b8f7 32%,
+        #a65ff8 49%,
+        #5949e0 77%,
+        #313ed3 100%
+      );
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-family: "AeonikTRIAL-Bold";
     }
   }
 }
@@ -155,66 +186,5 @@
         }
       }
     }
-  }
-}
-
-@mixin checkedBox{
-  .subCourdersWrap {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    .form-check {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding-left: 0;
-      // .form-check-input {
-      //   width: 2rem;
-      //   height: 2rem;
-      //   cursor: pointer;
-      //   border-color: #2d4cc3;
-      //   &:checked {
-      //     background-color: #2d4cc3;
-      //   }
-      //   &:focus {
-      //     outline: none;
-      //     box-shadow: none;
-      //   }
-      // }
-      i{
-        font-size: 2.4rem;
-      }
-      .form-check-label {
-        font-size: 1.6rem;
-        cursor: pointer;
-      }
-    }
-  }
-}
-
-@mixin scrollBar{
-  &::-webkit-scrollbar {
-    width: 16px;
-    height: 16px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: #2d4cc3;
-    border-radius: 16px;
-    box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25),
-      inset -2px -2px 2px rgba(0, 0, 0, 0.25);
-  }
-  &::-webkit-scrollbar-track {
-    background: linear-gradient(
-      90deg,
-      #87c9ff,
-      #87c9ff 1px,
-      #87c9ff 0,
-      #87c9ff
-    );
-    box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25),
-      inset -2px -2px 2px rgba(0, 0, 0, 0.25);
-  }
-  &::-webkit-scrollbar-corner {
-    background: #87c9ff;
   }
 }

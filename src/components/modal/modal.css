@@ -1,405 +1,387 @@
-#staticBackdrop::-webkit-scrollbar {
+.modal-content .btn-close {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  font-size: 1.6rem;
+  color: #000;
+  opacity: 1;
+}
+
+.product-details {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  padding-top: 2rem;
+}
+.product-details .padLeft {
+  padding: 0 1rem;
+  max-height: 55rem;
+  overflow: auto;
+}
+.product-details .padLeft::-webkit-scrollbar {
   width: 16px;
   height: 16px;
 }
-#staticBackdrop::-webkit-scrollbar-thumb {
+.product-details .padLeft::-webkit-scrollbar-thumb {
   background: #2d4cc3;
   border-radius: 16px;
   box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
 }
-#staticBackdrop::-webkit-scrollbar-track {
+.product-details .padLeft::-webkit-scrollbar-track {
   background: linear-gradient(90deg, #87c9ff, #87c9ff 1px, #87c9ff 0, #87c9ff);
   box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
 }
-#staticBackdrop::-webkit-scrollbar-corner {
+.product-details .padLeft::-webkit-scrollbar-corner {
   background: #87c9ff;
 }
-@media (min-width: 576px) {
-  #staticBackdrop .modal-dialog {
-    max-width: 1080px;
-  }
+.product-details .product-image-slider {
+  padding-bottom: 13rem;
 }
-#staticBackdrop .modal-dialog .modal-content {
-  max-height: none;
+.product-details .product-image-slider .main-image {
+  max-width: calc(100% - 2rem);
+  height: 43.2rem;
+  border: 0.2rem solid #919191;
+  border-radius: 1rem;
+  overflow: hidden;
 }
-#staticBackdrop .modal-dialog .modal-content .btn-close {
-  opacity: 1;
-  width: 2rem;
-  height: 2rem;
-  background-size: 1.8rem;
-  position: absolute;
-  right: 3rem;
-  top: 2rem;
-  z-index: 1;
+.product-details .product-image-slider .main-image img {
+  width: 100%;
+  height: 100%;
 }
-#staticBackdrop .modal-dialog .modal-content .btn-close:focus {
+.product-details .product-image-slider .thumbs-container {
+  margin-top: 2rem;
+}
+.product-details .product-image-slider .thumbs-container .swiper .swiper-wrapper .swiper-slide {
+  width: 8.3rem;
+  height: 7.6rem;
+}
+.product-details .product-image-slider .thumbs-container .swiper .swiper-wrapper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+}
+.product-details .product-info {
+  margin-bottom: 2rem;
+}
+.product-details .product-info h1 {
+  font-size: 2.6rem;
+}
+.product-details .product-info p {
+  font-size: 1.6rem;
+}
+.product-details .bundle-selector {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+.product-details .bundle-selector label {
+  font-size: 1.8rem;
+  font-family: "AeonikTRIAL-Bold";
+  color: #1d1d1f;
+}
+.product-details .bundle-selector select {
+  height: 3.5rem;
+  width: 60%;
+  border: 0.2rem solid #919191;
+  border-radius: 5rem;
+  padding: 0 1.5rem;
+  font-size: 1.4rem;
+  color: #1d1d1f;
+  font-family: "AeonikTRIAL-Regular";
+  background-image: linear-gradient(45deg, transparent 50%, #1d1d1f 60%), linear-gradient(135deg, #1d1d1f 40%, transparent 50%) !important;
+  background-position: calc(100% - 22px) 14px, calc(100% - 15px) 14px, 100% 0;
+  background-size: 7px 7px, 7px 7px;
+  background-repeat: no-repeat;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+.product-details .bundle-selector select:focus {
   outline: none;
   box-shadow: none;
 }
-#staticBackdrop .modal-dialog .modal-content .modal-body {
-  padding: 0;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body::-webkit-scrollbar {
-  width: 16px;
-  height: 16px;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body::-webkit-scrollbar-thumb {
-  background: #2d4cc3;
-  border-radius: 16px;
-  box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body::-webkit-scrollbar-track {
-  background: linear-gradient(90deg, #87c9ff, #87c9ff 1px, #87c9ff 0, #87c9ff);
-  box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body::-webkit-scrollbar-corner {
-  background: #87c9ff;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  height: 66rem;
-  overflow: auto;
-  position: relative;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap::-webkit-scrollbar {
-  width: 16px;
-  height: 16px;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap::-webkit-scrollbar-thumb {
-  background: #2d4cc3;
-  border-radius: 16px;
-  box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap::-webkit-scrollbar-track {
-  background: linear-gradient(90deg, #87c9ff, #87c9ff 1px, #87c9ff 0, #87c9ff);
-  box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap::-webkit-scrollbar-corner {
-  background: #87c9ff;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox {
-  background: #f7f7f7;
-  padding: 3rem 3rem 0rem 1.5rem;
-  position: sticky;
-  left: 0;
-  top: 0;
-  height: auto;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .slider-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .slider-container .main-image-container {
-  position: relative;
-  width: 50rem;
-  height: 30rem;
-  text-align: center;
-}
-@media (max-width: 1024px) {
-  #staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .slider-container .main-image-container {
-    width: 35rem;
-  }
-}
-@media (max-width: 767px) {
-  #staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .slider-container .main-image-container {
-    width: 100%;
-  }
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .slider-container .main-image-container .main-image {
-  width: 100%;
-  height: 100%;
-  transition: transform 0.3s ease-in-out;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .slider-container .thumbnail-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
-  gap: 2rem;
-  flex-wrap: wrap;
-  width: 50rem;
-  padding: 1rem;
-  border: 0.1rem solid #dddddd;
-  border-radius: 0.3rem;
-}
-@media (max-width: 767px) {
-  #staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .slider-container .thumbnail-container {
-    width: 100%;
-  }
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .slider-container .thumbnail-container .thumbNailBox {
-  width: 8rem;
-  height: 8rem;
-  margin: 0 0.5rem;
-  cursor: pointer;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .slider-container .thumbnail-container .thumbnail {
-  transition: opacity 0.3s;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .slider-container .thumbnail-container .thumbnail.active {
-  opacity: 0.5;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .slider-container .thumbnail-container .thumbnail.active ~ .main-image {
-  transform: scale(0.8);
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .color-container {
-  display: none;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .slider-container .main-image-container {
-  height: 50rem;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .subWrap {
-  background: #2d4cc3;
-  padding: 2rem;
-  border-radius: 0.5rem;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .subWrap h5 {
-  color: #fff;
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .subWrap .mainProductDescription {
-  font-size: 1.6rem;
+.product-details .subcourses {
   margin-bottom: 2rem;
-  color: #fff;
 }
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .subWrap .subCourdersWrap {
+.product-details .subcourses ul {
+  padding-left: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  align-items: center;
+  -moz-column-gap: 2.4rem;
+       column-gap: 2.4rem;
+  row-gap: 1.5rem;
 }
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .subWrap .subCourdersWrap .coursesDetailsWrap {
-  width: 15rem;
-  height: 19rem;
+.product-details .subcourses ul li {
+  font-size: 1.6rem;
+  color: #5d5d5d;
+}
+.product-details .subcourses ul li::before {
+  content: url(../../assets/images/bookIcon.svg);
+  padding-right: 0.5rem;
+}
+.product-details .colorQtWraps {
   display: flex;
-  flex-direction: column;
+  gap: 4rem;
+}
+.product-details .colorQtWraps .color-selector .color-select {
+  font-size: 1.8rem;
+  font-family: "AeonikTRIAL-Bold";
+  color: #1d1d1f;
+}
+.product-details .colorQtWraps .color-selector .radioWrap {
+  display: flex;
   align-items: center;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .subWrap .subCourdersWrap .coursesDetailsWrap .courseImageWrap {
-  width: 8rem;
-  height: auto;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .subWrap .subCourdersWrap .coursesDetailsWrap .courseImageWrap img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .subWrap .subCourdersWrap .coursesDetailsWrap .courseDetails {
+  gap: 2rem;
   margin-top: 1rem;
-  text-align: center;
 }
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .subWrap .subCourdersWrap {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
+.product-details .colorQtWraps .color-selector .radioWrap input[type=radio]:checked::before {
+  content: "";
+  display: block;
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .subWrap .subCourdersWrap .form-check {
+.product-details .colorQtWraps .color-selector .radioWrap label {
+  font-size: 1.8rem;
+  font-family: "AeonikTRIAL-Regular";
+  color: #919191;
+  text-transform: capitalize;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding-left: 0;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .subWrap .subCourdersWrap .form-check i {
-  font-size: 2.4rem;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .subWrap .subCourdersWrap .form-check .form-check-label {
-  font-size: 1.6rem;
   cursor: pointer;
 }
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .leftBox .subWrap .form-check .form-check-label {
-  font-size: 1.6rem;
-  color: #fff;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox {
-  height: 100%;
-  padding: 5rem 3rem 0rem 1.5rem;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .rightBoxxxx .bckBtn {
-  background-color: transparent;
-  border: 0;
-  padding: 0;
-  margin-bottom: 4rem;
-  font-size: 1.8rem;
-  font-weight: 500;
+.product-details .colorQtWraps .qtSelectWrap {
   display: flex;
-  gap: 0.5rem;
+  flex-direction: column;
+}
+.product-details .colorQtWraps .qtSelectWrap label {
+  font-size: 1.8rem;
+  font-family: "AeonikTRIAL-Bold";
+  color: #1d1d1f;
+}
+.product-details .colorQtWraps .qtSelectWrap .qttBox {
+  height: 3.5rem;
+  width: 8rem;
+  border: 0.2rem solid #919191;
+  border-radius: 5rem;
+  padding: 0 1.5rem;
+  font-size: 1.8rem;
+  font-family: "AeonikTRIAL-Regular";
+  color: #1d1d1f;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
   align-items: center;
   line-height: 0;
 }
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .rightBoxxxx .bckBtn span {
-  transform: rotate(180deg);
-  display: block;
+.product-details .produtcMainPrices {
+  margin-top: 3rem;
 }
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .rightBoxxxx form .form-label {
-  color: #313234;
-  font-size: 1.6rem;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
+.product-details .produtcMainPrices h2 {
+  font-size: 4rem;
+  font-family: "AeonikTRIAL-Bold";
+  color: #2d4cc3;
+  margin-bottom: 0;
 }
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .rightBoxxxx form .form-control,
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .rightBoxxxx form .form-select {
-  height: 4rem;
-  width: 96%;
-  font-size: 1.6rem;
-  border-color: #2d4cc3;
+.product-details .produtcMainPrices h2 del {
+  font-size: 3.2rem;
+  font-family: "AeonikTRIAL-Regular";
+  color: #919191;
 }
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .rightBoxxxx form .form-control:focus,
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .rightBoxxxx form .form-select:focus {
-  outline: none;
-  box-shadow: none;
+.product-details .defaultBox {
+  margin-top: 3rem;
 }
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .rightBoxxxx form .form-select {
-  cursor: pointer;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .mainProductName {
-  font-size: 2.6rem;
-  margin-bottom: 1rem;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .mainProductDescription {
+.product-details .defaultBox label {
   font-size: 1.8rem;
-  margin-bottom: 0.5rem;
+  font-family: "AeonikTRIAL-Bold";
+  color: #1d1d1f;
 }
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .mainProductPricing {
-  font-size: 3.8rem;
-  font-weight: 700;
-  color: #333;
-  margin: 1rem 0 2rem;
+.product-details .defaultBox p {
+  font-size: 1.6rem;
 }
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .mainProductPricing del {
-  font-size: 2.4rem;
-  color: #9d9d9d;
-  font-weight: 400;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .selectionBox {
+.product-details .defaultBox ul {
+  padding-left: 0;
   display: flex;
   flex-wrap: wrap;
+  -moz-column-gap: 2.4rem;
+       column-gap: 2.4rem;
+  row-gap: 1.5rem;
 }
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .subWrap h5 {
-  color: #313234;
+.product-details .defaultBox ul li {
+  font-size: 1.6rem;
+  color: #5d5d5d;
+}
+.product-details .defaultBox ul li::before {
+  content: url(../../assets/images/bookIcon.svg);
+  padding-right: 0.5rem;
+}
+.product-details .order-summary {
+  background-color: #fff;
+  box-shadow: 0 0 1rem 0 rgba(188, 188, 188, 0.7411764706);
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  height: 9.3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5rem;
+}
+.product-details .order-summary .leftBoxWp {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.product-details .order-summary .leftBoxWp .finalProductImgWRap {
+  height: 7rem;
+  width: 7rem;
+  overflow: hidden;
+  padding: 0.5rem;
+}
+.product-details .order-summary .leftBoxWp .finalProductImgWRap img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.product-details .order-summary .leftBoxWp .nameColrWrap h2 {
   font-size: 1.8rem;
-  margin-bottom: 1rem;
 }
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .subWrap h5 span {
+.product-details .order-summary .leftBoxWp .nameColrWrap p {
+  font-size: 1.8rem;
+  font-family: "AeonikTRIAL-Regular";
+  color: #1d1d1f;
+  text-transform: capitalize;
+}
+.product-details .order-summary .leftBoxWp .nameColrWrap p span {
+  color: #919191;
+}
+.product-details .order-summary .midBoxWp h2 {
+  font-size: 1.8rem;
+}
+.product-details .order-summary .midBoxWp p {
+  font-size: 1.8rem;
+  font-family: "AeonikTRIAL-Regular";
+  color: #919191;
+  text-transform: capitalize;
+}
+.product-details .order-summary .rightBoxWp {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.product-details .order-summary .rightBoxWp .pricing {
+  font-size: 3rem;
+  font-family: "AeonikTRIAL-Bold";
+  color: #1d1d1f;
+  margin-bottom: 0;
+}
+.product-details .order-summary .rightBoxWp .commBtnWrap button {
+  margin-top: 0;
+  padding: 10px 5px 10px 15px;
+}
+
+.current-price {
+  font-weight: bold;
+  color: green;
+}
+
+.discounted-price {
+  text-decoration: line-through;
   color: red;
 }
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .subWrap .subCourdersWrap {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .subWrap .subCourdersWrap .form-check {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding-left: 0;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .subWrap .subCourdersWrap .form-check i {
-  font-size: 2.4rem;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .subWrap .subCourdersWrap .form-check .form-check-label {
-  font-size: 1.6rem;
+
+.order-summary button {
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  border: none;
   cursor: pointer;
 }
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .commBtnWrap {
-  width: 100%;
-  position: sticky;
-  bottom: 1%;
-  left: 0;
+
+.product-image-slider {
+  position: relative;
 }
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .commBtnWrap button {
-  width: 100%;
+
+.main-image {
+  position: relative;
 }
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .selectCourseBox {
-  margin-bottom: 2rem;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .selectCourseBox h5 {
-  color: #313234;
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .selectCourseBox .form-select {
-  font-size: 1.6rem;
-  width: 90%;
-  border-color: #2d4cc3;
-  height: 4rem;
-  cursor: pointer;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .selectCourseBox .form-select:focus {
-  outline: none;
-  box-shadow: none;
-  border-color: #c6c6c7;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .colorsWrap h5 {
-  color: #313234;
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .colorsWrap .form-check {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .colorsWrap .form-check .form-check-label {
-  font-size: 1.6rem;
-  cursor: pointer;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .colorsWrap .form-check .form-check-input {
-  width: 2.5rem;
-  height: 2.5rem;
-  cursor: pointer;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .colorsWrap .form-check .form-check-input:focus {
-  border-color: transparent;
-  outline: none;
-  box-shadow: none;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .colorsWrap .form-check .form-check-input.black:checked {
-  background-color: #161616;
-  border-color: #161616;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .colorsWrap .form-check .form-check-input.gray:checked {
-  background-color: gray;
-  border-color: gray;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .colorsWrap .colorWrapBox {
-  display: flex;
-  margin-bottom: 2rem;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .quantityWrapBox {
-  margin-bottom: 2rem;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .quantityWrapBox h5 {
-  color: #313234;
-  font-size: 1.8rem;
-  margin-bottom: 0.8rem;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .quantityWrapBox .input-group {
-  width: 70%;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .quantityWrapBox .input-group .form-control {
-  color: #313234;
-  font-size: 1.6rem;
-  border-color: #2d4cc3;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .quantityWrapBox .input-group .form-control:focus {
-  outline: none;
-  box-shadow: none;
-}
-#staticBackdrop .modal-dialog .modal-content .modal-body .productDetailsWrap .rightBox .multi-step-form .step-content .quantityWrapBox .input-group .btn {
-  width: 3.5rem;
-  height: 4rem;
-  font-size: 2rem;
-  line-height: 0;
+
+.prev-button,
+.next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   background-color: #2d4cc3;
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5rem;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+.prev-button i,
+.next-button i {
+  font-size: 1.8rem;
   color: #fff;
+}
+
+.prev-button {
+  left: 10px;
+}
+
+.next-button {
+  right: 10px;
+}
+
+.thumbs-container {
+  display: flex;
+  align-items: center;
+}
+
+.prev-thumb-button,
+.next-thumb-button {
+  background-color: #2d4cc3;
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5rem;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+.prev-thumb-button i,
+.next-thumb-button i {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.thumbs-swiper {
+  flex-grow: 1;
+}
+
+.thumbs-swiper .swiper-slide {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.thumbs-swiper .swiper-slide.active {
+  opacity: 1;
 }/*# sourceMappingURL=modal.css.map */

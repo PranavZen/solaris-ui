@@ -10,7 +10,6 @@ import PurePerformance from "../components/homepagecomponents/PurePerformance";
 import CustomCaraouselWrap from "../components/customecarousel/CustomCaraouselWrap";
 import cardData from "../components/customecarousel/cardsslide/card";
 import PreOrderSection from "../components/homepagecomponents/PreOrderSection";
-import Modal from "../components/modal/Modal";
 
 function HomePage() {
   return (
@@ -22,9 +21,9 @@ function HomePage() {
         <Clients />
       </section>
       <section id="bookAmtCarousel">
-        <CustomCaraouselWrap cards={cardData}/>
+        <CustomCaraouselWrap cards={cardData} />
       </section>
-      
+
       <section id="solarisGridSection">
         <SolarisGrid />
       </section>
@@ -44,9 +43,8 @@ function HomePage() {
         <ProductFeature />
       </section>
       <section id="preOrderBookingSection">
-        <PreOrderSection/>
+        <PreOrderSection />
       </section>
-      <Modal/>
     </>
   );
 }

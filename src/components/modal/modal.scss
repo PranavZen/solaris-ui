@@ -1,268 +1,387 @@
 @import "../../assets/scss/media";
 @import "../../assets/scss/mixin";
-#staticBackdrop {
-  @include scrollBar;
-  .modal-dialog {
-    // height: 70rem;
 
-    @include min-576-width {
-      max-width: 1080px;
-    }
-    .modal-content {
-      // height: 70rem;
-      max-height: none;
-      .btn-close {
-        opacity: 1;
-        width: 2rem;
-        height: 2rem;
-        background-size: 1.8rem;
-        position: absolute;
-        right: 3rem;
-        top: 2rem;
-        z-index: 1;
-        &:focus {
-          outline: none;
-          box-shadow: none;
-        }
+.modal-content {
+  .btn-close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.6rem;
+    color: #000;
+    opacity: 1;
+  }
+}
+
+.product-details {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  padding-top: 2rem;
+  .padLeft {
+    padding: 0 1rem;
+    max-height: 55rem;
+    overflow: auto;
+    @include scrollBar;
+  }
+  .product-image-slider {
+    padding-bottom: 13rem;
+    .main-image {
+      max-width: calc(100% - 2rem);
+      height: 43.2rem;
+      border: 0.2rem solid #919191;
+      border-radius: 1rem;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
       }
-      .modal-body {
-        padding: 0;
-        @include scrollBar;
-        .productDetailsWrap {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          height: 66rem;
-          overflow: auto;
-          @include scrollBar;
-          position: relative;
-          .leftBox {
-            background: #f7f7f7;
-            padding: 3rem 3rem 0rem 1.5rem;
-            position: sticky;
-            left: 0;
-            top: 0;
-            height: auto;
-            @include productSliderWrap;
-            .color-container {
-              display: none;
-            }
-            .slider-container {
-              .main-image-container {
-                height: 50rem;
-              }
-            }
-            .subWrap {
-              background: #2d4cc3;
-              padding: 2rem;
-              border-radius: 0.5rem;
-              h5 {
-                color: #fff;
-                font-size: 2.2rem;
-                margin-bottom: 1rem;
-                
-              }
-              .mainProductDescription {
-                font-size: 1.6rem;
-                margin-bottom: 2rem;
-                color: #fff;
-              }
-              @include cousrsesImagesWrap;
-              @include checkedBox;
-              .form-check {
-                .form-check-label {
-                  font-size: 1.6rem;
-                  color: #fff;
-                }
-              }
-            }
-          }
-          .rightBox {
-            height: 100%;
-            padding: 5rem 3rem 0rem 1.5rem;
-            .multi-step-form {
-              .step-content {
-                .rightBoxxxx {
-                  .bckBtn {
-                    background-color: transparent;
-                    border: 0;
-                    padding: 0;
-                    margin-bottom: 4rem;
-                    font-size: 1.8rem;
-                    font-weight: 500;
-                    display: flex;
-                    gap: 0.5rem;
-                    align-items: center;
-                    line-height: 0;
-                    span {
-                      transform: rotate(180deg);
-                      display: block;
-                    }
-                  }
-                  form {
-                    .form-label {
-                      color: #313234;
-                      font-size: 1.6rem;
-                      margin-bottom: 0.5rem;
-                      font-weight: 600;
-                    }
-                    .form-control,
-                    .form-select {
-                      height: 4rem;
-                      width: 96%;
-                      font-size: 1.6rem;
-                      border-color: #2d4cc3;
-                      &:focus {
-                        outline: none;
-                        box-shadow: none;
-                      }
-                    }
-                    .form-select {
-                      cursor: pointer;
-                    }
-                  }
-                }
-                .mainProductName {
-                  font-size: 2.6rem;
-                  margin-bottom: 1rem;
-                }
-                .mainProductDescription {
-                  @include paraTypo;
-                  margin-bottom: 0.5rem;
-                }
-                .mainProductPricing {
-                  font-size: 3.8rem;
-                  font-weight: 700;
-                  color: #333;
-                  margin: 1rem 0 2rem;
-                  del {
-                    font-size: 2.4rem;
-                    color: #9d9d9d;
-                    font-weight: 400;
-                  }
-                }
-                .selectionBox {
-                  display: flex;
-                  flex-wrap: wrap;
-                  //   gap: 3rem;
-                }
-                .subWrap {
-                  h5 {
-                    color: #313234;
-                    font-size: 1.8rem;
-                    margin-bottom: 1rem;
-                    span{
-                      color: red;
-                    }
-                  }
-                  @include checkedBox;
-                }
-
-                .commBtnWrap {
-                  width: 100%;
-                  position: sticky;
-                  bottom: 1%;
-                  left: 0;
-                  button {
-                    width: 100%;
-                  }
-                }
-                .selectCourseBox {
-                  margin-bottom: 2rem;
-                  h5 {
-                    color: #313234;
-                    font-size: 1.8rem;
-                    margin-bottom: 0.5rem;
-                  }
-                  .form-select {
-                    font-size: 1.6rem;
-                    width: 90%;
-                    border-color: #2d4cc3;
-                    height: 4rem;
-                    cursor: pointer;
-                    &:focus {
-                      outline: none;
-                      box-shadow: none;
-                      border-color: #c6c6c7;
-                    }
-                  }
-                }
-                .colorsWrap {
-                  h5 {
-                    color: #313234;
-                    font-size: 1.8rem;
-                    margin-bottom: 0.5rem;
-                  }
-                  .form-check {
-                    display: flex;
-                    align-items: center;
-                    gap: 0.5rem;
-                    .form-check-label {
-                      font-size: 1.6rem;
-                      cursor: pointer;
-                    }
-                    .form-check-input {
-                      width: 2.5rem;
-                      height: 2.5rem;
-                      cursor: pointer;
-                      //   border-color: #2d4cc3;
-                      &:focus {
-                        border-color: transparent;
-                        outline: none;
-                        box-shadow: none;
-                      }
-                      &.black {
-                        &:checked {
-                          background-color: #161616;
-                          border-color: #161616;
-                        }
-                      }
-                      &.gray {
-                        &:checked {
-                          background-color: gray;
-                          border-color: gray;
-                        }
-                      }
-                    }
-                  }
-                  .colorWrapBox {
-                    display: flex;
-                    margin-bottom: 2rem;
-                  }
-                }
-                .quantityWrapBox {
-                  margin-bottom: 2rem;
-                  h5 {
-                    color: #313234;
-                    font-size: 1.8rem;
-                    margin-bottom: 0.8rem;
-                  }
-                  .input-group {
-                    width: 70%;
-                    .form-control {
-                      color: #313234;
-                      font-size: 1.6rem;
-                      border-color: #2d4cc3;
-                      &:focus {
-                        outline: none;
-                        box-shadow: none;
-                      }
-                    }
-                    .btn {
-                      width: 3.5rem;
-                      height: 4rem;
-                      font-size: 2rem;
-                      line-height: 0;
-                      background-color: #2d4cc3;
-                      color: #fff;
-                    }
-                  }
-                }
-              }
+    }
+    .thumbs-container {
+      margin-top: 2rem;
+      .swiper {
+        .swiper-wrapper {
+          .swiper-slide {
+            width: 8.3rem;
+            height: 7.6rem;
+            img {
+              width: 100%;
+              height: 100%;
             }
           }
         }
       }
     }
   }
+  .product-info {
+    margin-bottom: 2rem;
+    h1 {
+      font-size: 2.6rem;
+    }
+    p {
+      font-size: 1.6rem;
+    }
+  }
+  .bundle-selector {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    label {
+      font-size: 1.8rem;
+      font-family: "AeonikTRIAL-Bold";
+      color: #1d1d1f;
+    }
+    select {
+      height: 3.5rem;
+      width: 60%;
+      border: 0.2rem solid #919191;
+      border-radius: 5rem;
+      padding: 0 1.5rem;
+      font-size: 1.4rem;
+      color: #1d1d1f;
+      font-family: "AeonikTRIAL-Regular";
+      background-image: linear-gradient(45deg, transparent 50%, #1d1d1f 60%),
+        linear-gradient(135deg, #1d1d1f 40%, transparent 50%) !important;
+      background-position: calc(100% - 22px) 14px, calc(100% - 15px) 14px, 100% 0;
+      background-size: 7px 7px, 7px 7px;
+      background-repeat: no-repeat;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      cursor: pointer;
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+  }
+  .subcourses {
+    margin-bottom: 2rem;
+    ul {
+      padding-left: 0;
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 2.4rem;
+      row-gap: 1.5rem;
+      li {
+        font-size: 1.6rem;
+        color: #5d5d5d;
+        &::before {
+          content: url(../../assets/images/bookIcon.svg);
+          padding-right: 0.5rem;
+        }
+      }
+    }
+  }
+  .colorQtWraps {
+    display: flex;
+    gap: 4rem;
+    .color-selector {
+      .color-select {
+        font-size: 1.8rem;
+        font-family: "AeonikTRIAL-Bold";
+        color: #1d1d1f;
+      }
+      .radioWrap {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        margin-top: 1rem;
+        input[type="radio"] {
+          &:checked::before {
+            content: "";
+            display: block;
+            width: 1.9rem;
+            height: 1.9rem;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        }
+        label {
+          font-size: 1.8rem;
+          font-family: "AeonikTRIAL-Regular";
+          color: #919191;
+          text-transform: capitalize;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          cursor: pointer;
+        }
+      }
+    }
+    .qtSelectWrap {
+      display: flex;
+      flex-direction: column;
+      label {
+        font-size: 1.8rem;
+        font-family: "AeonikTRIAL-Bold";
+        color: #1d1d1f;
+      }
+      .qttBox {
+        height: 3.5rem;
+        width: 8rem;
+        border: 0.2rem solid #919191;
+        border-radius: 5rem;
+        padding: 0 1.5rem;
+        font-size: 1.8rem;
+        font-family: "AeonikTRIAL-Regular";
+        color: #1d1d1f;
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        line-height: 0;
+      }
+    }
+  }
+  .produtcMainPrices {
+    margin-top: 3rem;
+    h2 {
+      font-size: 4rem;
+      font-family: "AeonikTRIAL-Bold";
+      color: #2d4cc3;
+      margin-bottom: 0;
+      del {
+        font-size: 3.2rem;
+        font-family: "AeonikTRIAL-Regular";
+        color: #919191;
+      }
+    }
+  }
+  .defaultBox {
+    margin-top: 3rem;
+    label {
+      font-size: 1.8rem;
+      font-family: "AeonikTRIAL-Bold";
+      color: #1d1d1f;
+    }
+    p {
+      font-size: 1.6rem;
+    }
+    ul {
+      padding-left: 0;
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 2.4rem;
+      row-gap: 1.5rem;
+      li {
+        font-size: 1.6rem;
+        color: #5d5d5d;
+        &::before {
+          content: url(../../assets/images/bookIcon.svg);
+          padding-right: 0.5rem;
+        }
+      }
+    }
+  }
+  .order-summary {
+    background-color: #fff;
+    box-shadow: 0 0 1rem 0 #bcbcbcbd;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    height: 9.3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5rem;
+    .leftBoxWp {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      .finalProductImgWRap {
+        height: 7rem;
+        width: 7rem;
+        overflow: hidden;
+        padding: 0.5rem;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .nameColrWrap {
+        h2 {
+          font-size: 1.8rem;
+        }
+        p {
+          font-size: 1.8rem;
+          font-family: "AeonikTRIAL-Regular";
+          color: #1d1d1f;
+          text-transform: capitalize;
+          span {
+            color: #919191;
+          }
+        }
+      }
+    }
+    .midBoxWp {
+      h2 {
+        font-size: 1.8rem;
+      }
+      p {
+        font-size: 1.8rem;
+        font-family: "AeonikTRIAL-Regular";
+        color: #919191;
+        text-transform: capitalize;
+      }
+    }
+    .rightBoxWp {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      .pricing {
+        font-size: 3rem;
+        font-family: "AeonikTRIAL-Bold";
+        color: #1d1d1f;
+        margin-bottom: 0;
+      }
+      .commBtnWrap {
+        button {
+          margin-top: 0;
+          padding: 10px 5px 10px 15px;
+        }
+      }
+    }
+  }
+}
+
+.current-price {
+  font-weight: bold;
+  color: green;
+}
+
+.discounted-price {
+  text-decoration: line-through;
+  color: red;
+}
+
+.order-summary button {
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.product-image-slider {
+  position: relative;
+}
+
+.main-image {
+  position: relative;
+}
+
+.prev-button,
+.next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #2d4cc3;
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5rem;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  i {
+    font-size: 1.8rem;
+    color: #fff;
+  }
+}
+
+.prev-button {
+  left: 10px;
+}
+
+.next-button {
+  right: 10px;
+}
+
+.thumbs-container {
+  display: flex;
+  align-items: center;
+}
+
+.prev-thumb-button,
+.next-thumb-button {
+  background-color: #2d4cc3;
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5rem;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  i {
+    font-size: 1.2rem;
+    color: #fff;
+  }
+}
+
+.thumbs-swiper {
+  flex-grow: 1;
+}
+
+.thumbs-swiper .swiper-slide {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.thumbs-swiper .swiper-slide.active {
+  opacity: 1;
 }

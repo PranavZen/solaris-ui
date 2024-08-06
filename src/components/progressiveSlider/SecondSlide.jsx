@@ -15,7 +15,7 @@ function SecondSlide() {
             3050 Laptop GPU. Supported by 1 TB SSD, 16 GB DDR4 memory, and
             ultrafast WiFi 6E.
           </p>
-          <CommonButton buttonText="Pre Order Now" />
+          <CommonButton buttonText="Pre Order Now" type="button"/>
         </div>
       </div>
       <div className="col-md-7">

@@ -26,7 +26,7 @@ function BannerContent() {
             India's pioneering crafting laptop book-tailored for lifelong
             learning and suitable for all ages!
           </p>
-          <CommonButton buttonText="Pre Order Now" />
+          <CommonButton buttonText="Pre Order Now" type="button"/>
         </div>
         <div className="centerBoxWrap">
           <span className="priceTag">
