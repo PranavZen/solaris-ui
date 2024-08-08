@@ -3,7 +3,12 @@ import React from "react";
 function CommonButton(props) {
   return (
     <div className="commBtnWrap">
-      <button type={props.type} data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+      <button
+        type={props.type}
+        data-bs-toggle={props.modal}
+        data-bs-target={props.modalId}
+        onClick={props.onClick}
+      >
         {props.buttonText}
         <span>
           <svg

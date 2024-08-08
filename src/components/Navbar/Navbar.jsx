@@ -65,10 +65,10 @@ function Navbar() {
                 </Link>
               </li>
               <li className="nav-item rightBorder">
-              <Link className="nav-link" aria-current="page" to="/support">
-                Support
-              </Link>
-            </li>
+                <Link className="nav-link" aria-current="page" to="/support">
+                  Support
+                </Link>
+              </li>
               {/* <li className="nav-item dropdown">
                 <Link
                   className="nav-link dropdown-toggle"
@@ -100,7 +100,6 @@ function Navbar() {
             </ul>
           </div>
           <ul className="navbar-nav me-auto mb-2 mb-lg-0 extraLinks">
-           
             <li className="nav-item">
               <Link className="nav-link" to="#">
                 <svg
@@ -118,7 +117,12 @@ function Navbar() {
               </Link>
             </li>
             <li className="nav-item">
-              <CommonButton buttonText="Pre Order Now" type="button"/>
+              <CommonButton
+                buttonText="Pre Order Now"
+                type="button"
+                modal="modal"
+                modalId="#staticBackdrop"
+              />
             </li>
           </ul>
         </nav>

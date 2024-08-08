@@ -2219,7 +2219,7 @@ input {
 }
 
 .h100 {
-  height: 100vh;
+  height: 50vh;
 }
 .h100:nth-child(even) {
   background-color: red;

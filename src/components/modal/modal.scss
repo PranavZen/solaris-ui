@@ -1,6 +1,20 @@
 @import "../../assets/scss/media";
 @import "../../assets/scss/mixin";
 
+.modal-dialog-centered {
+  @include x-767-tablet {
+    margin: 0;
+  }
+}
+.modal-dialog{
+  @include md-tablet{
+    max-width: 98%;
+  }
+  @include x-767-tablet{
+    max-width: 100%;
+  }
+}
+
 .modal-content {
   .btn-close {
     position: absolute;
@@ -9,28 +23,70 @@
     font-size: 1.6rem;
     color: #000;
     opacity: 1;
+    z-index: 1;
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
   }
 }
 
 .product-details {
-  display: flex;
-  flex-wrap: wrap;
   position: relative;
-  padding-top: 2rem;
+
+  .section {
+    display: flex;
+    flex-wrap: wrap;
+    &.step1 {
+      padding-top: 4rem;
+      .checkoutDataWrap {
+        display: none;
+      }
+    }
+    &.step2 {
+      padding: 0rem 0 5rem;
+      flex-direction: column;
+      .commBtnWrap {
+        button {
+          span {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+  }
   .padLeft {
     padding: 0 1rem;
     max-height: 55rem;
     overflow: auto;
     @include scrollBar;
+    @include md-tablet{
+      padding-bottom: 10rem;
+    }
+    @include x-767-tablet {
+      max-height: 100%;
+      overflow: unset;
+      padding-bottom: 0;
+    }
   }
   .product-image-slider {
     padding-bottom: 13rem;
+    @include x-767-tablet {
+      padding-bottom: 5rem;
+    }
     .main-image {
       max-width: calc(100% - 2rem);
       height: 43.2rem;
       border: 0.2rem solid #919191;
       border-radius: 1rem;
       overflow: hidden;
+      @include md-tablet{
+        height: 30.2rem;
+      }
+      @include x-767-tablet {
+        max-width: calc(100% - 0rem);
+        height: 100%;
+      }
       img {
         width: 100%;
         height: 100%;
@@ -83,7 +139,8 @@
       font-family: "AeonikTRIAL-Regular";
       background-image: linear-gradient(45deg, transparent 50%, #1d1d1f 60%),
         linear-gradient(135deg, #1d1d1f 40%, transparent 50%) !important;
-      background-position: calc(100% - 22px) 14px, calc(100% - 15px) 14px, 100% 0;
+      background-position: calc(100% - 22px) 14px, calc(100% - 15px) 14px,
+        100% 0;
       background-size: 7px 7px, 7px 7px;
       background-repeat: no-repeat;
       appearance: none;
@@ -232,10 +289,23 @@
     left: 50%;
     transform: translateX(-50%);
     border-radius: 5rem;
+    @include x-767-tablet {
+      flex-direction: column;
+      align-items: flex-start;
+      box-shadow: unset;
+      position: relative;
+      height: 100%;
+      padding: 0;
+      gap: 1rem;
+    }
     .leftBoxWp {
       display: flex;
       align-items: center;
       gap: 1rem;
+      @include x-767-tablet {
+        width: 100%;
+        justify-content: flex-start;
+      }
       .finalProductImgWRap {
         height: 7rem;
         width: 7rem;
@@ -277,6 +347,10 @@
       display: flex;
       align-items: center;
       gap: 2rem;
+      @include x-767-tablet {
+        width: 100%;
+        justify-content: space-between;
+      }
       .pricing {
         font-size: 3rem;
         font-family: "AeonikTRIAL-Bold";
@@ -290,6 +364,60 @@
         }
       }
     }
+  }
+  .form-container {
+    background-color: #e2e2ff;
+    padding: 2rem;
+    border-radius: 0.8rem;
+    h2 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 3rem;
+    }
+    .form-group {
+      margin-bottom: 2rem;
+      .form-label {
+        font-size: 1.6rem;
+        font-family: "AeonikTRIAL-Bold";
+        color: #1d1d1f;
+        display: block;
+        margin-bottom: 0.8rem;
+      }
+      .form-control {
+        height: 4.5rem;
+        padding: 0 1.5rem;
+        font-size: 1.6rem;
+        color: #181818;
+        border: 0;
+        &:focus {
+          outline: none;
+          box-shadow: none;
+          border-color: #919191;
+        }
+      }
+      textarea {
+        padding-top: 1rem !important;
+      }
+      .error {
+        font-size: 1.6rem;
+        color: red;
+      }
+    }
+    .commBtnWrap {
+      margin-top: 3rem;
+      button {
+        width: 27%;
+        margin: 0 auto;
+        justify-content: space-between;
+        span {
+          transform: none !important;
+        }
+      }
+    }
+  }
+
+  .payment-methods img {
+    width: 100%;
   }
 }
 
@@ -384,4 +512,7 @@
 
 .thumbs-swiper .swiper-slide.active {
   opacity: 1;
+}
+.Toastify__toast-container {
+  font-size: 1.6rem;
 }

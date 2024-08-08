@@ -45,15 +45,16 @@ const ProductImageSlider = ({ images = [] }) => {
     <div className="product-image-slider">
       <div className="main-image">
         <img src={images[activeIndex]} alt={`Product Image ${activeIndex}`} />
-        <button className="prev-button" onClick={handlePrevMainClick}>
+        <button className="prev-button" onClick={handlePrevMainClick} type="button">
           <i className="fa fa-arrow-left"></i>
         </button>
-        <button className="next-button" onClick={handleNextMainClick}>
+        <button className="next-button" onClick={handleNextMainClick} type="button">
           <i className="fa fa-arrow-right"></i>
         </button>
       </div>
       <div className="thumbs-container">
         <button
+        type="button"
           className="prev-thumb-button"
           onClick={handlePrevThumbClick}
           disabled={thumbStartIndex === 0}
@@ -79,6 +80,7 @@ const ProductImageSlider = ({ images = [] }) => {
         </Swiper>
         <button
           className="next-thumb-button"
+          type="button"
           onClick={handleNextThumbClick}
           disabled={thumbStartIndex + thumbDisplayCount >= images.length}
         >

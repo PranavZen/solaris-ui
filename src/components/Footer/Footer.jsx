@@ -16,7 +16,12 @@ function Footer() {
             </div>
           </div>
           <div className="col-lg-3 col-md-5">
-            <CommonButton buttonText="Pre Order Now" type="button"/>
+            <CommonButton
+              buttonText="Pre Order Now"
+              type="button"
+              modal="modal"
+              modalId="#staticBackdrop"
+            />
           </div>
         </div>
         <div className="row padTop">

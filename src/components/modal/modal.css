@@ -1,3 +1,20 @@
+@media (max-width: 767px) {
+  .modal-dialog-centered {
+    margin: 0;
+  }
+}
+
+@media (max-width: 834px) {
+  .modal-dialog {
+    max-width: 98%;
+  }
+}
+@media (max-width: 767px) {
+  .modal-dialog {
+    max-width: 100%;
+  }
+}
+
 .modal-content .btn-close {
   position: absolute;
   right: 1rem;
@@ -5,13 +22,32 @@
   font-size: 1.6rem;
   color: #000;
   opacity: 1;
+  z-index: 1;
+}
+.modal-content .btn-close:focus {
+  outline: none;
+  box-shadow: none;
 }
 
 .product-details {
+  position: relative;
+}
+.product-details .section {
   display: flex;
   flex-wrap: wrap;
-  position: relative;
-  padding-top: 2rem;
+}
+.product-details .section.step1 {
+  padding-top: 4rem;
+}
+.product-details .section.step1 .checkoutDataWrap {
+  display: none;
+}
+.product-details .section.step2 {
+  padding: 0rem 0 5rem;
+  flex-direction: column;
+}
+.product-details .section.step2 .commBtnWrap button span {
+  transform: rotate(180deg);
 }
 .product-details .padLeft {
   padding: 0 1rem;
@@ -34,8 +70,25 @@
 .product-details .padLeft::-webkit-scrollbar-corner {
   background: #87c9ff;
 }
+@media (max-width: 834px) {
+  .product-details .padLeft {
+    padding-bottom: 10rem;
+  }
+}
+@media (max-width: 767px) {
+  .product-details .padLeft {
+    max-height: 100%;
+    overflow: unset;
+    padding-bottom: 0;
+  }
+}
 .product-details .product-image-slider {
   padding-bottom: 13rem;
+}
+@media (max-width: 767px) {
+  .product-details .product-image-slider {
+    padding-bottom: 5rem;
+  }
 }
 .product-details .product-image-slider .main-image {
   max-width: calc(100% - 2rem);
@@ -43,6 +96,17 @@
   border: 0.2rem solid #919191;
   border-radius: 1rem;
   overflow: hidden;
+}
+@media (max-width: 834px) {
+  .product-details .product-image-slider .main-image {
+    height: 30.2rem;
+  }
+}
+@media (max-width: 767px) {
+  .product-details .product-image-slider .main-image {
+    max-width: calc(100% - 0rem);
+    height: 100%;
+  }
 }
 .product-details .product-image-slider .main-image img {
   width: 100%;
@@ -237,10 +301,27 @@
   transform: translateX(-50%);
   border-radius: 5rem;
 }
+@media (max-width: 767px) {
+  .product-details .order-summary {
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: unset;
+    position: relative;
+    height: 100%;
+    padding: 0;
+    gap: 1rem;
+  }
+}
 .product-details .order-summary .leftBoxWp {
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+@media (max-width: 767px) {
+  .product-details .order-summary .leftBoxWp {
+    width: 100%;
+    justify-content: flex-start;
+  }
 }
 .product-details .order-summary .leftBoxWp .finalProductImgWRap {
   height: 7rem;
@@ -280,6 +361,12 @@
   align-items: center;
   gap: 2rem;
 }
+@media (max-width: 767px) {
+  .product-details .order-summary .rightBoxWp {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
 .product-details .order-summary .rightBoxWp .pricing {
   font-size: 3rem;
   font-family: "AeonikTRIAL-Bold";
@@ -289,6 +376,59 @@
 .product-details .order-summary .rightBoxWp .commBtnWrap button {
   margin-top: 0;
   padding: 10px 5px 10px 15px;
+}
+.product-details .form-container {
+  background-color: #e2e2ff;
+  padding: 2rem;
+  border-radius: 0.8rem;
+}
+.product-details .form-container h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+.product-details .form-container .form-group {
+  margin-bottom: 2rem;
+}
+.product-details .form-container .form-group .form-label {
+  font-size: 1.6rem;
+  font-family: "AeonikTRIAL-Bold";
+  color: #1d1d1f;
+  display: block;
+  margin-bottom: 0.8rem;
+}
+.product-details .form-container .form-group .form-control {
+  height: 4.5rem;
+  padding: 0 1.5rem;
+  font-size: 1.6rem;
+  color: #181818;
+  border: 0;
+}
+.product-details .form-container .form-group .form-control:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #919191;
+}
+.product-details .form-container .form-group textarea {
+  padding-top: 1rem !important;
+}
+.product-details .form-container .form-group .error {
+  font-size: 1.6rem;
+  color: red;
+}
+.product-details .form-container .commBtnWrap {
+  margin-top: 3rem;
+}
+.product-details .form-container .commBtnWrap button {
+  width: 27%;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+.product-details .form-container .commBtnWrap button span {
+  transform: none !important;
+}
+.product-details .payment-methods img {
+  width: 100%;
 }
 
 .current-price {
@@ -384,4 +524,8 @@
 
 .thumbs-swiper .swiper-slide.active {
   opacity: 1;
+}
+
+.Toastify__toast-container {
+  font-size: 1.6rem;
 }/*# sourceMappingURL=modal.css.map */

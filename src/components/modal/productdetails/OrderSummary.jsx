@@ -5,9 +5,11 @@ const OrderSummary = ({
   selectedColor,
   selectedBundle,
   currentPrice,
+  handleSubmit,
   onPreOrder,
   images,
   name,
+  currentStep,
 }) => {
   return (
     <div className="order-summary">
@@ -34,11 +36,21 @@ const OrderSummary = ({
       </div>
       <div className="rightBoxWp">
         <h3 className="pricing">₹{currentPrice}</h3>
-        <CommonButton
-          buttonText="Pre Order Now"
-          onClick={onPreOrder}
-          type="submit"
-        />
+        {currentStep === 2 ? (
+          <form onSubmit={handleSubmit(onPreOrder)}>
+            <CommonButton buttonText="Checkout Now" type="submit" />
+          </form>
+        ) : currentStep === 3 ? (
+          <form>
+            <CommonButton buttonText="Payment Now" type="submit" />
+          </form>
+        ) : (
+          <CommonButton
+            buttonText="Pre Order Now"
+            onClick={onPreOrder}
+            type="button"
+          />
+        )}
       </div>
     </div>
   );

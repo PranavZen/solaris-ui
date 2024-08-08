@@ -1,6 +1,7 @@
 import React from "react";
 import "../modal/modal.css";
 import ProductDetails from "./productdetails/ProductDetails";
+
 function Modal() {
   return (
     <div
