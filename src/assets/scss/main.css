@@ -717,6 +717,7 @@ input {
 @media (max-width: 767px) {
   #productFeature .slider-container .thumbnail-container {
     width: 100%;
+    gap: 0rem;
   }
 }
 #productFeature .slider-container .thumbnail-container .thumbNailBox {
@@ -753,9 +754,10 @@ input {
 }
 @media (max-width: 767px) {
   .color-container {
-    right: 10px;
+    right: 0px;
     top: -35px;
     width: 40%;
+    justify-content: flex-end;
   }
 }
 .color-container .colorBox {
@@ -1951,6 +1953,11 @@ input {
   right: 0;
   top: 0;
   padding: 0 1rem;
+}
+@media (max-width: 767px) {
+  #preOrderBookingSection .halfLaptopWrap .bookInputWrap form .bookBtn {
+    font-size: 1.2rem;
+  }
 }
 #preOrderBookingSection .halfLaptopWrap .bookInputWrap p {
   font-size: 1.8rem;

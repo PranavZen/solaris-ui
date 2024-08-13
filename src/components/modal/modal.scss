@@ -48,6 +48,7 @@
       flex-direction: column;
       .commBtnWrap {
         button {
+          margin-bottom: 2rem;
           span {
             transform: rotate(180deg);
           }
@@ -409,6 +410,12 @@
         width: 27%;
         margin: 0 auto;
         justify-content: space-between;
+        @include md-tablet{
+          width: 50%;
+        }
+        @include x-767-tablet{
+          width: 100%;
+        }
         span {
           transform: none !important;
         }

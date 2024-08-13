@@ -46,6 +46,9 @@
   padding: 0rem 0 5rem;
   flex-direction: column;
 }
+.product-details .section.step2 .commBtnWrap button {
+  margin-bottom: 2rem;
+}
 .product-details .section.step2 .commBtnWrap button span {
   transform: rotate(180deg);
 }
@@ -423,6 +426,16 @@
   width: 27%;
   margin: 0 auto;
   justify-content: space-between;
+}
+@media (max-width: 834px) {
+  .product-details .form-container .commBtnWrap button {
+    width: 50%;
+  }
+}
+@media (max-width: 767px) {
+  .product-details .form-container .commBtnWrap button {
+    width: 100%;
+  }
 }
 .product-details .form-container .commBtnWrap button span {
   transform: none !important;
