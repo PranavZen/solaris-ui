@@ -1,143 +1,202 @@
-import React from "react";
-import { useForm } from "react-hook-form";
+import React, { useEffect, useState } from "react";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import CommonButton from "../../commonButton/CommonButton";
 
+const validationSchema = Yup.object().shape({
+  name: Yup.string()
+    .matches(/^[A-Za-z\s]+$/, "Name should only contain letters.")
+    .required("Name is required."),
+  email: Yup.string()
+    .email("Please enter a valid email address.")
+    .required("Email is required."),
+  mobileNumber: Yup.string()
+    .matches(/^[0-9]{10}$/, "Please enter a valid 10-digit mobile number.")
+    .required("Mobile number is required."),
+  address: Yup.string().required("Address is required."),
+  state: Yup.string().required("State is required."),
+  city: Yup.string().required("City is required."),
+  affiliateCode: Yup.string(),
+});
+
 const ClientForm = ({ onSubmit, onSuccess }) => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm();
+  const [states, setStates] = useState([]);
+  const [cities, setCities] = useState([]);
 
-  const validateName = (value) => /^[A-Za-z\s]+$/.test(value);
-  const validateEmail = (value) =>
-    /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value);
-  const validateMobileNumber = (value) => /^[0-9]{10}$/.test(value);
+  useEffect(() => {
+    // Fetch states
+    axios.get('https://cdn-api.co-vin.in/api/v2/admin/location/states')
+      .then(response => {
+        setStates(response.data.states);
+      })
+      .catch(error => {
+        toast.error("Failed to fetch states.");
+      });
+  }, []);
 
-  const onSubmitHandler = (data) => {
-    if (data.affiliateCode) {
-      toast.error("Affiliate Code is incorrect!");
-      return;
-    }
-    onSubmit(data);
-    toast.success("Form submitted successfully!");
-    reset();
-    if (onSuccess) {
-      onSuccess();
-    }
-  };
-
-  const handleKeyPress = (event) => {
-    const charCode = event.charCode;
-    if (!/[0-9]/.test(String.fromCharCode(charCode))) {
-      event.preventDefault();
-      toast.error("Mobile number should only contain digits.");
-    }
+  const fetchCities = (state_id) => {
+    // Fetch cities based on selected state
+    axios.get(`https://cdn-api.co-vin.in/api/v2/admin/location/districts/${state_id}`)
+      .then(response => {
+        setCities(response.data.districts);
+      })
+      .catch(error => {
+        toast.error("Failed to fetch cities.");
+      });
   };
 
   return (
     <div className="form-container">
       <h2>Pre Order Registration</h2>
-      <form onSubmit={handleSubmit(onSubmitHandler)} className="row">
-        <div className="form-group col-md-6">
-          <label className="form-label">Name</label>
-          <input
-            className="form-control"
-            {...register("name", {
-              required: "Name is required.",
-              validate: (value) =>
-                validateName(value) || "Name should only contain letters.",
-            })}
-          />
-          {errors.name && <span className="error">{errors.name.message}</span>}
-        </div>
+      <Formik
+        initialValues={{
+          name: "",
+          email: "",
+          mobileNumber: "",
+          address: "",
+          state: "",
+          city: "",
+          affiliateCode: "",
+        }}
+        validationSchema={validationSchema}
+        onSubmit={(values, { resetForm }) => {
+          if (values.affiliateCode) {
+            toast.error("Affiliate Code is incorrect!");
+            return;
+          }
+          onSubmit(values);
+          toast.success("Form submitted successfully!");
+          resetForm();
+          if (onSuccess) {
+            onSuccess();
+          }
+        }}
+      >
+        {({ handleSubmit, setFieldValue }) => (
+          <Form onSubmit={handleSubmit} className="row">
+            <div className="form-group col-md-6">
+              <label className="form-label">Name</label>
+              <Field
+                name="name"
+                className="form-control"
+              />
+              <ErrorMessage
+                name="name"
+                component="span"
+                className="error"
+              />
+            </div>
 
-        <div className="form-group col-md-6">
-          <label className="form-label">Email ID</label>
-          <input
-            className="form-control"
-            {...register("email", {
-              required: "Email is required.",
-              validate: (value) =>
-                validateEmail(value) || "Please enter a valid email address.",
-            })}
-          />
-          {errors.email && (
-            <span className="error">{errors.email.message}</span>
-          )}
-        </div>
+            <div className="form-group col-md-6">
+              <label className="form-label">Email ID</label>
+              <Field
+                name="email"
+                className="form-control"
+              />
+              <ErrorMessage
+                name="email"
+                component="span"
+                className="error"
+              />
+            </div>
 
-        <div className="form-group col-md-6">
-          <label className="form-label">Mobile Number</label>
-          <input
-            className="form-control"
-            {...register("mobileNumber", {
-              required: "Mobile number is required.",
-              validate: (value) =>
-                validateMobileNumber(value) ||
-                "Please enter a valid 10-digit mobile number.",
-            })}
-            onKeyPress={handleKeyPress}
-          />
-          {errors.mobileNumber && (
-            <span className="error">{errors.mobileNumber.message}</span>
-          )}
-        </div>
+            <div className="form-group col-md-6">
+              <label className="form-label">Mobile Number</label>
+              <Field
+                name="mobileNumber"
+                className="form-control"
+                onKeyPress={(event) => {
+                  const charCode = event.charCode;
+                  if (!/[0-9]/.test(String.fromCharCode(charCode))) {
+                    event.preventDefault();
+                    toast.error("Mobile number should only contain digits.");
+                  }
+                }}
+              />
+              <ErrorMessage
+                name="mobileNumber"
+                component="span"
+                className="error"
+              />
+            </div>
 
-        <div className="form-group col-md-6">
-          <label className="form-label">Address</label>
-          <textarea
-            className="form-control"
-            {...register("address", { required: "Address is required." })}
-          />
-          {errors.address && (
-            <span className="error">{errors.address.message}</span>
-          )}
-        </div>
+            <div className="form-group col-md-6">
+              <label className="form-label">Address</label>
+              <Field
+                name="address"
+                as="textarea"
+                className="form-control"
+              />
+              <ErrorMessage
+                name="address"
+                component="span"
+                className="error"
+              />
+            </div>
 
-        <div className="form-group col-md-6">
-          <label className="form-label">State</label>
-          <input
-            className="form-control"
-            {...register("state", { required: "State is required." })}
-          />
-          {errors.state && (
-            <span className="error">{errors.state.message}</span>
-          )}
-        </div>
+            <div className="form-group col-md-6">
+              <label className="form-label">State</label>
+              <Field
+                as="select"
+                name="state"
+                className="form-control"
+                onChange={(e) => {
+                  const selectedState = e.target.value;
+                  const selectedStateId = states.find(state => state.state_name === selectedState).state_id;
+                  setFieldValue("state", selectedState);
+                  fetchCities(selectedStateId);
+                }}
+              >
+                <option value="">Select State</option>
+                {states.map((state) => (
+                  <option key={state.state_id} value={state.state_name}>
+                    {state.state_name}
+                  </option>
+                ))}
+              </Field>
+              <ErrorMessage name="state" component="span" className="error" />
+            </div>
 
-        <div className="form-group col-md-6">
-          <label className="form-label">City</label>
-          <input
-            className="form-control"
-            {...register("city", { required: "City is required." })}
-          />
-          {errors.city && <span className="error">{errors.city.message}</span>}
-        </div>
+            <div className="form-group col-md-6">
+              <label className="form-label">City</label>
+              <Field as="select" name="city" className="form-control">
+                <option value="">Select City</option>
+                {cities.map((city) => (
+                  <option key={city.district_id} value={city.district_name}>
+                    {city.district_name}
+                  </option>
+                ))}
+              </Field>
+              <ErrorMessage name="city" component="span" className="error" />
+            </div>
 
-        
+            <div className="form-group col-md-6">
+              <label className="form-label">Affiliate Code</label>
+              <Field
+                name="affiliateCode"
+                className="form-control"
+              />
+            </div>
 
-        <div className="form-group col-md-6">
-          <label className="form-label">Affiliate Code</label>
-          <input className="form-control" {...register("affiliateCode")} />
-        </div>
+            <div className="form-group col-md-6">
+              <label className="form-label">Pay via UPI</label>
+              <div className="payment-methods">
+                <img
+                  src="upi-payment.png"
+                  alt="UPI Payment Method"
+                  className="img-fluid"
+                  loading="lazy"
+                />
+              </div>
+            </div>
 
-        <div className="form-group col-md-6">
-          <label className="form-label">Pay via UPI</label>
-          <div className="payment-methods">
-            <img
-              src="upi-payment.png"
-              alt="UPI Payment Method"
-              className="img-fluid"
-              loading="lazy"
-            />
-          </div>
-        </div>
-        <CommonButton buttonText="Checkout For Payment" type="submit" />
-      </form>
+            <CommonButton buttonText="Checkout For Payment" type="submit" />
+          </Form>
+        )}
+      </Formik>
       <ToastContainer />
     </div>
   );
