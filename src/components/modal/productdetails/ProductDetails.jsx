@@ -31,13 +31,13 @@ const ProductDetails = () => {
   };
 
   const handlePreOrder = (data) => {
-    setCurrentStep(2);
+    setCurrentStep(3);
   };
 
   const handleBack = () => setCurrentStep(1);
 
   const handleFormSuccess = () => {
-    setCurrentStep(3);
+    setCurrentStep(2);
   };
 
   const handleSelectMethod = (event) => {
@@ -63,12 +63,17 @@ const ProductDetails = () => {
 
   return (
     <div className="product-details">
-      {currentStep === 1 ? (
-        <div className="section step1">
+      {currentStep === 2 ? (
+        <div className="section step2">
           <div className="col-lg-6 col-md-6 col-12">
             <ProductImageSlider images={initialImages[selectedColor] || []} />
           </div>
           <div className="col-lg-6 col-md-6 col-12">
+            {/* <CommonButton
+            buttonText="Back"
+            onClick={handleBack}
+            className="back-button"
+          /> */}
             <div className="padLeft">
               <ProductInfo
                 name="Product Name"
@@ -101,13 +106,8 @@ const ProductDetails = () => {
             </div>
           </div>
         </div>
-      ) : currentStep === 2 ? (
-        <div className="section step2">
-          <CommonButton
-            buttonText="Back"
-            onClick={handleBack}
-            className="back-button"
-          />
+      ) : currentStep === 1 ? (
+        <div className="section step1">
           <div className="col-mlg-10 col-md-10 col-12 mx-auto">
             <ClientForm
               onSubmit={handlePreOrder}

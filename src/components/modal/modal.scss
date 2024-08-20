@@ -43,7 +43,7 @@
         display: none;
       }
     }
-    &.step2 {
+    &.step3 {
       padding: 0rem 0 5rem;
       flex-direction: column;
       .commBtnWrap {
@@ -398,6 +398,7 @@
       }
       textarea {
         padding-top: 1rem !important;
+        height: 6rem !important;
       }
       .error {
         font-size: 1.6rem;
@@ -407,7 +408,7 @@
     .commBtnWrap {
       margin-top: 3rem;
       button {
-        width: 27%;
+        width: 50%;
         margin: 0 auto;
         justify-content: space-between;
         @include md-tablet{

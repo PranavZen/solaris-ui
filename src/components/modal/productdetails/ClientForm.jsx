@@ -28,22 +28,26 @@ const ClientForm = ({ onSubmit, onSuccess }) => {
 
   useEffect(() => {
     // Fetch states
-    axios.get('https://cdn-api.co-vin.in/api/v2/admin/location/states')
-      .then(response => {
+    axios
+      .get("https://cdn-api.co-vin.in/api/v2/admin/location/states")
+      .then((response) => {
         setStates(response.data.states);
       })
-      .catch(error => {
+      .catch((error) => {
         toast.error("Failed to fetch states.");
       });
   }, []);
 
   const fetchCities = (state_id) => {
     // Fetch cities based on selected state
-    axios.get(`https://cdn-api.co-vin.in/api/v2/admin/location/districts/${state_id}`)
-      .then(response => {
+    axios
+      .get(
+        `https://cdn-api.co-vin.in/api/v2/admin/location/districts/${state_id}`
+      )
+      .then((response) => {
         setCities(response.data.districts);
       })
-      .catch(error => {
+      .catch((error) => {
         toast.error("Failed to fetch cities.");
       });
   };
@@ -77,30 +81,16 @@ const ClientForm = ({ onSubmit, onSuccess }) => {
       >
         {({ handleSubmit, setFieldValue }) => (
           <Form onSubmit={handleSubmit} className="row">
-            <div className="form-group col-md-6">
-              <label className="form-label">Name</label>
-              <Field
-                name="name"
-                className="form-control"
-              />
-              <ErrorMessage
-                name="name"
-                component="span"
-                className="error"
-              />
+            <div className="form-group col-md-12">
+              <label className="form-label">Full Name</label>
+              <Field name="name" className="form-control" />
+              <ErrorMessage name="name" component="span" className="error" />
             </div>
 
             <div className="form-group col-md-6">
               <label className="form-label">Email ID</label>
-              <Field
-                name="email"
-                className="form-control"
-              />
-              <ErrorMessage
-                name="email"
-                component="span"
-                className="error"
-              />
+              <Field name="email" className="form-control" />
+              <ErrorMessage name="email" component="span" className="error" />
             </div>
 
             <div className="form-group col-md-6">
@@ -123,18 +113,26 @@ const ClientForm = ({ onSubmit, onSuccess }) => {
               />
             </div>
 
-            <div className="form-group col-md-6">
+            <div className="form-group col-md-12">
               <label className="form-label">Address</label>
               <Field
                 name="address"
                 as="textarea"
                 className="form-control"
+                row={30}
               />
-              <ErrorMessage
-                name="address"
-                component="span"
-                className="error"
-              />
+              <ErrorMessage name="address" component="span" className="error" />
+            </div>
+
+            <div className="form-group col-md-6">
+              <label className="form-label">Country</label>
+              <Field
+                as="input"
+                name="country"
+                value="India"
+                className="form-control "
+                disabled
+              ></Field>
             </div>
 
             <div className="form-group col-md-6">
@@ -145,7 +143,9 @@ const ClientForm = ({ onSubmit, onSuccess }) => {
                 className="form-control"
                 onChange={(e) => {
                   const selectedState = e.target.value;
-                  const selectedStateId = states.find(state => state.state_name === selectedState).state_id;
+                  const selectedStateId = states.find(
+                    (state) => state.state_name === selectedState
+                  ).state_id;
                   setFieldValue("state", selectedState);
                   fetchCities(selectedStateId);
                 }}
@@ -174,11 +174,8 @@ const ClientForm = ({ onSubmit, onSuccess }) => {
             </div>
 
             <div className="form-group col-md-6">
-              <label className="form-label">Affiliate Code</label>
-              <Field
-                name="affiliateCode"
-                className="form-control"
-              />
+              <label className="form-label">Discount Cupon Code</label>
+              <Field name="affiliateCode" className="form-control" />
             </div>
 
             <div className="form-group col-md-6">
@@ -192,8 +189,9 @@ const ClientForm = ({ onSubmit, onSuccess }) => {
                 />
               </div>
             </div>
-
-            <CommonButton buttonText="Checkout For Payment" type="submit" />
+            <div className="form-group col-md-6">
+              <CommonButton buttonText="Select Pre Order" type="submit" />
+            </div>
           </Form>
         )}
       </Formik>

@@ -42,14 +42,14 @@
 .product-details .section.step1 .checkoutDataWrap {
   display: none;
 }
-.product-details .section.step2 {
+.product-details .section.step3 {
   padding: 0rem 0 5rem;
   flex-direction: column;
 }
-.product-details .section.step2 .commBtnWrap button {
+.product-details .section.step3 .commBtnWrap button {
   margin-bottom: 2rem;
 }
-.product-details .section.step2 .commBtnWrap button span {
+.product-details .section.step3 .commBtnWrap button span {
   transform: rotate(180deg);
 }
 .product-details .padLeft {
@@ -414,6 +414,7 @@
 }
 .product-details .form-container .form-group textarea {
   padding-top: 1rem !important;
+  height: 6rem !important;
 }
 .product-details .form-container .form-group .error {
   font-size: 1.6rem;
@@ -423,7 +424,7 @@
   margin-top: 3rem;
 }
 .product-details .form-container .commBtnWrap button {
-  width: 27%;
+  width: 50%;
   margin: 0 auto;
   justify-content: space-between;
 }
