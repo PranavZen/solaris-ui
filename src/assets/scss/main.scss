@@ -345,6 +345,17 @@ input {
           width: max-content;
         }
       }
+      a{
+        display: block;
+        cursor: pointer;
+        span{
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          // pointer-events: none;
+        }
+      }
     }
     .laptopBox {
       margin-top: -0.3rem;
@@ -396,6 +407,7 @@ input {
       }
     }
     .svgLine {
+      pointer-events: none;
       @include md-tablet {
         display: none;
       }
@@ -408,7 +420,7 @@ input {
   height: 100%;
   width: 50%;
   top: 25%;
-
+  pointer-events: none;
   &.leftArrow {
     left: 4rem;
     width: 36%;
@@ -806,6 +818,7 @@ input {
         top: 53%;
         stroke-width: 0.3rem;
         left: 20%;
+        pointer-events: none;
       }
     }
     .grid4 {
@@ -819,6 +832,7 @@ input {
         width: 85%;
         left: 15%;
         stroke-width: 0.3rem;
+        pointer-events: none;
       }
     }
     .grid5 {
@@ -832,6 +846,7 @@ input {
         width: 100%;
         left: -4%;
         stroke-width: 0.3rem;
+        pointer-events: none;
       }
     }
   }
@@ -1026,9 +1041,9 @@ input {
       display: none;
     }
     .spinner {
-      animation: rotate 11s linear infinite;
-      -webkit-animation: rotate 11s linear infinite;
-      -moz-animation: rotate 11s linear infinite;
+      animation: rotate 70s linear infinite;
+      -webkit-animation: rotate 70s linear infinite;
+      -moz-animation: rotate 70s linear infinite;
       position: relative;
       pointer-events: none;
     }
@@ -1055,6 +1070,7 @@ input {
       position: absolute;
       top: 15%;
       left: -15%;
+      pointer-events: none;
       @include d-1366-desktop {
         top: 28%;
         left: -10%;
@@ -1064,6 +1080,7 @@ input {
         width: 100%;
         height: auto;
         transform: scale(0.89);
+        pointer-events: none;
       }
     }
   }
@@ -1270,6 +1287,7 @@ input {
       width: 29%;
       top: 50%;
       stroke-width: 0.4rem;
+      pointer-events: none;
     }
     .topImgContentWrap {
       position: absolute;

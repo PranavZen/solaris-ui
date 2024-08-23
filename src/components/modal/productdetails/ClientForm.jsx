@@ -16,42 +16,88 @@ const validationSchema = Yup.object().shape({
   mobileNumber: Yup.string()
     .matches(/^[0-9]{10}$/, "Please enter a valid 10-digit mobile number.")
     .required("Mobile number is required."),
+  pincode: Yup.string()
+    .matches(/^[0-9]+$/, "Please enter a valid pincode number.")
+    .length(6, "Pincode must be exactly 6 digits.")
+    .required("Pincode number is required."),
   address: Yup.string().required("Address is required."),
   state: Yup.string().required("State is required."),
   city: Yup.string().required("City is required."),
   affiliateCode: Yup.string(),
 });
 
-const ClientForm = ({ onSubmit, onSuccess }) => {
+const ClientForm = ({ onSuccess }) => {
   const [states, setStates] = useState([]);
   const [cities, setCities] = useState([]);
+  const [selectedStateId, setSelectedStateId] = useState("");
+  const [selectedCityId, setSelectedCityId] = useState("");
 
   useEffect(() => {
     // Fetch states
     axios
-      .get("https://cdn-api.co-vin.in/api/v2/admin/location/states")
+      .get("https://client.solarisbook.com/state-getAll")
       .then((response) => {
         setStates(response.data.states);
       })
-      .catch((error) => {
+      .catch(() => {
         toast.error("Failed to fetch states.");
       });
   }, []);
 
-  const fetchCities = (state_id) => {
+  const fetchCities = (id) => {
     // Fetch cities based on selected state
     axios
-      .get(
-        `https://cdn-api.co-vin.in/api/v2/admin/location/districts/${state_id}`
-      )
+      .get(`https://client.solarisbook.com/city-state/${id}`)
       .then((response) => {
-        setCities(response.data.districts);
+        setCities(response.data.cities);
       })
-      .catch((error) => {
+      .catch(() => {
         toast.error("Failed to fetch cities.");
       });
   };
 
+  const handleSubmit = async (values, { resetForm }) => {
+    try {
+      // Prepare the form data
+      const formValues = {
+        name: values.name,
+        email: values.email,
+        phone: values.mobileNumber,
+        address: values.address,
+        state: selectedStateId || values.state, // Use ID for state
+        city: selectedCityId || values.city, // Use ID for city
+        pinCode: values.pincode,
+        country: "1", // Assuming country ID is static or predefined
+        affiliateCode: values.affiliateCode,
+      };
+  
+      console.log("Submitting form with values:", formValues);
+  
+      // Make the POST request
+      const response = await axios.post("https://client.solarisbook.com/sign-up", formValues);
+  
+      // Check the response status and message
+      if (response.status === 200 && response.data.message === "User created successfully") {
+        toast.success("Form submitted successfully!");
+        resetForm();
+        if (onSuccess) {
+          onSuccess();
+        }
+      } 
+      else {
+        toast.success(response.data.message);
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+  
+      // Check for specific error details from server
+      if (error.response && error.response.data) {
+        toast.error(`Error: ${error.response.data.message || 'Something went wrong'}`);
+      } else {
+        toast.error("Something went wrong.");
+      }
+    }
+  };
   return (
     <div className="form-container">
       <h2>Pre Order Registration</h2>
@@ -64,20 +110,10 @@ const ClientForm = ({ onSubmit, onSuccess }) => {
           state: "",
           city: "",
           affiliateCode: "",
+          pincode: "",
         }}
         validationSchema={validationSchema}
-        onSubmit={(values, { resetForm }) => {
-          if (values.affiliateCode) {
-            toast.error("Affiliate Code is incorrect!");
-            return;
-          }
-          onSubmit(values);
-          toast.success("Form submitted successfully!");
-          resetForm();
-          if (onSuccess) {
-            onSuccess();
-          }
-        }}
+        onSubmit={handleSubmit}
       >
         {({ handleSubmit, setFieldValue }) => (
           <Form onSubmit={handleSubmit} className="row">
@@ -130,9 +166,9 @@ const ClientForm = ({ onSubmit, onSuccess }) => {
                 as="input"
                 name="country"
                 value="India"
-                className="form-control "
+                className="form-control"
                 disabled
-              ></Field>
+              />
             </div>
 
             <div className="form-group col-md-6">
@@ -142,18 +178,20 @@ const ClientForm = ({ onSubmit, onSuccess }) => {
                 name="state"
                 className="form-control"
                 onChange={(e) => {
-                  const selectedState = e.target.value;
-                  const selectedStateId = states.find(
-                    (state) => state.state_name === selectedState
-                  ).state_id;
-                  setFieldValue("state", selectedState);
-                  fetchCities(selectedStateId);
+                  const selectedStateName = e.target.value;
+                  const selectedStateObj = states.find(
+                    (state) => state.name === selectedStateName
+                  );
+                  const stateId = selectedStateObj?.id;
+                  setSelectedStateId(stateId);
+                  setFieldValue("state", selectedStateName);
+                  fetchCities(stateId);
                 }}
               >
                 <option value="">Select State</option>
                 {states.map((state) => (
-                  <option key={state.state_id} value={state.state_name}>
-                    {state.state_name}
+                  <option key={state.id} value={state.name}>
+                    {state.name}
                   </option>
                 ))}
               </Field>
@@ -162,11 +200,24 @@ const ClientForm = ({ onSubmit, onSuccess }) => {
 
             <div className="form-group col-md-6">
               <label className="form-label">City</label>
-              <Field as="select" name="city" className="form-control">
+              <Field
+                as="select"
+                name="city"
+                className="form-control"
+                onChange={(e) => {
+                  const selectedCityName = e.target.value;
+                  const selectedCityObj = cities.find(
+                    (city) => city.city === selectedCityName
+                  );
+                  const cityId = selectedCityObj?.id;
+                  setSelectedCityId(cityId);
+                  setFieldValue("city", selectedCityName);
+                }}
+              >
                 <option value="">Select City</option>
                 {cities.map((city) => (
-                  <option key={city.district_id} value={city.district_name}>
-                    {city.district_name}
+                  <option key={city.id} value={city.city}>
+                    {city.city}
                   </option>
                 ))}
               </Field>
@@ -174,7 +225,13 @@ const ClientForm = ({ onSubmit, onSuccess }) => {
             </div>
 
             <div className="form-group col-md-6">
-              <label className="form-label">Discount Cupon Code</label>
+              <label className="form-label">Pincode</label>
+              <Field name="pincode" className="form-control" />
+              <ErrorMessage name="pincode" component="span" className="error" />
+            </div>
+
+            <div className="form-group col-md-6">
+              <label className="form-label">Discount Coupon Code</label>
               <Field name="affiliateCode" className="form-control" />
             </div>
 

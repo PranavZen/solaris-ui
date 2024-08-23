@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 import CommonButton from "../commonButton/CommonButton";
-import { laptop, laptopBox, priceTag } from "..";
+import { laptop, laptopBox, playIcon, priceTag } from "..";
 import AOS from "aos";
 import "aos/dist/aos.css";
+// import "@fancyapps/fancybox/dist/jquery.fancybox.min.css";
+// import "@fancyapps/fancybox/dist/jquery.fancybox.min.js";
 
 function BannerContent() {
   useEffect(() => {
@@ -15,10 +17,7 @@ function BannerContent() {
   return (
     <div className="container">
       <div className="bannerContentRow">
-        <div
-          className="bannerTextWrap"
-          
-        >
+        <div className="bannerTextWrap">
           <h1 className="mainText">
             <span className="gradientText">Solaris</span> Book 14X OLED
           </h1>
@@ -26,7 +25,7 @@ function BannerContent() {
             India's pioneering crafting laptop book-tailored for lifelong
             learning and suitable for all ages!
           </p>
-          <CommonButton buttonText="Pre Order Now" type="button"/>
+          <CommonButton buttonText="Pre Order Now" type="button" />
         </div>
         <div className="centerBoxWrap">
           <span className="priceTag">
@@ -52,7 +51,23 @@ function BannerContent() {
             data-aos="fade-down"
             data-aos-duration="2200"
           >
-            <img src={laptop} alt="laptop" className="img-fluid" />
+            <a
+              data-fancybox
+              href="https://www.youtube.com/embed/L-LXCGb6NNg?autoplay=1"
+            >
+              <img src={laptop} alt="laptop" className="img-fluid" />
+              <span>
+                <img
+                  src={playIcon}
+                  alt="Video Play"
+                  data-aos="fade-in"
+                  data-aos-duration="2500"
+                  data-aos-easing="ease-in-back"
+                  width={52}
+                  height={52}
+                />
+              </span>
+            </a>
             <span className="overlapText">Made for India</span>
           </span>
           <span className="laptopBox">

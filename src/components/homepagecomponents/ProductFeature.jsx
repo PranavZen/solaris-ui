@@ -32,6 +32,7 @@ function ProductFeature() {
             <CommonButton buttonText="Pre Order Now" type="button"/>
           </div>
         </div>
+        
         <div className="col-md-12 col-lg-6">
           <ImageSlider colorImages={colorImages} />
         </div>

@@ -441,6 +441,16 @@ input {
     width: max-content;
   }
 }
+#bannerSection .centerBoxWrap .mainLaptop a {
+  display: block;
+  cursor: pointer;
+}
+#bannerSection .centerBoxWrap .mainLaptop a span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
 #bannerSection .centerBoxWrap .laptopBox {
   margin-top: -0.3rem;
 }
@@ -498,6 +508,9 @@ input {
   font-size: 1.4rem;
   font-family: "AeonikTRIAL-Regular";
 }
+#bannerSection .centerBoxWrap .svgLine {
+  pointer-events: none;
+}
 @media (max-width: 834px) {
   #bannerSection .centerBoxWrap .svgLine {
     display: none;
@@ -510,6 +523,7 @@ input {
   height: 100%;
   width: 50%;
   top: 25%;
+  pointer-events: none;
 }
 .svgLine.leftArrow {
   left: 4rem;
@@ -994,6 +1008,7 @@ input {
   top: 53%;
   stroke-width: 0.3rem;
   left: 20%;
+  pointer-events: none;
 }
 #solarisGridSection .bookGrid .grid4 {
   grid-area: 2/2/3/3;
@@ -1009,6 +1024,7 @@ input {
   width: 85%;
   left: 15%;
   stroke-width: 0.3rem;
+  pointer-events: none;
 }
 #solarisGridSection .bookGrid .grid5 {
   grid-area: 2/3/3/4;
@@ -1024,6 +1040,7 @@ input {
   width: 100%;
   left: -4%;
   stroke-width: 0.3rem;
+  pointer-events: none;
 }
 
 #featureSliderSection {
@@ -1247,9 +1264,9 @@ input {
   }
 }
 #featureSliderSection .div5 .spinner {
-  animation: rotate 11s linear infinite;
-  -webkit-animation: rotate 11s linear infinite;
-  -moz-animation: rotate 11s linear infinite;
+  animation: rotate 70s linear infinite;
+  -webkit-animation: rotate 70s linear infinite;
+  -moz-animation: rotate 70s linear infinite;
   position: relative;
   pointer-events: none;
 }
@@ -1264,6 +1281,7 @@ input {
   position: absolute;
   top: 15%;
   left: -15%;
+  pointer-events: none;
 }
 @media (max-width: 1366px) {
   #featureSliderSection .div5 .midImagWrap {
@@ -1276,6 +1294,7 @@ input {
   width: 100%;
   height: auto;
   transform: scale(0.89);
+  pointer-events: none;
 }
 
 #windowProSection {
@@ -1510,6 +1529,7 @@ input {
   width: 29%;
   top: 50%;
   stroke-width: 0.4rem;
+  pointer-events: none;
 }
 #solarisBenefits .leftImgWrap .topImgContentWrap {
   position: absolute;

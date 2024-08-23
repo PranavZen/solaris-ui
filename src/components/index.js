@@ -18,6 +18,7 @@ export { default as halfLaptop } from "../assets/images/halflaptop.png";
 export { default as fooLogo } from "../assets/images/foologo.png";
 export { default as certificates } from "../assets/images/cirtificates.png";
 export { default as butterflyImg } from "../assets/images/butterflyImg.png";
+export { default as playIcon } from "../assets/images/play-button.png";
 
 // export { default as grayImg1 } from "../assets/images/1.png";
 // export { default as grayImg2 } from "../assets/images/2.png";
